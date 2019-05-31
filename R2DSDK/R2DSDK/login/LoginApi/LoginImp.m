@@ -206,6 +206,7 @@
         if (code == 0) {
             NSLog(@"Unwrap successful,msg:%@",msg);
               [SDK_DATA saveLoginType:LoginTypeGuest];
+            SDK_DATA.isBindFb = NO;
              [viewController dismissViewControllerAnimated:NO completion:nil];
         }else{
             NSLog(@"Unwrap failed,msg:%@,code:%d",msg,code);
@@ -222,6 +223,7 @@
         if (code == 0) {
             NSLog(@"Unwrap successful,msg:%@",msg);
             [SDK_DATA saveLoginType:LoginTypeGuest];
+            SDK_DATA.isBindGoogle = NO;
             [viewController dismissViewControllerAnimated:NO completion:nil];
         }else{
             NSLog(@"Unwrap failed,msg:%@,code:%d",msg,code);
