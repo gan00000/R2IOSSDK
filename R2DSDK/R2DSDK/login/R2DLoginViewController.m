@@ -11,6 +11,9 @@
 #import "view/GuestLoginWarnTipsView.h"
 #import "view/CurrentLoginInfoView.h"
 #import "view/BindAccountView.h"
+#import "LoginImp.h"
+#import "view/GuestLogoutWarnTipsView.h"
+#import "view/FBGGUnbindView.h"
 
 
 @implementation R2DLoginViewController{
@@ -18,6 +21,7 @@
     SDKPage sdkPageType;
     CurrentLoginInfoView *mCurrentLoginInfoView;
     BindAccountView *mBindAccountView;
+    FBGGUnbindView *mFBGGUnbindView;
 }
 
 -(instancetype)initWithPageType:(SDKPage) pageType
@@ -61,7 +65,7 @@
             
         case SDKPage_UnBind:
         {
-            [self showLoginCurrentTypePage];
+            [self showLoginUnbindPage];
         }
             break;
         default:
@@ -116,9 +120,30 @@
     }];
 }
 
--(void)showLoginUnbind
+-(void)showFBGGUnbindView
 {
+    //gameLoginType为登录方式
+    mFBGGUnbindView = [[FBGGUnbindView alloc]initWithLoginType:SDK_DATA.gameLoginType];
     
+    [self.view addSubview:mFBGGUnbindView];
+    
+    [mFBGGUnbindView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(@(0));
+        make.centerY.equalTo(@(0));
+        make.width.equalTo(@(kBgWidth));
+        make.height.equalTo(@(kBgHeight));
+    }];
+}
+
+
+-(void)showLoginUnbindPage
+{
+    if (SDK_DATA.gameLoginType == LoginTypeGuest) {
+        [self showLoginCurrentTypePage];
+    }else
+    {
+        [self showFBGGUnbindView];
+    }
 }
 
 
@@ -126,6 +151,7 @@
 {
         mBindAccountView = [[BindAccountView alloc]initView];
     
+        mBindAccountView.delegate = self;
         [self.view addSubview:mBindAccountView];
     
         [mBindAccountView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -153,9 +179,35 @@
     [self showLoginBind];
 }
 
+-(void)goGuestLoginoutTipsView
+{
+    GuestLogoutWarnTipsView *mGuestLogoutWarnTipsView = [[GuestLogoutWarnTipsView alloc]initView];
+    
+    [self.view addSubview:mGuestLogoutWarnTipsView];
+    
+    [mGuestLogoutWarnTipsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(@(0));
+        make.centerY.equalTo(@(0));
+        make.width.equalTo(@(kBgWidth));
+        make.height.equalTo(@(kBgHeight));
+    }];
+}
+
 - (void)logout
 {
     
 }
+
+-(void)clickBindFacebook
+{
+    SDK_LOG(@"bindFacebook");
+    [LoginImp bindFacebook:self];
+}
+-(void)clickBindGoogle
+{
+    SDK_LOG(@"bindGoogle");
+    [LoginImp bindGoogle:self];
+}
+
 
 @end

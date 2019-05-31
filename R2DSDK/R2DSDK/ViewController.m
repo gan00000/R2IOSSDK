@@ -34,6 +34,14 @@
     [loginTypeBtn addTarget:self action:@selector(openLoginType:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:loginTypeBtn];
     
+    
+    UIButton *unbindBtn = [[UIButton alloc] initWithFrame:CGRectMake(40, 180, 200, 40)];
+    [unbindBtn setTitle:@"游戏内解除绑定" forState:(UIControlStateNormal)];
+    unbindBtn.backgroundColor = [UIColor grayColor];
+    [unbindBtn addTarget:self action:@selector(unbindPage:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.view addSubview:unbindBtn];
+    
+    
 }
 
 -(void)openLogin:(UIButton *)btn
@@ -61,6 +69,14 @@
                                                      }];
 }
 
+-(void)unbindPage:(UIButton *)btn
+{
+   
+    [[R2SDKPlat shareR2SDK] showUnbindWithViewController:self
+                                                     logoutHandler:^(NSInteger logout) {
+                                                         [self showTips:@"退出登录了"];
+                                                     }];
+}
 
 -(void)showTips:(NSString *)msg
 {

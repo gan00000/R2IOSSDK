@@ -13,7 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol LoginViewDelegate <NSObject>
 
 -(void)goBindView;
+-(void)goGuestLoginoutTipsView;
 -(void)logout;
+-(void)clickBindFacebook;
+-(void)clickBindGoogle;
 
 @end
 

@@ -23,8 +23,23 @@
 //            NSString *loginTimestamp = result.timestamp; 
 //
             SDK_DATA.loginResult = result;
-             [SDK_DATA saveLoginType:LoginTypeGuest];
-            [[NSNotificationCenter defaultCenter] postNotificationName:Guest_Login_Tipe_OK object:nil];
+            BOOL isBindFb = result.isBoundToFacebook;
+            BOOL isBindGoogle =result.isBoundToGoogleAccount;
+            if (isBindFb) {//绑定过就不算游客登录
+                [SDK_DATA saveLoginType:LoginTypeFacebook];
+                [self loginSuccess:result];
+                
+            }else if(isBindGoogle)
+            {
+                 [SDK_DATA saveLoginType:LoginTypeGoogle];
+                 [self loginSuccess:result];
+            }else
+            {
+                [SDK_DATA saveLoginType:LoginTypeGuest];
+                [[NSNotificationCenter defaultCenter] postNotificationName:Guest_Login_Tipe_OK object:nil];
+            }
+            
+          
            
 //            [SDK_DATA saveLoginType:LoginTypeGuest];
             
@@ -112,6 +127,10 @@
     SDK_DATA.gameLoginTimeStamp = loginTimestamp;
     SDK_DATA.gameLoginToken = sign;
     SDK_DATA.isLogin = YES;
+    
+    SDK_DATA.isBindFb = r2LoginResult.isBoundToFacebook;
+    SDK_DATA.isBindGoogle = r2LoginResult.isBoundToGoogleAccount;
+    
     [hillTopViewController dismissViewControllerAnimated:NO completion:nil];
     
     if ([R2SDKPlat shareR2SDK].loginCompletionHandler) {
@@ -120,7 +139,7 @@
     }
 }
 
-+(void) logout
++(void) logoutAccount
 {
     [SDK_DATA releaseData];
     [hillTopViewController dismissViewControllerAnimated:NO completion:nil];
@@ -129,6 +148,32 @@
         [R2SDKPlat shareR2SDK].logoutHandler(SDK_DATA.gameLoginType);
     }
     [SDK_DATA releaseData];
+}
+
+
++(void)bindFacebook:(UIViewController *)viewController
+{
+
+    [[R2FacebookMgrHelper sharedHelper]bindFBWithViewController:viewController
+                                            withReadPermissions:@[@"public_profile"]
+                                              andR2UidToBeBound:SDK_DATA.gameUserId
+                                              completionHandler:^(int code, NSString *msg, R2FacebookLoginResult *result) {
+                                                  
+                                                  if (code == 1009) {
+                                                      [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"FB_HAS_BIND")];
+                                                  }else  if (code == FACEBOOK_BIND_SUCCESS) {
+                                                      NSLog(@"facebook login and bind r2 account successfully,[%@%@%@]",result.fbUserId,result.fbUsername,result.fbImageUrl);
+                                                            [SDK_DATA saveLoginType:LoginTypeFacebook];
+                                                      [viewController dismissViewControllerAnimated:NO completion:nil];
+                                                  }else {
+                                                       [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"BIND_FAIL")];
+                                                              NSLog(@"facebook login and bind r2 account failed,code = %d,msg = %@",code,msg);
+                                                    }
+                                              }
+     
+     
+     ];
+                                                          
 }
 
 +(void) bindGoogle:(UIViewController *)viewController

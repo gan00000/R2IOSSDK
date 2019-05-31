@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDKBaseView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginMainView : UIView
+@interface LoginMainView : SDKBaseView
 
 - (instancetype)initView;
 

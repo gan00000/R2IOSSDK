@@ -136,6 +136,26 @@
     [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:nil];
 }
 
+
+- (void)showUnbindWithViewController:(UIViewController *)gameUIViewController logoutHandler:(R2SDKLogoutHandler)logoutHandler
+{
+    self.gameUIViewController = gameUIViewController;
+    self.logoutHandler = logoutHandler;
+    if (SDK_DATA.gameLoginType < 0 || !SDK_DATA.isLogin) {
+        [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_LOGIN_FIRST")];
+        return;
+    }
+    
+    self.gameUIViewController = gameUIViewController;
+    self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_UnBind)];
+    //    presentedVC.view.backgroundColor = [UIColor clearColor];
+    
+    self.sdkPresentedVC.definesPresentationContext = YES;
+    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
+    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:nil];
+    
+}
+
 - (void)initWithLanguage:(NSString *)language
 {
     SDK_DATA;

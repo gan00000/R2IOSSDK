@@ -1,18 +1,18 @@
 //
-//  CurrentLoginInfoView.m
+//  FBGGUnbindView.m
 //  R2DSDK
 //
-//  Created by ganyuanrong on 2019/5/29.
+//  Created by ganyuanrong on 2019/5/31.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
 //
 
-#import "CurrentLoginInfoView.h"
+#import "FBGGUnbindView.h"
 
 #import "R2DHeader.h"
 #import "LoginTitleView.h"
 #import "../LoginApi/LoginImp.h"
 
-@implementation CurrentLoginInfoView
+@implementation FBGGUnbindView
 {
     UIImageView *currentLogoImageView;
     NSInteger loginType;
@@ -28,7 +28,7 @@
 
 
 - (instancetype)initWithLoginType:(NSInteger)mLoginType{
- 
+    
     self = [super init];
     loginType = mLoginType;
     
@@ -48,7 +48,7 @@
     }];
     
     UIView *contentView = [[UIView alloc] init];
-//    contentView.backgroundColor = [UIColor redColor];
+    //    contentView.backgroundColor = [UIColor redColor];
     [self addSubview:contentView];
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -63,7 +63,7 @@
     currentTipsLabel.text = GET_SDK_LOCALIZED(@"R2SDK_CURRENT_LOGIN_TYPE");
     currentTipsLabel.textAlignment = NSTextAlignmentCenter;
     currentTipsLabel.backgroundColor = [UIColor clearColor];
-
+    
     [contentView addSubview:currentTipsLabel];
     [currentTipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -73,13 +73,13 @@
         make.left.mas_equalTo(contentView).offset(10);
     }];
     
-
+    
     
     currentLogoImageView = [[UIImageView alloc] initWithImage:[UIImage gama_imageNamed:@"r2d_fb_current.png"]];
     currentLogoImageView.contentMode = UIViewContentModeScaleAspectFit;
     [contentView addSubview:currentLogoImageView];
     [currentLogoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-
+        
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(100);
         make.top.mas_equalTo(currentTipsLabel.mas_bottom).offset(10);
@@ -101,36 +101,27 @@
     }];
     
     
-
-    UIButton *guestBindBtn = [UIUtil initBtnWithTitle:GET_SDK_LOCALIZED(@"R2SDK_BIND_ACCOUNT") tag:124 selector:@selector(clickBtnsAction:) target:self];
-    guestBindBtn.backgroundColor = [UIColor whiteColor];
-    [guestBindBtn setFont:[ UIFont fontWithName:LABEL_FONT_NAME_BOLD size : 16 ]];
-
-    [contentView addSubview:guestBindBtn];
-    [guestBindBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-
+    
+    UIButton *unBindBtn = [UIUtil initBtnWithTitle:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_ACCOUNT") tag:124 selector:@selector(clickBtnsAction:) target:self];
+    unBindBtn.backgroundColor = [UIColor whiteColor];
+    [unBindBtn setFont:[ UIFont fontWithName:LABEL_FONT_NAME_BOLD size : 16 ]];
+    
+    [contentView addSubview:unBindBtn];
+    [unBindBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(34);
         make.top.mas_equalTo(logoutBtn.mas_bottom).offset(20);
         make.centerX.mas_equalTo(logoutBtn);
-    
+        
     }];
     
-    if (loginType == LoginTypeGuest) {
-        [logoutBtn setTitle:GET_SDK_LOCALIZED(@"R2SDK_Guest_Logout") forState: UIControlStateNormal];
-        
-        currentLogoImageView.image = [UIImage gama_imageNamed:@"r2d_guest_current.png"];
-        
-    }else{
-        [logoutBtn setTitle:GET_SDK_LOCALIZED(@"R2SDK_LOGOUT") forState: UIControlStateNormal];
-        guestBindBtn.hidden = YES;
-        if (loginType == LoginTypeFacebook) {
-            currentLogoImageView.image = [UIImage gama_imageNamed:@"r2d_fb_current.png"];
-        }else if (loginType == LoginTypeGoogle){
-            currentLogoImageView.image = [UIImage gama_imageNamed:@"r2d_google_current.png"];
-        }
-        
+    if (loginType == LoginTypeFacebook) {
+        currentLogoImageView.image = [UIImage gama_imageNamed:@"r2d_fb_current.png"];
+    }else if (loginType == LoginTypeGoogle){
+        currentLogoImageView.image = [UIImage gama_imageNamed:@"r2d_google_current.png"];
     }
+    
     
     return self;
 }
@@ -141,33 +132,28 @@
     switch (button.tag) {
             
         case 123:
-
-            if (loginType == LoginTypeGuest) {
-                if (self.delegate) {
-                    [self.delegate goGuestLoginoutTipsView];
-                }
-            }else
-            {
-                [LoginImp logoutAccount];
-            }
             
+            [LoginImp logoutAccount];
+//            if (self.delegate) {
+//                [self.delegate goGuestLoginoutTipsView];
+//            }
             
             break;
             
         case 124:
-//            [SDK_DATA.r2dLoginVC showLoginBind];
+            //解除绑定
             if (self.delegate) {
-                [self.delegate goBindView];
+//                [self.delegate ];
             }
+            
             break;
             
-       
-  
+            
+            
             
         default:
             break;
     }
-    
 }
 
 @end

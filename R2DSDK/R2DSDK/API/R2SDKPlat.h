@@ -60,6 +60,8 @@ typedef void (^R2SDKLogoutHandler)(NSInteger logout);
 
 - (void)showCurrentLoginTypeWithViewController:(UIViewController *)gameUIViewController logoutHandler:(R2SDKLogoutHandler)logoutHandler;
 
+- (void)showUnbindWithViewController:(UIViewController *)gameUIViewController logoutHandler:(R2SDKLogoutHandler)logoutHandler;
+
 - (void)initWithLanguage:(NSString *)language;
 
 

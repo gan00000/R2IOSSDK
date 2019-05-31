@@ -9,7 +9,7 @@
 #import "BindAccountView.h"
 #import "R2DHeader.h"
 #import "LoginTitleView.h"
-#import "../LoginApi/LoginImp.h"
+
 
 @implementation BindAccountView
 
@@ -117,12 +117,27 @@
     switch (button.tag) {
         case 201:  //fb
         {
-
+//            SDK_DATA.isBindFb
+//            SDK_DATA.isBindGoogle
+            if (SDK_DATA.isBindFb) {
+                [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_ACCOUNT_ARLEADY_BIND")];
+                return;
+            }
+            if (self.delegate) {
+                [self.delegate clickBindFacebook];
+            }
         }
             break;
         case 202:   //google
         {
             
+            if (SDK_DATA.isBindGoogle) {
+                [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_ACCOUNT_ARLEADY_BIND")];
+                return;
+            }
+            if (self.delegate) {
+                [self.delegate clickBindGoogle];
+            }
         }
             break;
             

@@ -47,7 +47,6 @@
     self.gameUserId = @"";
     self.gameLoginToken = @"";
     self.gameLoginTimeStamp = @"";
-    self.gameUserId = @"";
 }
 
 @end

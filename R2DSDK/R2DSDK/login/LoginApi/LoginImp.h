@@ -29,7 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(void) bindGoogle:(UIViewController *)viewController;
 
-+(void) logout;
+
++(void)bindFacebook:(UIViewController *)viewController;
+
++(void) logoutAccount;
 
 +(void)loginSuccess:(R2LoginResponse *) r2LoginResult;
 

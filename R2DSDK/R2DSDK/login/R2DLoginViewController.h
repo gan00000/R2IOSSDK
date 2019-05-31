@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype)initWithPageType:(SDKPage) pageType;
 
--(void)showLoginBind;
+//-(void)showLoginBind;
 
 @end
 

@@ -28,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic)R2LoginResponse * loginResult;
 
+@property(nonatomic,assign) BOOL isBindFb;
+@property(nonatomic,assign) BOOL isBindGoogle;
+
 + (instancetype)sharedSdkData;
 
 -(void)saveLoginType:(NSInteger)loginType;

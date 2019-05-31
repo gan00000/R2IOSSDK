@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "../LoginViewDelegate.h"
+#import "SDKBaseView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CurrentLoginInfoView : UIView
+@interface CurrentLoginInfoView : SDKBaseView
 
-@property(nonatomic, weak) id<LoginViewDelegate> delegate;
 - (instancetype)initWithLoginType:(NSInteger)mLoginType;
 
 @end
