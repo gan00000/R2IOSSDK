@@ -124,7 +124,7 @@
 {
     //gameLoginType为登录方式
     mFBGGUnbindView = [[FBGGUnbindView alloc]initWithLoginType:SDK_DATA.gameLoginType];
-    
+    mFBGGUnbindView.delegate = self;
     [self.view addSubview:mFBGGUnbindView];
     
     [mFBGGUnbindView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -209,5 +209,15 @@
     [LoginImp bindGoogle:self];
 }
 
+-(void)unBindGoogle
+{
+    SDK_LOG(@"unBindGoogle");
+    [LoginImp unbindGoogle:self];
+}
+-(void)unBindFacebook
+{
+    SDK_LOG(@"unBindFacebook");
+    [LoginImp unbindFacebook:self];
+}
 
 @end

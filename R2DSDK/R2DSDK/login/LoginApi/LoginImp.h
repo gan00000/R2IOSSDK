@@ -36,6 +36,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(void)loginSuccess:(R2LoginResponse *) r2LoginResult;
 
++(void)unbindFacebook:(UIViewController *)viewController;
+
++(void) unbindGoogle:(UIViewController *)viewController;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -178,19 +178,58 @@
 
 +(void) bindGoogle:(UIViewController *)viewController
 {
-    [[R2GoogleHelper sharedInstance] switchFromViewController:viewController enableCreateNewAccount:YES
-                                          onCompletionHandler:^(int code, NSString *msg, R2LoginResponse * r2LoginResult, NSDictionary *result) {
-                                              
-                                              if (code == 0) {
-                                                  NSString *r2UserId = r2LoginResult.r2Uid;
-                                                  NSString *loginTimestamp = r2LoginResult.timestamp;
-                                                  NSString *sign = r2LoginResult.sign;
-                                                  NSLog(@"current r2 uid = %@",r2UserId);
-                                              } else{
-                                                  NSLog(@"switch failed,code -> %d,msg -> %@",code,msg);
-                                              }
-                                          }];
+    [[R2GoogleHelper sharedInstance] bindFromViewController:viewController
+                                                  withR2Uid:SDK_DATA.gameUserId
+                                        onCompletionHandler:^(int code, NSString *msg, R2LoginResponse *loginResponse, NSDictionary *result) {
+                                            if (code == 1009) {
+                                                [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"FB_HAS_BIND")];
+                                            }else if (code == 0) {
+                                                //绑定成功
+                                                [SDK_DATA saveLoginType:LoginTypeGoogle];
+                                                [viewController dismissViewControllerAnimated:NO completion:nil];
+                                                
+                                            }else{
+                                                
+                                                [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"BIND_FAIL")];
+                                                NSLog(@"bind failed,code -> %d,msg -> %@",code,msg);
+                                            }
+                                            
+                                        }];
 }
+
+
++(void)unbindFacebook:(UIViewController *)viewController
+{
+    
+    
+    [[R2SDKMgrApi sharedInstance]unwrap:SDK_DATA.gameUserId openType:@"2" completionHandler:^(int code, NSString *msg, R2UnwrapResponse *result) {
+        if (code == 0) {
+            NSLog(@"Unwrap successful,msg:%@",msg);
+              [SDK_DATA saveLoginType:LoginTypeGuest];
+             [viewController dismissViewControllerAnimated:NO completion:nil];
+        }else{
+            NSLog(@"Unwrap failed,msg:%@,code:%d",msg,code);
+             [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_FAIL")];
+        }
+    }];
+    
+}
+//type:第三方账号类型(GameCenter 传入"1"，Facebook 账号传入"2", Google 账 号传入"8")(必须)
++(void) unbindGoogle:(UIViewController *)viewController
+{
+    
+    [[R2SDKMgrApi sharedInstance]unwrap:SDK_DATA.gameUserId openType:@"8" completionHandler:^(int code, NSString *msg, R2UnwrapResponse *result) {
+        if (code == 0) {
+            NSLog(@"Unwrap successful,msg:%@",msg);
+            [SDK_DATA saveLoginType:LoginTypeGuest];
+            [viewController dismissViewControllerAnimated:NO completion:nil];
+        }else{
+            NSLog(@"Unwrap failed,msg:%@,code:%d",msg,code);
+             [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_FAIL")];
+        }
+    }];
+}
+
 
                   
 @end

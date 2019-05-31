@@ -141,10 +141,8 @@
             break;
             
         case 124:
-            //解除绑定
-            if (self.delegate) {
-//                [self.delegate ];
-            }
+          
+            [self showUnbindTips];
             
             break;
             
@@ -154,6 +152,38 @@
         default:
             break;
     }
+    
 }
+-(void)showUnbindTips
+{
+    
+    UIAlertController *mAlert = [UIAlertController alertControllerWithTitle:nil message:GET_SDK_LOCALIZED(@"R2SDK_IS_UNBIND_ACCOUNT")
+                    preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:GET_SDK_LOCALIZED(@"R2SDK_OK") style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              //响应事件
+                                                              NSLog(@"action = %@", action);
+                                                              //解除绑定
+                                                              if (self.delegate) {
+                                                                  if (loginType == LoginTypeFacebook) {
+                                                                      [self.delegate unBindFacebook];
+                                                                  }else if (loginType == LoginTypeGoogle) {
+                                                                      [self.delegate unBindGoogle];
+                                                                  }
+                                                              }
+                                                          }];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:GET_SDK_LOCALIZED(@"R2SDK_CANCEL") style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * action) {
+                                                              //响应事件
+                                                              NSLog(@"action = %@", action);
+                                                          }];
+    
+    [mAlert addAction:defaultAction];
+    [mAlert addAction:cancelAction];
+    [[GamaFunction getCurrentViewController] presentViewController:mAlert animated:YES completion:nil];
+}
+
 
 @end

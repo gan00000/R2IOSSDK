@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)logout;
 -(void)clickBindFacebook;
 -(void)clickBindGoogle;
+-(void)unBindGoogle;
+-(void)unBindFacebook;
 
 @end
 
