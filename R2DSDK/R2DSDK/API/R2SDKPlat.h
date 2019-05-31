@@ -24,14 +24,14 @@ typedef void (^R2SDKLogoutHandler)(NSInteger logout);
 
 @property (nonatomic)R2SDKLogoutHandler logoutHandler;
 
-@property (nonatomic)UIViewController * sdkPresentedVC;
+@property (nonatomic,nullable)UIViewController * sdkPresentedVC;
 @property (nonatomic)UIViewController * gameUIViewController;
 
 /**
  应用跳转回调（适用于 iOS 8 及以下）
  
  */
-+ (BOOL)application:(UIApplication *)application
+- (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation;
@@ -39,7 +39,7 @@ typedef void (^R2SDKLogoutHandler)(NSInteger logout);
 /**
  应用跳转回调（适用于 iOS 9 及以上）
  */
-+ (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options;
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 

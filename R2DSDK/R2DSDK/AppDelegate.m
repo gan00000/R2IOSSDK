@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "login/R2DLoginViewController.h"
 #import "ViewController.h"
+#import "R2SDKPlat.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,15 @@
 
 @implementation AppDelegate
 
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
+    BOOL handled = [[R2SDKPlat shareR2SDK] application:application openURL:url options:options];
+    // Add any custom logic here.
+    return handled;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -32,6 +42,11 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [[R2SDKPlat shareR2SDK] application:application didFinishLaunchingWithOptions:launchOptions];
+    NSString *googleClientId = @"113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com";
+//    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
+//    [[R2GoogleSignInHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
     
     return YES;
 }
@@ -61,6 +76,8 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+     [[R2SDKPlat shareR2SDK] applicationWillTerminate:application];
 }
 
 

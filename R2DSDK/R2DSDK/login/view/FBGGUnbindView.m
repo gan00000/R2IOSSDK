@@ -182,7 +182,7 @@
     
     [mAlert addAction:defaultAction];
     [mAlert addAction:cancelAction];
-    [[GamaFunction getCurrentViewController] presentViewController:mAlert animated:YES completion:nil];
+    [hillTopViewController presentViewController:mAlert animated:YES completion:nil];
 }
 
 

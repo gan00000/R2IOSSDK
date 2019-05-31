@@ -8,6 +8,7 @@
 
 #import "UIUtil.h"
 #import "R2DHeader.h"
+#import "R2SDKPlat.h"
 
 @implementation UIUtil
 
@@ -56,7 +57,27 @@
                                                               NSLog(@"action = %@", action);
                                                           }];
     [mAlert addAction:defaultAction];
-    [[GamaFunction getCurrentViewController] presentViewController:mAlert animated:YES completion:nil];
+    [hillTopViewController presentViewController:mAlert animated:YES completion:nil];
+}
+
++(void)showAlertTips:(NSString *)msg okHandler:(void (^ __nullable)(UIAlertAction *action))handler
+{
+    UIAlertController *mAlert = [UIAlertController alertControllerWithTitle:nil message:msg preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:handler];
+    [mAlert addAction:defaultAction];
+    [hillTopViewController presentViewController:mAlert animated:YES completion:nil];
+}
+
+
++(UIViewController *)getSDKController
+{
+    if ([R2SDKPlat shareR2SDK].sdkPresentedVC) {
+        return [R2SDKPlat shareR2SDK].sdkPresentedVC;
+    }else
+    {
+      return  [GamaFunction getCurrentViewController];
+    }
 }
 
 

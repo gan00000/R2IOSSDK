@@ -121,18 +121,25 @@
     switch (button.tag) {
         case fbLoginActTag:
         {
-            
+            if (self.delegate) {
+                [self.delegate clickFbLogin];
+            }
         }
             break;
         case googleLoginActTag:
         {
-            
+            if (self.delegate) {
+                [self.delegate clickGoogleLogin];
+            }
         }
             break;
             
         case guestLoginActTag:
         {
-            [LoginImp loginGuestAccount:nil];
+            if (self.delegate) {
+                [self.delegate clickGuestLogin];
+            }
+//            [LoginImp loginGuestAccount:nil];
         }
             break;
             

@@ -51,7 +51,7 @@
 #define SDK_LOG(format, ...) (NSLog)((format), ##__VA_ARGS__)
 #define GET_SDK_LOCALIZED(key) [[ConfigCoreUtil reader] getLocalizedStringForKey:key]
 
-#define hillTopViewController   [GamaFunction getCurrentViewController]
+#define hillTopViewController    [UIUtil getSDKController]
 
 #define Guest_Login_Tipe_OK  @"Guest_Login_Tipe_OK"
 

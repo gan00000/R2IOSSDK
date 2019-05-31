@@ -94,6 +94,7 @@
 -(void)showLoginPage
 {
     loginMainView = [[LoginMainView alloc] initView];
+    loginMainView.delegate = self;
     [self.view addSubview:loginMainView];
     
     [loginMainView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -218,6 +219,22 @@
 {
     SDK_LOG(@"unBindFacebook");
     [LoginImp unbindFacebook:self];
+}
+
+-(void)clickFbLogin
+{   SDK_LOG(@"clickFbLogin");
+     [LoginImp loginFBAccount:self];
+}
+-(void)clickGoogleLogin
+{
+    SDK_LOG(@"clickGoogleLogin");
+    [LoginImp loginGoogleAccount:self];
+}
+
+-(void)clickGuestLogin
+{
+    SDK_LOG(@"clickGuestLogin");
+    [LoginImp loginGuestAccount:self];
 }
 
 @end

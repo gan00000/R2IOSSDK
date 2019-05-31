@@ -47,7 +47,7 @@
  应用跳转回调（适用于 iOS 8 及以下）
  
  */
-+ (BOOL)application:(UIApplication *)application
+- (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation{
@@ -58,7 +58,7 @@
 /**
  应用跳转回调（适用于 iOS 9 及以上）
  */
-+ (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options
 {
     //Facebook
     
@@ -68,9 +68,9 @@
                                                  annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
  
     //google
-    [[R2GoogleHelper sharedInstance] application:app
-                                         openURL:url
-                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+//    [[R2GoogleHelper sharedInstance] application:app
+//                                         openURL:url
+//                               sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
 //    [[R2GoogleHelper sharedInstance] application:app openURL:url options:options];
     return YES;
 }
@@ -83,10 +83,11 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
-    //google
-    NSString *googleClientId = @"9825068096-ama8dc07lj0vp7bo052l5muv142a2qas.apps.googleusercontent.com";
-    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
-    
+    //google 113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com
+//    NSString *googleClientId = @"9825068096-ama8dc07lj0vp7bo052l5muv142a2qas.apps.googleusercontent.com";
+//    NSString *googleClientId = @"113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com";
+//    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
+//    
     SDK_DATA;
     return YES;
 }
@@ -110,11 +111,12 @@
     }
     self.gameUIViewController = gameUIViewController;
     self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_Login)];
-//    presentedVC.view.backgroundColor = [UIColor clearColor];
 
-    self.sdkPresentedVC.definesPresentationContext = YES;
-    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
-    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:nil];
+//    self.sdkPresentedVC.definesPresentationContext = YES;
+//    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
+//    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:nil];
+    
+     [self showController];
 }
 
 - (void)showCurrentLoginTypeWithViewController:(UIViewController *)gameUIViewController logoutHandler:(R2SDKLogoutHandler)logoutHandler
@@ -131,9 +133,11 @@
     self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_LoginType)];
     //    presentedVC.view.backgroundColor = [UIColor clearColor];
     
-    self.sdkPresentedVC.definesPresentationContext = YES;
-    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
-    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:nil];
+//    self.sdkPresentedVC.definesPresentationContext = YES;
+//    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
+//    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:nil];
+    
+     [self showController];
 }
 
 
@@ -150,11 +154,20 @@
     self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_UnBind)];
     //    presentedVC.view.backgroundColor = [UIColor clearColor];
     
-    self.sdkPresentedVC.definesPresentationContext = YES;
-    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
-    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:nil];
+    [self showController];
     
 }
+
+-(void)showController
+{
+    self.sdkPresentedVC.definesPresentationContext = YES;
+    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
+    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:^{
+        
+    }];
+   
+}
+
 
 - (void)initWithLanguage:(NSString *)language
 {

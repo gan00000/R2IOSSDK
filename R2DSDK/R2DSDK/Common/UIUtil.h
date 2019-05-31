@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 +(void)showAlertTips:(NSString *)msg;
++(void)showAlertTips:(NSString *)msg okHandler:(void (^ __nullable)(UIAlertAction *action))handler;
+
++(UIViewController *)getSDKController;
 
 @end
 

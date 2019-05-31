@@ -57,7 +57,7 @@
 }
 
 -(void)closeLoginView:(UIButton *) btn{
-    [[GamaFunction getCurrentViewController] dismissViewControllerAnimated:NO completion:nil];
+    [hillTopViewController dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end

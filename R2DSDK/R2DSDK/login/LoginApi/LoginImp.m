@@ -91,6 +91,7 @@
             
         }else{
             NSLog(@"Facebook login failed,code -> %d,msg -> %@",code,msg);
+            [UIUtil showAlertTips:msg];
         }
     }];
 }
@@ -98,7 +99,7 @@
 
 +(void) loginGoogleAccount:(UIViewController *)viewController
 {
-  
+ 
     [[R2GoogleHelper sharedInstance] loginFromViewController:viewController
                                          onCompletionHandler:^(int code,
                                                                NSString *msg,
@@ -109,6 +110,7 @@
             [self loginSuccess:r2LoginResult];
         } else{
             NSLog(@"login failed,code -> %d,msg -> %@",code,msg);
+             [UIUtil showAlertTips:msg];
         }
     }];
     
@@ -142,6 +144,7 @@
 +(void) logoutAccount
 {
     [SDK_DATA releaseData];
+    [[R2SDKMgrApi  sharedInstance] logout];//清楚R2SDK token
     [hillTopViewController dismissViewControllerAnimated:NO completion:nil];
     if ([R2SDKPlat shareR2SDK].logoutHandler) {
         
@@ -164,7 +167,13 @@
                                                   }else  if (code == FACEBOOK_BIND_SUCCESS) {
                                                       NSLog(@"facebook login and bind r2 account successfully,[%@%@%@]",result.fbUserId,result.fbUsername,result.fbImageUrl);
                                                             [SDK_DATA saveLoginType:LoginTypeFacebook];
-                                                      [viewController dismissViewControllerAnimated:NO completion:nil];
+                                                      
+                                                      
+                                                      [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_BIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
+                                                          [viewController dismissViewControllerAnimated:NO completion:nil];
+                                                      }];
+                                                      
+                                                     // [viewController dismissViewControllerAnimated:NO completion:nil];
                                                   }else {
                                                        [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"BIND_FAIL")];
                                                               NSLog(@"facebook login and bind r2 account failed,code = %d,msg = %@",code,msg);
@@ -186,7 +195,11 @@
                                             }else if (code == 0) {
                                                 //绑定成功
                                                 [SDK_DATA saveLoginType:LoginTypeGoogle];
-                                                [viewController dismissViewControllerAnimated:NO completion:nil];
+                                                
+                                                [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_BIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
+                                                    [viewController dismissViewControllerAnimated:NO completion:nil];
+                                                }];
+                                                
                                                 
                                             }else{
                                                 
@@ -207,7 +220,10 @@
             NSLog(@"Unwrap successful,msg:%@",msg);
               [SDK_DATA saveLoginType:LoginTypeGuest];
             SDK_DATA.isBindFb = NO;
-             [viewController dismissViewControllerAnimated:NO completion:nil];
+            [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
+                [viewController dismissViewControllerAnimated:NO completion:nil];
+            }];
+            
         }else{
             NSLog(@"Unwrap failed,msg:%@,code:%d",msg,code);
              [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_FAIL")];
@@ -224,7 +240,12 @@
             NSLog(@"Unwrap successful,msg:%@",msg);
             [SDK_DATA saveLoginType:LoginTypeGuest];
             SDK_DATA.isBindGoogle = NO;
-            [viewController dismissViewControllerAnimated:NO completion:nil];
+            
+            [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
+                [viewController dismissViewControllerAnimated:NO completion:nil];
+            }];
+            
+         //   [viewController dismissViewControllerAnimated:NO completion:nil];
         }else{
             NSLog(@"Unwrap failed,msg:%@,code:%d",msg,code);
              [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_FAIL")];
