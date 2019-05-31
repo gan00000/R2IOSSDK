@@ -44,9 +44,6 @@
     [self.window makeKeyAndVisible];
     
     [[R2SDKPlat shareR2SDK] application:application didFinishLaunchingWithOptions:launchOptions];
-    NSString *googleClientId = @"113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com";
-//    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
-//    [[R2GoogleSignInHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
     
     return YES;
 }

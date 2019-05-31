@@ -17,4 +17,8 @@
  *  @return UIColor对象
  */
 + (UIColor *)colorWithHexString: (NSString *)color;
+
+
++ (UIColor *) colorWithHexString: (NSString *)color andAlpha:(CGFloat)alpha;
+
 @end
