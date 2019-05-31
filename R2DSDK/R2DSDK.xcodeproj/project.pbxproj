@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		325182A0229E24BB00623AFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251829F229E24BB00623AFF /* AppDelegate.m */; };
+		325182A3229E24BB00623AFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182A2229E24BB00623AFF /* ViewController.m */; };
+		325182A6229E24BB00623AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325182A4229E24BB00623AFF /* Main.storyboard */; };
+		325182A8229E24BD00623AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325182A7229E24BD00623AFF /* Assets.xcassets */; };
+		325182AB229E24BD00623AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325182A9229E24BD00623AFF /* LaunchScreen.storyboard */; };
+		325182AE229E24BD00623AFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182AD229E24BD00623AFF /* main.m */; };
+		325182B8229E26CA00623AFF /* R2DLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182B7229E26CA00623AFF /* R2DLoginViewController.m */; };
+		325182BE229E28EF00623AFF /* GamaFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182BB229E28EF00623AFF /* GamaFunction.m */; };
+		325182FC229E2F6C00623AFF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182E3229E2F6B00623AFF /* View+MASAdditions.m */; };
+		325182FD229E2F6C00623AFF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182E5229E2F6B00623AFF /* MASConstraint.m */; };
+		325182FE229E2F6C00623AFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182E7229E2F6B00623AFF /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		325182FF229E2F6C00623AFF /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182EA229E2F6B00623AFF /* MASLayoutConstraint.m */; };
+		32518300229E2F6C00623AFF /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F1229E2F6C00623AFF /* NSArray+MASAdditions.m */; };
+		32518301229E2F6C00623AFF /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F2229E2F6C00623AFF /* MASViewAttribute.m */; };
+		32518302229E2F6C00623AFF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F3229E2F6C00623AFF /* MASConstraintMaker.m */; };
+		32518303229E2F6C00623AFF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F6229E2F6C00623AFF /* MASCompositeConstraint.m */; };
+		32518304229E2F6C00623AFF /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F8229E2F6C00623AFF /* MASViewConstraint.m */; };
+		32518305229E2F6C00623AFF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182FB229E2F6C00623AFF /* ViewController+MASAdditions.m */; };
+		32518309229E398C00623AFF /* UIImage+GamaBundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518308229E398B00623AFF /* UIImage+GamaBundleImage.m */; };
+		3251830C229E4C8900623AFF /* R2DSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3251830B229E4C8900623AFF /* R2DSDKResources.bundle */; };
+		3251830F229E599800623AFF /* UIColor+HexStringToColorTW.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251830E229E599800623AFF /* UIColor+HexStringToColorTW.m */; };
+		32518312229E5AE300623AFF /* LoginTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518311229E5AE300623AFF /* LoginTitleView.m */; };
+		32518315229E5FD800623AFF /* LoginMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518314229E5FD800623AFF /* LoginMainView.m */; };
+		32518318229E6E0B00623AFF /* UIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518317229E6E0B00623AFF /* UIUtil.m */; };
+		3251831B229E979B00623AFF /* GuestLoginWarnTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */; };
+		32518322229EAAA100623AFF /* R2SDKDATA.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518321229EAAA100623AFF /* R2SDKDATA.m */; };
+		3251A0E722A0342A004A0CCD /* UIViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251A0E622A0342A004A0CCD /* UIViewUtil.m */; };
+		3253B2A0229EC407007C23CD /* ConfigCoreUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253B29F229EC407007C23CD /* ConfigCoreUtil.m */; };
+		3253B2A5229ED684007C23CD /* CurrentLoginInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253B2A4229ED684007C23CD /* CurrentLoginInfoView.m */; };
+		3260C1E122A0D6F800E30FE9 /* SDKBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */; };
+		32CEA207229F7C7500B9CC7C /* BindAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA206229F7C7500B9CC7C /* BindAccountView.m */; };
+		32CEA219229F9EDF00B9CC7C /* R2SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32CEA209229F9EDE00B9CC7C /* R2SDK.bundle */; };
+		32CEA21A229F9EDF00B9CC7C /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32CEA20B229F9EDE00B9CC7C /* GoogleSignIn.bundle */; };
+		32CEA21B229F9EDF00B9CC7C /* R2GoogleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20C229F9EDE00B9CC7C /* R2GoogleFramework.framework */; };
+		32CEA21C229F9EDF00B9CC7C /* R2GoogleBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32CEA20D229F9EDE00B9CC7C /* R2GoogleBundle.bundle */; };
+		32CEA21D229F9EDF00B9CC7C /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20E229F9EDE00B9CC7C /* GoogleSignInDependencies.framework */; };
+		32CEA21E229F9EDF00B9CC7C /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20F229F9EDE00B9CC7C /* GoogleSignIn.framework */; };
+		32CEA21F229F9EDF00B9CC7C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA211229F9EDE00B9CC7C /* FBSDKLoginKit.framework */; };
+		32CEA220229F9EDF00B9CC7C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA212229F9EDE00B9CC7C /* FBSDKShareKit.framework */; };
+		32CEA221229F9EDF00B9CC7C /* R2FacebookFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA213229F9EDE00B9CC7C /* R2FacebookFramework.framework */; };
+		32CEA222229F9EDF00B9CC7C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA214229F9EDE00B9CC7C /* FBSDKCoreKit.framework */; };
+		32CEA223229F9EDF00B9CC7C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA215229F9EDE00B9CC7C /* Bolts.framework */; };
+		32CEA224229F9EDF00B9CC7C /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA217229F9EDE00B9CC7C /* AppsFlyerLib.framework */; };
+		32CEA225229F9EDF00B9CC7C /* R2SDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA218229F9EDE00B9CC7C /* R2SDKFramework.framework */; };
+		32CEA229229FA08200B9CC7C /* R2SDKPlat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA228229FA08200B9CC7C /* R2SDKPlat.m */; };
+		32CEA22D229FAC1500B9CC7C /* LoginImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA22C229FAC1500B9CC7C /* LoginImp.m */; };
+		32CEA230229FAF1000B9CC7C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
+		32CEA232229FAF1800B9CC7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */; };
+		32CEA234229FAF3B00B9CC7C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA233229FAF3B00B9CC7C /* SafariServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3251829B229E24BB00623AFF /* R2DSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = R2DSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3251829E229E24BB00623AFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3251829F229E24BB00623AFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		325182A1229E24BB00623AFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		325182A2229E24BB00623AFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		325182A5229E24BB00623AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		325182A7229E24BD00623AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		325182AA229E24BD00623AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		325182AC229E24BD00623AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		325182AD229E24BD00623AFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		325182B6229E26CA00623AFF /* R2DLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = R2DLoginViewController.h; sourceTree = "<group>"; };
+		325182B7229E26CA00623AFF /* R2DLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = R2DLoginViewController.m; sourceTree = "<group>"; };
+		325182BB229E28EF00623AFF /* GamaFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamaFunction.m; sourceTree = "<group>"; };
+		325182BC229E28EF00623AFF /* GamaFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamaFunction.h; sourceTree = "<group>"; };
+		325182BD229E28EF00623AFF /* R2DHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R2DHeader.h; sourceTree = "<group>"; };
+		325182E3229E2F6B00623AFF /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		325182E4229E2F6B00623AFF /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		325182E5229E2F6B00623AFF /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		325182E6229E2F6B00623AFF /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		325182E7229E2F6B00623AFF /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		325182E8229E2F6B00623AFF /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		325182E9229E2F6B00623AFF /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		325182EA229E2F6B00623AFF /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		325182EB229E2F6B00623AFF /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		325182EC229E2F6B00623AFF /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
+		325182ED229E2F6B00623AFF /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		325182EE229E2F6B00623AFF /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		325182EF229E2F6C00623AFF /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		325182F0229E2F6C00623AFF /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		325182F1229E2F6C00623AFF /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		325182F2229E2F6C00623AFF /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		325182F3229E2F6C00623AFF /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		325182F4229E2F6C00623AFF /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		325182F5229E2F6C00623AFF /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		325182F6229E2F6C00623AFF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		325182F7229E2F6C00623AFF /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		325182F8229E2F6C00623AFF /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
+		325182F9229E2F6C00623AFF /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		325182FA229E2F6C00623AFF /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		325182FB229E2F6C00623AFF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		32518307229E398B00623AFF /* UIImage+GamaBundleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GamaBundleImage.h"; sourceTree = "<group>"; };
+		32518308229E398B00623AFF /* UIImage+GamaBundleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GamaBundleImage.m"; sourceTree = "<group>"; };
+		3251830B229E4C8900623AFF /* R2DSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = R2DSDKResources.bundle; sourceTree = "<group>"; };
+		3251830D229E599800623AFF /* UIColor+HexStringToColorTW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexStringToColorTW.h"; sourceTree = "<group>"; };
+		3251830E229E599800623AFF /* UIColor+HexStringToColorTW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexStringToColorTW.m"; sourceTree = "<group>"; };
+		32518310229E5AE300623AFF /* LoginTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTitleView.h; sourceTree = "<group>"; };
+		32518311229E5AE300623AFF /* LoginTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTitleView.m; sourceTree = "<group>"; };
+		32518313229E5FD800623AFF /* LoginMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginMainView.h; sourceTree = "<group>"; };
+		32518314229E5FD800623AFF /* LoginMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginMainView.m; sourceTree = "<group>"; };
+		32518316229E6E0B00623AFF /* UIUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIUtil.h; sourceTree = "<group>"; };
+		32518317229E6E0B00623AFF /* UIUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIUtil.m; sourceTree = "<group>"; };
+		32518319229E979B00623AFF /* GuestLoginWarnTipsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuestLoginWarnTipsView.h; sourceTree = "<group>"; };
+		3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuestLoginWarnTipsView.m; sourceTree = "<group>"; };
+		3251831C229EA7F000623AFF /* ConfigCoreUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigCoreUtil.h; sourceTree = "<group>"; };
+		32518320229EAAA100623AFF /* R2SDKDATA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = R2SDKDATA.h; sourceTree = "<group>"; };
+		32518321229EAAA100623AFF /* R2SDKDATA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = R2SDKDATA.m; sourceTree = "<group>"; };
+		3251A0E422A02F9E004A0CCD /* LoginViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewDelegate.h; sourceTree = "<group>"; };
+		3251A0E522A0342A004A0CCD /* UIViewUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewUtil.h; sourceTree = "<group>"; };
+		3251A0E622A0342A004A0CCD /* UIViewUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewUtil.m; sourceTree = "<group>"; };
+		3253B29F229EC407007C23CD /* ConfigCoreUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigCoreUtil.m; sourceTree = "<group>"; };
+		3253B2A3229ED684007C23CD /* CurrentLoginInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLoginInfoView.h; sourceTree = "<group>"; };
+		3253B2A4229ED684007C23CD /* CurrentLoginInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLoginInfoView.m; sourceTree = "<group>"; };
+		3260C1DF22A0D6F800E30FE9 /* SDKBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDKBaseView.h; sourceTree = "<group>"; };
+		3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDKBaseView.m; sourceTree = "<group>"; };
+		32CEA205229F7C7500B9CC7C /* BindAccountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindAccountView.h; sourceTree = "<group>"; };
+		32CEA206229F7C7500B9CC7C /* BindAccountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindAccountView.m; sourceTree = "<group>"; };
+		32CEA209229F9EDE00B9CC7C /* R2SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = R2SDK.bundle; sourceTree = "<group>"; };
+		32CEA20B229F9EDE00B9CC7C /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		32CEA20C229F9EDE00B9CC7C /* R2GoogleFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = R2GoogleFramework.framework; sourceTree = "<group>"; };
+		32CEA20D229F9EDE00B9CC7C /* R2GoogleBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = R2GoogleBundle.bundle; sourceTree = "<group>"; };
+		32CEA20E229F9EDE00B9CC7C /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
+		32CEA20F229F9EDE00B9CC7C /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		32CEA211229F9EDE00B9CC7C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		32CEA212229F9EDE00B9CC7C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		32CEA213229F9EDE00B9CC7C /* R2FacebookFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = R2FacebookFramework.framework; sourceTree = "<group>"; };
+		32CEA214229F9EDE00B9CC7C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		32CEA215229F9EDE00B9CC7C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		32CEA217229F9EDE00B9CC7C /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppsFlyerLib.framework; sourceTree = "<group>"; };
+		32CEA218229F9EDE00B9CC7C /* R2SDKFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = R2SDKFramework.framework; sourceTree = "<group>"; };
+		32CEA227229FA08200B9CC7C /* R2SDKPlat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = R2SDKPlat.h; sourceTree = "<group>"; };
+		32CEA228229FA08200B9CC7C /* R2SDKPlat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = R2SDKPlat.m; sourceTree = "<group>"; };
+		32CEA22B229FAC1500B9CC7C /* LoginImp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginImp.h; sourceTree = "<group>"; };
+		32CEA22C229FAC1500B9CC7C /* LoginImp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginImp.m; sourceTree = "<group>"; };
+		32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		32CEA233229FAF3B00B9CC7C /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32518298229E24BB00623AFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32CEA234229FAF3B00B9CC7C /* SafariServices.framework in Frameworks */,
+				32CEA232229FAF1800B9CC7C /* SystemConfiguration.framework in Frameworks */,
+				32CEA230229FAF1000B9CC7C /* LocalAuthentication.framework in Frameworks */,
+				32CEA21D229F9EDF00B9CC7C /* GoogleSignInDependencies.framework in Frameworks */,
+				32CEA21E229F9EDF00B9CC7C /* GoogleSignIn.framework in Frameworks */,
+				32CEA220229F9EDF00B9CC7C /* FBSDKShareKit.framework in Frameworks */,
+				32CEA21F229F9EDF00B9CC7C /* FBSDKLoginKit.framework in Frameworks */,
+				32CEA222229F9EDF00B9CC7C /* FBSDKCoreKit.framework in Frameworks */,
+				32CEA21B229F9EDF00B9CC7C /* R2GoogleFramework.framework in Frameworks */,
+				32CEA225229F9EDF00B9CC7C /* R2SDKFramework.framework in Frameworks */,
+				32CEA221229F9EDF00B9CC7C /* R2FacebookFramework.framework in Frameworks */,
+				32CEA224229F9EDF00B9CC7C /* AppsFlyerLib.framework in Frameworks */,
+				32CEA223229F9EDF00B9CC7C /* Bolts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32518292229E24BB00623AFF = {
+			isa = PBXGroup;
+			children = (
+				3251829D229E24BB00623AFF /* R2DSDK */,
+				3251829C229E24BB00623AFF /* Products */,
+				32CEA22E229FAF0F00B9CC7C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3251829C229E24BB00623AFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3251829B229E24BB00623AFF /* R2DSDK.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3251829D229E24BB00623AFF /* R2DSDK */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA208229F9EDE00B9CC7C /* ThirdLib */,
+				3253B2A1229EC8A5007C23CD /* API */,
+				3251831F229EAA3200623AFF /* SDKDATA */,
+				3251830A229E3B9400623AFF /* RES */,
+				325182B9229E281900623AFF /* Common */,
+				325182B4229E254C00623AFF /* Login */,
+				3251829E229E24BB00623AFF /* AppDelegate.h */,
+				3251829F229E24BB00623AFF /* AppDelegate.m */,
+				325182A1229E24BB00623AFF /* ViewController.h */,
+				325182A2229E24BB00623AFF /* ViewController.m */,
+				325182A4229E24BB00623AFF /* Main.storyboard */,
+				325182A7229E24BD00623AFF /* Assets.xcassets */,
+				325182A9229E24BD00623AFF /* LaunchScreen.storyboard */,
+				325182AC229E24BD00623AFF /* Info.plist */,
+				325182AD229E24BD00623AFF /* main.m */,
+			);
+			path = R2DSDK;
+			sourceTree = "<group>";
+		};
+		325182B4229E254C00623AFF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA22A229FABE200B9CC7C /* LoginApi */,
+				32518306229E38A800623AFF /* view */,
+				325182B6229E26CA00623AFF /* R2DLoginViewController.h */,
+				325182B7229E26CA00623AFF /* R2DLoginViewController.m */,
+				3251A0E422A02F9E004A0CCD /* LoginViewDelegate.h */,
+			);
+			name = Login;
+			path = login;
+			sourceTree = "<group>";
+		};
+		325182B9229E281900623AFF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				325182BD229E28EF00623AFF /* R2DHeader.h */,
+				3251830D229E599800623AFF /* UIColor+HexStringToColorTW.h */,
+				3251830E229E599800623AFF /* UIColor+HexStringToColorTW.m */,
+				32518307229E398B00623AFF /* UIImage+GamaBundleImage.h */,
+				32518308229E398B00623AFF /* UIImage+GamaBundleImage.m */,
+				325182E2229E2F5900623AFF /* Masonry */,
+				325182BC229E28EF00623AFF /* GamaFunction.h */,
+				325182BB229E28EF00623AFF /* GamaFunction.m */,
+				32518316229E6E0B00623AFF /* UIUtil.h */,
+				32518317229E6E0B00623AFF /* UIUtil.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		325182E2229E2F5900623AFF /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				325182EF229E2F6C00623AFF /* MASCompositeConstraint.h */,
+				325182F6229E2F6C00623AFF /* MASCompositeConstraint.m */,
+				325182E4229E2F6B00623AFF /* MASConstraint.h */,
+				325182E5229E2F6B00623AFF /* MASConstraint.m */,
+				325182EB229E2F6B00623AFF /* MASConstraint+Private.h */,
+				325182E6229E2F6B00623AFF /* MASConstraintMaker.h */,
+				325182F3229E2F6C00623AFF /* MASConstraintMaker.m */,
+				325182EE229E2F6B00623AFF /* MASLayoutConstraint.h */,
+				325182EA229E2F6B00623AFF /* MASLayoutConstraint.m */,
+				325182F9229E2F6C00623AFF /* Masonry.h */,
+				325182EC229E2F6B00623AFF /* MASUtilities.h */,
+				325182F7229E2F6C00623AFF /* MASViewAttribute.h */,
+				325182F2229E2F6C00623AFF /* MASViewAttribute.m */,
+				325182F5229E2F6C00623AFF /* MASViewConstraint.h */,
+				325182F8229E2F6C00623AFF /* MASViewConstraint.m */,
+				325182E9229E2F6B00623AFF /* NSArray+MASAdditions.h */,
+				325182F1229E2F6C00623AFF /* NSArray+MASAdditions.m */,
+				325182E8229E2F6B00623AFF /* NSArray+MASShorthandAdditions.h */,
+				325182F0229E2F6C00623AFF /* NSLayoutConstraint+MASDebugAdditions.h */,
+				325182E7229E2F6B00623AFF /* NSLayoutConstraint+MASDebugAdditions.m */,
+				325182FA229E2F6C00623AFF /* View+MASAdditions.h */,
+				325182E3229E2F6B00623AFF /* View+MASAdditions.m */,
+				325182ED229E2F6B00623AFF /* View+MASShorthandAdditions.h */,
+				325182F4229E2F6C00623AFF /* ViewController+MASAdditions.h */,
+				325182FB229E2F6C00623AFF /* ViewController+MASAdditions.m */,
+			);
+			name = Masonry;
+			sourceTree = "<group>";
+		};
+		32518306229E38A800623AFF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				32518310229E5AE300623AFF /* LoginTitleView.h */,
+				32518311229E5AE300623AFF /* LoginTitleView.m */,
+				32518313229E5FD800623AFF /* LoginMainView.h */,
+				32518314229E5FD800623AFF /* LoginMainView.m */,
+				32518319229E979B00623AFF /* GuestLoginWarnTipsView.h */,
+				3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */,
+				3253B2A3229ED684007C23CD /* CurrentLoginInfoView.h */,
+				3253B2A4229ED684007C23CD /* CurrentLoginInfoView.m */,
+				32CEA205229F7C7500B9CC7C /* BindAccountView.h */,
+				32CEA206229F7C7500B9CC7C /* BindAccountView.m */,
+				3251A0E522A0342A004A0CCD /* UIViewUtil.h */,
+				3251A0E622A0342A004A0CCD /* UIViewUtil.m */,
+				3260C1DF22A0D6F800E30FE9 /* SDKBaseView.h */,
+				3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		3251830A229E3B9400623AFF /* RES */ = {
+			isa = PBXGroup;
+			children = (
+				3251830B229E4C8900623AFF /* R2DSDKResources.bundle */,
+			);
+			path = RES;
+			sourceTree = "<group>";
+		};
+		3251831F229EAA3200623AFF /* SDKDATA */ = {
+			isa = PBXGroup;
+			children = (
+				3253B29F229EC407007C23CD /* ConfigCoreUtil.m */,
+				3251831C229EA7F000623AFF /* ConfigCoreUtil.h */,
+				32518320229EAAA100623AFF /* R2SDKDATA.h */,
+				32518321229EAAA100623AFF /* R2SDKDATA.m */,
+			);
+			path = SDKDATA;
+			sourceTree = "<group>";
+		};
+		3253B2A1229EC8A5007C23CD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA227229FA08200B9CC7C /* R2SDKPlat.h */,
+				32CEA228229FA08200B9CC7C /* R2SDKPlat.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		32CEA208229F9EDE00B9CC7C /* ThirdLib */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA209229F9EDE00B9CC7C /* R2SDK.bundle */,
+				32CEA20A229F9EDE00B9CC7C /* google */,
+				32CEA210229F9EDE00B9CC7C /* facebook */,
+				32CEA216229F9EDE00B9CC7C /* appsflyer */,
+				32CEA218229F9EDE00B9CC7C /* R2SDKFramework.framework */,
+			);
+			path = ThirdLib;
+			sourceTree = "<group>";
+		};
+		32CEA20A229F9EDE00B9CC7C /* google */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA20B229F9EDE00B9CC7C /* GoogleSignIn.bundle */,
+				32CEA20C229F9EDE00B9CC7C /* R2GoogleFramework.framework */,
+				32CEA20D229F9EDE00B9CC7C /* R2GoogleBundle.bundle */,
+				32CEA20E229F9EDE00B9CC7C /* GoogleSignInDependencies.framework */,
+				32CEA20F229F9EDE00B9CC7C /* GoogleSignIn.framework */,
+			);
+			path = google;
+			sourceTree = "<group>";
+		};
+		32CEA210229F9EDE00B9CC7C /* facebook */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA211229F9EDE00B9CC7C /* FBSDKLoginKit.framework */,
+				32CEA212229F9EDE00B9CC7C /* FBSDKShareKit.framework */,
+				32CEA213229F9EDE00B9CC7C /* R2FacebookFramework.framework */,
+				32CEA214229F9EDE00B9CC7C /* FBSDKCoreKit.framework */,
+				32CEA215229F9EDE00B9CC7C /* Bolts.framework */,
+			);
+			path = facebook;
+			sourceTree = "<group>";
+		};
+		32CEA216229F9EDE00B9CC7C /* appsflyer */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA217229F9EDE00B9CC7C /* AppsFlyerLib.framework */,
+			);
+			path = appsflyer;
+			sourceTree = "<group>";
+		};
+		32CEA22A229FABE200B9CC7C /* LoginApi */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA22B229FAC1500B9CC7C /* LoginImp.h */,
+				32CEA22C229FAC1500B9CC7C /* LoginImp.m */,
+			);
+			path = LoginApi;
+			sourceTree = "<group>";
+		};
+		32CEA22E229FAF0F00B9CC7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA233229FAF3B00B9CC7C /* SafariServices.framework */,
+				32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */,
+				32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3251829A229E24BB00623AFF /* R2DSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 325182B1229E24BD00623AFF /* Build configuration list for PBXNativeTarget "R2DSDK" */;
+			buildPhases = (
+				32518297229E24BB00623AFF /* Sources */,
+				32518298229E24BB00623AFF /* Frameworks */,
+				32518299229E24BB00623AFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = R2DSDK;
+			productName = R2DSDK;
+			productReference = 3251829B229E24BB00623AFF /* R2DSDK.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32518293229E24BB00623AFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = ganyuanrong;
+				TargetAttributes = {
+					3251829A229E24BB00623AFF = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 32518296229E24BB00623AFF /* Build configuration list for PBXProject "R2DSDK" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32518292229E24BB00623AFF;
+			productRefGroup = 3251829C229E24BB00623AFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3251829A229E24BB00623AFF /* R2DSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32518299229E24BB00623AFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325182AB229E24BD00623AFF /* LaunchScreen.storyboard in Resources */,
+				325182A8229E24BD00623AFF /* Assets.xcassets in Resources */,
+				32CEA219229F9EDF00B9CC7C /* R2SDK.bundle in Resources */,
+				325182A6229E24BB00623AFF /* Main.storyboard in Resources */,
+				32CEA21A229F9EDF00B9CC7C /* GoogleSignIn.bundle in Resources */,
+				3251830C229E4C8900623AFF /* R2DSDKResources.bundle in Resources */,
+				32CEA21C229F9EDF00B9CC7C /* R2GoogleBundle.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32518297229E24BB00623AFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3253B2A0229EC407007C23CD /* ConfigCoreUtil.m in Sources */,
+				325182A3229E24BB00623AFF /* ViewController.m in Sources */,
+				32518301229E2F6C00623AFF /* MASViewAttribute.m in Sources */,
+				325182AE229E24BD00623AFF /* main.m in Sources */,
+				32518309229E398C00623AFF /* UIImage+GamaBundleImage.m in Sources */,
+				32518300229E2F6C00623AFF /* NSArray+MASAdditions.m in Sources */,
+				3251A0E722A0342A004A0CCD /* UIViewUtil.m in Sources */,
+				32CEA207229F7C7500B9CC7C /* BindAccountView.m in Sources */,
+				32518303229E2F6C00623AFF /* MASCompositeConstraint.m in Sources */,
+				325182FC229E2F6C00623AFF /* View+MASAdditions.m in Sources */,
+				32518312229E5AE300623AFF /* LoginTitleView.m in Sources */,
+				3251830F229E599800623AFF /* UIColor+HexStringToColorTW.m in Sources */,
+				32518302229E2F6C00623AFF /* MASConstraintMaker.m in Sources */,
+				325182BE229E28EF00623AFF /* GamaFunction.m in Sources */,
+				3251831B229E979B00623AFF /* GuestLoginWarnTipsView.m in Sources */,
+				325182A0229E24BB00623AFF /* AppDelegate.m in Sources */,
+				32518315229E5FD800623AFF /* LoginMainView.m in Sources */,
+				325182FD229E2F6C00623AFF /* MASConstraint.m in Sources */,
+				325182B8229E26CA00623AFF /* R2DLoginViewController.m in Sources */,
+				32518318229E6E0B00623AFF /* UIUtil.m in Sources */,
+				32518305229E2F6C00623AFF /* ViewController+MASAdditions.m in Sources */,
+				32CEA22D229FAC1500B9CC7C /* LoginImp.m in Sources */,
+				32518304229E2F6C00623AFF /* MASViewConstraint.m in Sources */,
+				3260C1E122A0D6F800E30FE9 /* SDKBaseView.m in Sources */,
+				3253B2A5229ED684007C23CD /* CurrentLoginInfoView.m in Sources */,
+				32518322229EAAA100623AFF /* R2SDKDATA.m in Sources */,
+				32CEA229229FA08200B9CC7C /* R2SDKPlat.m in Sources */,
+				325182FF229E2F6C00623AFF /* MASLayoutConstraint.m in Sources */,
+				325182FE229E2F6C00623AFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		325182A4229E24BB00623AFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325182A5229E24BB00623AFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		325182A9229E24BD00623AFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325182AA229E24BD00623AFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		325182AF229E24BD00623AFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		325182B0229E24BD00623AFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		325182B2229E24BD00623AFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/google",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/facebook",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/appsflyer",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib",
+				);
+				INFOPLIST_FILE = R2DSDK/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.r2game.R2DSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		325182B3229E24BD00623AFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/google",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/facebook",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/appsflyer",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib",
+				);
+				INFOPLIST_FILE = R2DSDK/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.r2game.R2DSDK;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32518296229E24BB00623AFF /* Build configuration list for PBXProject "R2DSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325182AF229E24BD00623AFF /* Debug */,
+				325182B0229E24BD00623AFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		325182B1229E24BD00623AFF /* Build configuration list for PBXNativeTarget "R2DSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325182B2229E24BD00623AFF /* Debug */,
+				325182B3229E24BD00623AFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32518293229E24BB00623AFF /* Project object */;
+}

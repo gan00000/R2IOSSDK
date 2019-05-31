@@ -1,0 +1,6 @@
+framework module R2FacebookFramework {
+  umbrella header "R2FacebookFramework.h"
+
+  export *
+  module * { export * }
+}

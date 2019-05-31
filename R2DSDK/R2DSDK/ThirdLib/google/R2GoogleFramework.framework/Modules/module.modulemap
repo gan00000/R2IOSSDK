@@ -1,0 +1,6 @@
+framework module R2GoogleFramework {
+  umbrella header "R2GoogleFramework.h"
+
+  export *
+  module * { export * }
+}
