@@ -57,6 +57,7 @@
 }
 
 -(void)closeLoginView:(UIButton *) btn{
+    
     [hillTopViewController dismissViewControllerAnimated:NO completion:nil];
 }
 

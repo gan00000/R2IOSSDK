@@ -112,17 +112,14 @@
     switch (button.tag) {
         case 123:
         {
-            [hillTopViewController dismissViewControllerAnimated:NO
-                                                      completion:nil];
-            
-            [LoginImp logoutAccount];
+            [LoginImp logoutAccount:self.theViewUIViewController];
         }
             break;
             
         case 124:
             
         {
-            [hillTopViewController dismissViewControllerAnimated:NO
+            [self.theViewUIViewController dismissViewControllerAnimated:NO
                                                       completion:nil];
             
         }

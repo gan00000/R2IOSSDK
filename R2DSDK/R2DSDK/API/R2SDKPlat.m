@@ -109,13 +109,13 @@
     }
     SDK_DATA.isNeedAutoLogin = YES;
     self.gameUIViewController = gameUIViewController;
-    self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_Login)];
+     R2DLoginViewController *sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_Login)];
 
 //    self.sdkPresentedVC.definesPresentationContext = YES;
 //    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
 //    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:nil];
     
-     [self showController];
+    [self showController:sdkPresentedVC];
 }
 
 - (void)loginWithViewController:(UIViewController *)gameUIViewController isAutoLogin:(BOOL)isNeedAutoLogin loginHandler:(R2SDKLoginCompletionHandler)loginHandler
@@ -128,8 +128,8 @@
     SDK_DATA.isNeedAutoLogin = isNeedAutoLogin;
     
     self.gameUIViewController = gameUIViewController;
-    self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_Login)];
-    [self showController];
+    R2DLoginViewController *sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_Login)];
+   [self showController:sdkPresentedVC];
 }
 
 - (void)showCurrentLoginTypeWithViewController:(UIViewController *)gameUIViewController logoutHandler:(R2SDKLogoutHandler)logoutHandler
@@ -143,14 +143,14 @@
     }
     
     self.gameUIViewController = gameUIViewController;
-    self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_LoginType)];
+    R2DLoginViewController *sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_LoginType)];
     //    presentedVC.view.backgroundColor = [UIColor clearColor];
     
 //    self.sdkPresentedVC.definesPresentationContext = YES;
 //    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
 //    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:nil];
     
-     [self showController];
+    [self showController:sdkPresentedVC];
 }
 
 
@@ -164,18 +164,18 @@
     }
     
     self.gameUIViewController = gameUIViewController;
-    self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_UnBind)];
+    R2DLoginViewController *sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_UnBind)];
     //    presentedVC.view.backgroundColor = [UIColor clearColor];
     
-    [self showController];
+    [self showController:sdkPresentedVC];
     
 }
 
--(void)showController
+-(void)showController:(R2DLoginViewController *)controller
 {
-    self.sdkPresentedVC.definesPresentationContext = YES;
-    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
-    [self.gameUIViewController presentViewController: self.sdkPresentedVC animated:NO completion:^{
+    controller.definesPresentationContext = YES;
+    controller.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
+    [self.gameUIViewController presentViewController: controller animated:NO completion:^{
         
     }];
    

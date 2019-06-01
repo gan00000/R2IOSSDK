@@ -32,12 +32,12 @@
             BOOL isBindGoogle =result.isBoundToGoogleAccount;
             if (isBindFb) {//绑定过就不算游客登录
                 [SDK_DATA saveLoginType:LoginTypeFacebook];
-                [self loginSuccess:result];
+                [self loginSuccess:result mController:viewController];
                 
             }else if(isBindGoogle)
             {
                  [SDK_DATA saveLoginType:LoginTypeGoogle];
-                 [self loginSuccess:result];
+                 [self loginSuccess:result mController:viewController];
             }else
             {
                 [SDK_DATA saveLoginType:LoginTypeGuest];
@@ -103,7 +103,7 @@
 //            NSString *loginTimestamp = r2LoginResult.timestamp;
 //            NSString *sign = r2LoginResult.sign;
             [SDK_DATA saveLoginType:LoginTypeFacebook];
-            [self loginSuccess:r2LoginResult];
+            [self loginSuccess:r2LoginResult mController:viewController];
             
         }else{
             NSLog(@"Facebook login failed,code -> %d,msg -> %@",code,msg);
@@ -134,7 +134,7 @@
                                              [self stopLoadingView];
         if (code == 0) {
             [SDK_DATA saveLoginType:LoginTypeGoogle];
-            [self loginSuccess:r2LoginResult];
+            [self loginSuccess:r2LoginResult mController:viewController];
         } else{
             NSLog(@"login failed,code -> %d,msg -> %@",code,msg);
             // [UIUtil showAlertTips:msg];
@@ -152,7 +152,7 @@
     
 }
 
-+(void)loginSuccess:(R2LoginResponse *) r2LoginResult
++(void)loginSuccess:(R2LoginResponse *) r2LoginResult mController:(UIViewController *) mController
 {
     SDK_DATA.loginResult = r2LoginResult;
     NSString *r2UserId = r2LoginResult.r2Uid;
@@ -169,7 +169,7 @@
     SDK_DATA.isBindFb = r2LoginResult.isBoundToFacebook;
     SDK_DATA.isBindGoogle = r2LoginResult.isBoundToGoogleAccount;
     
-    [hillTopViewController dismissViewControllerAnimated:NO completion:nil];
+    [mController dismissViewControllerAnimated:NO completion:nil];
     
     if ([R2SDKPlat shareR2SDK].loginCompletionHandler) {
     
@@ -177,10 +177,10 @@
     }
 }
 
-+(void) logoutAccount
++(void) logoutAccount:(UIViewController *) mController
 {
     [[R2SDKMgrApi  sharedInstance] logout];//清楚R2SDK token
-    [hillTopViewController dismissViewControllerAnimated:NO completion:nil];
+    [mController dismissViewControllerAnimated:NO completion:nil];
     if ([R2SDKPlat shareR2SDK].logoutHandler) {
         
         [R2SDKPlat shareR2SDK].logoutHandler(SDK_DATA.gameLoginType);

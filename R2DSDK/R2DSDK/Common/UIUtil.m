@@ -72,12 +72,14 @@
 
 +(UIViewController *)getSDKController
 {
-    if ([R2SDKPlat shareR2SDK].sdkPresentedVC) {
-        return [R2SDKPlat shareR2SDK].sdkPresentedVC;
-    }else
-    {
-      return  [GamaFunction getCurrentViewController];
-    }
+//    if ([R2SDKPlat shareR2SDK].sdkPresentedVC) {
+//        return [R2SDKPlat shareR2SDK].sdkPresentedVC;
+//    }else
+//    {
+//      return  [GamaFunction getCurrentViewController];
+//    }
+    
+     return  [GamaFunction getCurrentViewController];
 }
 
 

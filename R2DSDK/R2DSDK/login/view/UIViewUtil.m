@@ -15,20 +15,7 @@
 
 +(void)showGuestAlert
 {
-//    GuestLoginWarnTipsView *view = [[GuestLoginWarnTipsView alloc]initView];
-//    
-//    UIAlertController *mAlert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleAlert)];
-//    
-//    [mAlert.view addSubview:view];
-//    
-//    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-//                                                          handler:^(UIAlertAction * action) {
-//                                                              //响应事件
-//                                                              NSLog(@"action = %@", action);
-//                                                          }];
-//    [mAlert addAction:defaultAction];
-//    [hillTopViewController presentViewController:mAlert animated:YES completion:nil];
-//    
+   
     
 }
 

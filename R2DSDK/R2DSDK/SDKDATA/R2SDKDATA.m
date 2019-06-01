@@ -56,7 +56,7 @@
     self.gameUserId = @"";
     self.gameLoginToken = @"";
     self.gameLoginTimeStamp = @"";
-    self.isLogin = YES;
+    self.isNeedAutoLogin = YES;
     self.gameLanguage = @"zh-Hans";
 }
 
@@ -67,7 +67,7 @@
     self.gameUserId = @"";
     self.gameLoginToken = @"";
     self.gameLoginTimeStamp = @"";
-//    self.isLogin = YES;
+
 }
 
 @end

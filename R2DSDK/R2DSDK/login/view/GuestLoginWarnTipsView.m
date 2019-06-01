@@ -81,11 +81,8 @@
 {
     SDK_LOG(@"clickBtnsAction");
     
-    [hillTopViewController dismissViewControllerAnimated:NO
-                                              completion:nil];
-    
     if (SDK_DATA.loginResult) {
-        [LoginImp loginSuccess:SDK_DATA.loginResult];
+        [LoginImp loginSuccess:SDK_DATA.loginResult mController:self.theViewUIViewController];
     }
 }
 

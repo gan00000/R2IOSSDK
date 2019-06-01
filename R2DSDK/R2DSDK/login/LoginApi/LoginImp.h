@@ -32,9 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(void)bindFacebook:(UIViewController *)viewController;
 
-+(void) logoutAccount;
++(void) logoutAccount:(UIViewController *) mController;
 
-+(void)loginSuccess:(R2LoginResponse *) r2LoginResult;
++(void)loginSuccess:(R2LoginResponse *) r2LoginResult mController:(UIViewController *) mController;
 
 +(void)unbindFacebook:(UIViewController *)viewController;
 

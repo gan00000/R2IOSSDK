@@ -26,7 +26,7 @@ typedef void (^R2SDKLogoutHandler)(NSInteger logout);
 
 @property (nonatomic)R2SDKLogoutHandler logoutHandler;
 
-@property (nonatomic,nullable)UIViewController * sdkPresentedVC;
+//@property (nonatomic,nullable)UIViewController * sdkPresentedVC;
 @property (nonatomic)UIViewController * gameUIViewController;
 
 /**

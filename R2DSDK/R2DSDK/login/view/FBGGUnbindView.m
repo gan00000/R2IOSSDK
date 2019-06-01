@@ -133,7 +133,7 @@
             
         case 123:
             
-            [LoginImp logoutAccount];
+            [LoginImp logoutAccount:self.theViewUIViewController];
 //            if (self.delegate) {
 //                [self.delegate goGuestLoginoutTipsView];
 //            }
@@ -182,7 +182,7 @@
     
     [mAlert addAction:defaultAction];
     [mAlert addAction:cancelAction];
-    [hillTopViewController presentViewController:mAlert animated:YES completion:nil];
+    [self.theViewUIViewController presentViewController:mAlert animated:YES completion:nil];
 }
 
 

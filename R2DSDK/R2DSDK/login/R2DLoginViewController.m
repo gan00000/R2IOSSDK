@@ -14,6 +14,7 @@
 #import "LoginImp.h"
 #import "view/GuestLogoutWarnTipsView.h"
 #import "view/FBGGUnbindView.h"
+#import "R2SDKPlat.h"
 
 
 @implementation R2DLoginViewController{
@@ -39,11 +40,13 @@
     return self;
 }
 
+// 视图被销毁
 - (void)dealloc
 {
 //    [super dealloc];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
+    SDK_LOG(@"dealloc视图被销毁");
+//    [R2SDKPlat shareR2SDK].sdkPresentedVC = nil;
 }
 
 - (void)viewDidLoad {
@@ -84,7 +87,7 @@
     [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
         GuestLoginWarnTipsView *mGuestLoginWarnTipsView = [[GuestLoginWarnTipsView alloc]initView];
-    
+        mCurrentLoginInfoView.theViewUIViewController = self;
         [self.view addSubview:mGuestLoginWarnTipsView];
         [mGuestLoginWarnTipsView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(@(0));
@@ -129,6 +132,7 @@
 
     loginMainView = [[LoginMainView alloc] initView];
     loginMainView.delegate = self;
+    loginMainView.theViewUIViewController = self;
     [self.view addSubview:loginMainView];
     
     [loginMainView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -164,7 +168,7 @@
     //gameLoginType为登录方式
     mCurrentLoginInfoView = [[CurrentLoginInfoView alloc]initWithLoginType:SDK_DATA.gameLoginType];
     mCurrentLoginInfoView.delegate = self;
-    
+    mCurrentLoginInfoView.theViewUIViewController = self;
     [self.view addSubview:mCurrentLoginInfoView];
     
     [mCurrentLoginInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -180,6 +184,7 @@
     //gameLoginType为登录方式
     mFBGGUnbindView = [[FBGGUnbindView alloc]initWithLoginType:SDK_DATA.gameLoginType];
     mFBGGUnbindView.delegate = self;
+    mFBGGUnbindView.theViewUIViewController = self;
     [self.view addSubview:mFBGGUnbindView];
     
     [mFBGGUnbindView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -207,6 +212,7 @@
         mBindAccountView = [[BindAccountView alloc]initView];
     
         mBindAccountView.delegate = self;
+        mBindAccountView.theViewUIViewController = self;
         [self.view addSubview:mBindAccountView];
     
         [mBindAccountView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -239,7 +245,7 @@
 -(void)goGuestLoginoutTipsView
 {
     GuestLogoutWarnTipsView *mGuestLogoutWarnTipsView = [[GuestLogoutWarnTipsView alloc]initView];
-    
+    mGuestLogoutWarnTipsView.theViewUIViewController = self;
     [self.view addSubview:mGuestLogoutWarnTipsView];
     
     [mGuestLogoutWarnTipsView mas_makeConstraints:^(MASConstraintMaker *make) {

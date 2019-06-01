@@ -148,7 +148,7 @@
                 }
             }else
             {
-                [LoginImp logoutAccount];
+                [LoginImp logoutAccount:self.theViewUIViewController];
             }
             
             
