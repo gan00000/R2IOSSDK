@@ -152,7 +152,6 @@
 
 +(void) logoutAccount
 {
-    [SDK_DATA releaseData];
     [[R2SDKMgrApi  sharedInstance] logout];//清楚R2SDK token
     [hillTopViewController dismissViewControllerAnimated:NO completion:nil];
     if ([R2SDKPlat shareR2SDK].logoutHandler) {

@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)saveLoginType:(NSInteger)loginType;
 
-- (void)initData;
+//- (void)initData;
 
 - (void)releaseData;
 

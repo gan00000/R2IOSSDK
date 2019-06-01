@@ -102,7 +102,6 @@
  */
 - (void)loginWithViewController:(UIViewController *)gameUIViewController loginHandler:(R2SDKLoginCompletionHandler)loginHandler
 {
-    SDK_DATA.initData;
     self.loginCompletionHandler = loginHandler;
 
     if (!gameUIViewController) {

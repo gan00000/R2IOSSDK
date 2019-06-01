@@ -93,16 +93,53 @@
 
 -(void)showLoginPage
 {
-    loginMainView = [[LoginMainView alloc] initView];
-    loginMainView.delegate = self;
-    [self.view addSubview:loginMainView];
+ 
     
-    [loginMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+    if (SDK_DATA.gameLoginType == LoginTypeGoogle) {//自动登录
+        [self addAutoLoginTipsView];
+        [self clickGoogleLogin];
+    }else if (SDK_DATA.gameLoginType == LoginTypeFacebook){//自动登录
+         [self addAutoLoginTipsView];
+        [self clickFbLogin];
+    }else if (SDK_DATA.gameLoginType == LoginTypeGuest){//自动登录
+         [self addAutoLoginTipsView];
+        [self clickGuestLogin];
+        
+    }else{//弹出登录界面
+        
+        loginMainView = [[LoginMainView alloc] initView];
+        loginMainView.delegate = self;
+        [self.view addSubview:loginMainView];
+        
+        [loginMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(@(0));
+            make.centerY.equalTo(@(0));
+            make.width.equalTo(@(kBgWidth));
+            make.height.equalTo(@(kBgHeight));
+        }];
+        
+    }
+  
+}
+
+-(void)addAutoLoginTipsView
+{
+    UILabel *autoLabe = [[UILabel alloc]init];
+    autoLabe.font = [UIFont systemFontOfSize:15];
+    autoLabe.text = GET_SDK_LOCALIZED(@"R2SDK_AUTO_LOGINING");
+    autoLabe.textAlignment = NSTextAlignmentCenter;
+    autoLabe.backgroundColor = [UIColor clearColor];
+    autoLabe.numberOfLines = 0;
+    
+    [self.view addSubview:autoLabe];
+    [autoLabe mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(@(0));
-        make.centerY.equalTo(@(0));
-        make.width.equalTo(@(kBgWidth));
-        make.height.equalTo(@(kBgHeight));
+        make.centerY.equalTo(@(0)).offset(40);
+        make.height.mas_equalTo(40);
+        make.width.mas_equalTo(160);
+        
     }];
+    
 }
 
 -(void)showLoginCurrentTypePage

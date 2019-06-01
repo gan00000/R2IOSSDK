@@ -23,15 +23,25 @@
 - (instancetype)initSDKDATA
 {
     if (self = [super init]) {
-        [self releaseData];
+//        [self releaseData];
+        [self initData];
+         
     }
     return self;
 }
 
 -(void)saveLoginType:(NSInteger)loginType
 {
+    
     self.gameLoginType = loginType;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    // 1、写入
+    [userDefaults setInteger:self.gameLoginType forKey:@"SDK_LOGIN_TYPE"];
+    // 强制写入
+    [userDefaults synchronize];
 }
+
 
 #pragma mark -
 #pragma mark - Private Action
@@ -39,10 +49,19 @@
 - (void)initData
 {
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.gameLoginType = [userDefaults integerForKey:@"SDK_LOGIN_TYPE"];
+    
+    self.isLogin = NO;
+    self.gameUserId = @"";
+    self.gameLoginToken = @"";
+    self.gameLoginTimeStamp = @"";
+    
 }
 
 - (void)releaseData
 {
+    [self saveLoginType:-1];
     self.isLogin = NO;
     self.gameUserId = @"";
     self.gameLoginToken = @"";
