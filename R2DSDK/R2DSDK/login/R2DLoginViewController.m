@@ -52,14 +52,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    SDK_LOG(@"viewDidLoad");
     self.view.backgroundColor = [UIColor clearColor];
-    
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    SDK_LOG(@"viewDidAppear");
     switch (sdkPageType) {
         case SDKPage_Login:
-            {
-               [self showLoginPageOrAutoLogin];
-            }
+        {
+            [self showLoginPageOrAutoLogin];
+        }
             break;
             
         case SDKPage_LoginType:
@@ -77,8 +82,6 @@
         default:
             break;
     }
-  
-
 }
 
 -(void)showGuestLoginWarnTipsView
@@ -87,7 +90,7 @@
     [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
         GuestLoginWarnTipsView *mGuestLoginWarnTipsView = [[GuestLoginWarnTipsView alloc]initView];
-        mCurrentLoginInfoView.theViewUIViewController = self;
+        mGuestLoginWarnTipsView.theViewUIViewController = self;
         [self.view addSubview:mGuestLoginWarnTipsView];
         [mGuestLoginWarnTipsView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(@(0));
