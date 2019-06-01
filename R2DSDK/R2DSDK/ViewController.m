@@ -46,7 +46,25 @@
 
 -(void)openLogin:(UIButton *)btn
 {
-    [[R2SDKPlat shareR2SDK] loginWithViewController:self loginHandler:^(R2LoginResponse * _Nonnull r2LoginResult) {
+    [[R2SDKPlat shareR2SDK] loginWithViewController:self isAutoLogin:YES loginHandler:^(R2LoginResponse * _Nonnull r2LoginResult) {
+        
+        NSLog(@"登录完成");
+        
+        //取得帐号的 r2 uid，便于游戏自身定位玩家
+        NSString *r2UserId = r2LoginResult.r2Uid; //判断是否绑定 Game center 字段
+        //取得相关验证登录合法性的数据
+        NSString *loginTimestamp = r2LoginResult.timestamp;
+        NSString *sign = r2LoginResult.sign;
+        NSString *msg = [NSString stringWithFormat:@"current r2 uid=%@  loginTimestamp=%@ sign=%@ ",r2UserId, loginTimestamp, sign];
+        
+        [self showTips:msg];
+    }];
+}
+
+
+-(void)openLoginFormLogout
+{
+    [[R2SDKPlat shareR2SDK] loginWithViewController:self isAutoLogin:NO loginHandler:^(R2LoginResponse * _Nonnull r2LoginResult) {
         
         NSLog(@"登录完成");
         
@@ -65,7 +83,9 @@
 {
     [[R2SDKPlat shareR2SDK] showCurrentLoginTypeWithViewController:self
                                                      logoutHandler:^(NSInteger logout) {
-                                                         [self showTips:@"退出登录了"];
+                                                         [self showTips:@"退出登录了" handler:^(UIAlertAction *action) {
+                                                             [self openLoginFormLogout];
+                                                         }];
                                                      }];
 }
 
@@ -74,7 +94,9 @@
    
     [[R2SDKPlat shareR2SDK] showUnbindWithViewController:self
                                                      logoutHandler:^(NSInteger logout) {
-                                                         [self showTips:@"退出登录了"];
+                                                         [self showTips:@"退出登录了" handler:^(UIAlertAction *action) {
+                                                              [self openLoginFormLogout];
+                                                         }];
                                                      }];
 }
 
@@ -87,6 +109,16 @@
                                                               //响应事件
                                                               NSLog(@"action = %@", action);
                                                           }];
+    [mAlert addAction:defaultAction];
+    [self presentViewController:mAlert animated:YES completion:nil];
+}
+
+-(void)showTips:(NSString *)msg handler:(void (^ __nullable)(UIAlertAction *action))handler
+{
+    NSLog(msg);
+    UIAlertController *mAlert = [UIAlertController alertControllerWithTitle:@"提示" message:msg preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:handler];
     [mAlert addAction:defaultAction];
     [self presentViewController:mAlert animated:YES completion:nil];
 }

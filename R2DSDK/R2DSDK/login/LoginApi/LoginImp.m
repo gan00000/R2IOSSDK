@@ -13,7 +13,7 @@
 @implementation LoginImp
 
 
-+(void) loginGuestAccount:(UIViewController *)viewController 
++(void) loginGuestAccount:(UIViewController *)viewController isFormAutoLogin:(BOOL)isFormAutoLogin
 {
     [self startLoadingView];
     [R2SDKApi loginAsyncWithFixedGuestAccount:^(int code, NSString *msg, R2LoginResponse *result) {
@@ -49,13 +49,22 @@
 //            [SDK_DATA saveLoginType:LoginTypeGuest];
             
         }else{
+            if (isFormAutoLogin) {
+                //自动登录失败回到主登录界面
+                [UIUtil showAlertTips:msg okHandler:^(UIAlertAction * _Nonnull action) {
+                     [[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
+                }];
+                
+            }else{
+                [UIUtil showAlertTips:msg];
+            }
             SDK_LOG(@"failed to login，code:%d,error:%@",code,msg);
         }
         
     }];
 }
 
-+(void) loginFBAccount:(UIViewController *)viewController
++(void) loginFBAccount:(UIViewController *)viewController isFormAutoLogin:(BOOL)isFormAutoLogin
 {
     
 //
@@ -98,13 +107,22 @@
             
         }else{
             NSLog(@"Facebook login failed,code -> %d,msg -> %@",code,msg);
-            [UIUtil showAlertTips:msg];
+            if (isFormAutoLogin) {
+                //自动登录失败回到主登录界面
+                //[[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
+                [UIUtil showAlertTips:msg okHandler:^(UIAlertAction * _Nonnull action) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
+                }];
+            }else{
+                 [UIUtil showAlertTips:msg];
+            }
+           
         }
     }];
 }
 
 
-+(void) loginGoogleAccount:(UIViewController *)viewController
++(void) loginGoogleAccount:(UIViewController *)viewController isFormAutoLogin:(BOOL)isFormAutoLogin
 {
  [self startLoadingView];
     [[R2GoogleHelper sharedInstance] loginFromViewController:viewController
@@ -119,7 +137,16 @@
             [self loginSuccess:r2LoginResult];
         } else{
             NSLog(@"login failed,code -> %d,msg -> %@",code,msg);
-             [UIUtil showAlertTips:msg];
+            // [UIUtil showAlertTips:msg];
+            if (isFormAutoLogin) {
+                //自动登录失败回到主登录界面
+               // [[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
+                [UIUtil showAlertTips:msg okHandler:^(UIAlertAction * _Nonnull action) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
+                }];
+            }else{
+                [UIUtil showAlertTips:msg];
+            }
         }
     }];
     

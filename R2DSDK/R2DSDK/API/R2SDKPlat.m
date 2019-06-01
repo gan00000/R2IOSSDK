@@ -98,7 +98,7 @@
 
 
 /**
- 登录
+    登录界面，会根据上一次登录的方式进行自动登录，如果没有登录方式则显示登录界面
  */
 - (void)loginWithViewController:(UIViewController *)gameUIViewController loginHandler:(R2SDKLoginCompletionHandler)loginHandler
 {
@@ -107,6 +107,7 @@
     if (!gameUIViewController) {
         return;
     }
+    SDK_DATA.isNeedAutoLogin = YES;
     self.gameUIViewController = gameUIViewController;
     self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_Login)];
 
@@ -117,12 +118,26 @@
      [self showController];
 }
 
+- (void)loginWithViewController:(UIViewController *)gameUIViewController isAutoLogin:(BOOL)isNeedAutoLogin loginHandler:(R2SDKLoginCompletionHandler)loginHandler
+{
+    self.loginCompletionHandler = loginHandler;
+   
+    if (!gameUIViewController) {
+        return;
+    }
+    SDK_DATA.isNeedAutoLogin = isNeedAutoLogin;
+    
+    self.gameUIViewController = gameUIViewController;
+    self.sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_Login)];
+    [self showController];
+}
+
 - (void)showCurrentLoginTypeWithViewController:(UIViewController *)gameUIViewController logoutHandler:(R2SDKLogoutHandler)logoutHandler
 {
     
     self.gameUIViewController = gameUIViewController;
     self.logoutHandler = logoutHandler;
-    if (SDK_DATA.gameLoginType < 0 || !SDK_DATA.isLogin) {
+    if (SDK_DATA.gameLoginType < 1 || !SDK_DATA.isLogin) {
         [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_LOGIN_FIRST")];
         return;
     }
@@ -143,7 +158,7 @@
 {
     self.gameUIViewController = gameUIViewController;
     self.logoutHandler = logoutHandler;
-    if (SDK_DATA.gameLoginType < 0 || !SDK_DATA.isLogin) {
+    if (SDK_DATA.gameLoginType < 1 || !SDK_DATA.isLogin) {
         [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_LOGIN_FIRST")];
         return;
     }
@@ -170,7 +185,7 @@
 - (void)initWithLanguage:(NSString *)language
 {
     SDK_DATA;
-    SDK_DATA.gameLanguage = @"zh-Hant";
+    SDK_DATA.gameLanguage = @"zh-Hans";//简体
 }
 
 

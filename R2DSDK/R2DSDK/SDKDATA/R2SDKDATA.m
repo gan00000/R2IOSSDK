@@ -56,16 +56,18 @@
     self.gameUserId = @"";
     self.gameLoginToken = @"";
     self.gameLoginTimeStamp = @"";
-    
+    self.isLogin = YES;
+    self.gameLanguage = @"zh-Hans";
 }
 
 - (void)releaseData
 {
-    [self saveLoginType:-1];
+//    [self saveLoginType:-1];
     self.isLogin = NO;
     self.gameUserId = @"";
     self.gameLoginToken = @"";
     self.gameLoginTimeStamp = @"";
+//    self.isLogin = YES;
 }
 
 @end

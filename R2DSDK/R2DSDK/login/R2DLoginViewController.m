@@ -31,6 +31,9 @@
         sdkPageType = pageType;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_noteLisetner:) name:Guest_Login_Tipe_OK object:nil];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_noteLisetner:) name:SDK_AUTO_LOGIN_FAIL object:nil];
+        
+        
     }
     
     return self;
@@ -52,7 +55,7 @@
     switch (sdkPageType) {
         case SDKPage_Login:
             {
-               [self showLoginPage];
+               [self showLoginPageOrAutoLogin];
             }
             break;
             
@@ -91,35 +94,49 @@
         }];
 }
 
--(void)showLoginPage
+-(void)showLoginPageOrAutoLogin
 {
  
-    
-    if (SDK_DATA.gameLoginType == LoginTypeGoogle) {//自动登录
-        [self addAutoLoginTipsView];
-        [self clickGoogleLogin];
-    }else if (SDK_DATA.gameLoginType == LoginTypeFacebook){//自动登录
-         [self addAutoLoginTipsView];
-        [self clickFbLogin];
-    }else if (SDK_DATA.gameLoginType == LoginTypeGuest){//自动登录
-         [self addAutoLoginTipsView];
-        [self clickGuestLogin];
+    if (SDK_DATA.isNeedAutoLogin) {//是否需要自动登录
         
-    }else{//弹出登录界面
-        
-        loginMainView = [[LoginMainView alloc] initView];
-        loginMainView.delegate = self;
-        [self.view addSubview:loginMainView];
-        
-        [loginMainView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(@(0));
-            make.centerY.equalTo(@(0));
-            make.width.equalTo(@(kBgWidth));
-            make.height.equalTo(@(kBgHeight));
-        }];
-        
+        if (SDK_DATA.gameLoginType == LoginTypeGoogle) {//自动登录
+            [self addAutoLoginTipsView];
+             [LoginImp loginGoogleAccount:self isFormAutoLogin:YES];
+            
+        }else if (SDK_DATA.gameLoginType == LoginTypeFacebook){//自动登录
+            [self addAutoLoginTipsView];
+             [LoginImp loginFBAccount:self isFormAutoLogin:YES];
+            
+        }else if (SDK_DATA.gameLoginType == LoginTypeGuest){//自动登录
+            [self addAutoLoginTipsView];
+            
+            [LoginImp loginGuestAccount:self isFormAutoLogin:YES];
+            
+        }else{//弹出登录界面
+            [self showLoginPage];
+        }
+    }else{
+         [self showLoginPage];
     }
+    
   
+}
+
+-(void)showLoginPage
+{
+    //移除所有子视图
+    [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
+    loginMainView = [[LoginMainView alloc] initView];
+    loginMainView.delegate = self;
+    [self.view addSubview:loginMainView];
+    
+    [loginMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(@(0));
+        make.centerY.equalTo(@(0));
+        make.width.equalTo(@(kBgWidth));
+        make.height.equalTo(@(kBgHeight));
+    }];
 }
 
 -(void)addAutoLoginTipsView
@@ -207,6 +224,8 @@
     if ([noteName isEqualToString: Guest_Login_Tipe_OK]) {
         
         [self showGuestLoginWarnTipsView];
+    }else if ([noteName isEqualToString:SDK_AUTO_LOGIN_FAIL]){
+        [self showLoginPage];
     }
 }
 
@@ -260,18 +279,18 @@
 
 -(void)clickFbLogin
 {   SDK_LOG(@"clickFbLogin");
-     [LoginImp loginFBAccount:self];
+     [LoginImp loginFBAccount:self isFormAutoLogin:NO];
 }
 -(void)clickGoogleLogin
 {
     SDK_LOG(@"clickGoogleLogin");
-    [LoginImp loginGoogleAccount:self];
+    [LoginImp loginGoogleAccount:self isFormAutoLogin:NO];
 }
 
 -(void)clickGuestLogin
 {
     SDK_LOG(@"clickGuestLogin");
-    [LoginImp loginGuestAccount:self];
+    [LoginImp loginGuestAccount:self isFormAutoLogin:NO];
 }
 
 @end

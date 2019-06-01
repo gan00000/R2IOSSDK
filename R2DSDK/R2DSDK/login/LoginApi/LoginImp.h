@@ -20,12 +20,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginImp : NSObject
 
-+(void) loginGuestAccount:(UIViewController *)viewController;
++(void) loginGuestAccount:(UIViewController *)viewController isFormAutoLogin:(BOOL)isFormAutoLogin;
 
-+(void) loginFBAccount:(UIViewController *)viewController;
++(void) loginFBAccount:(UIViewController *)viewController isFormAutoLogin:(BOOL)isFormAutoLogin;
 
 
-+(void) loginGoogleAccount:(UIViewController *)viewController;
++(void) loginGoogleAccount:(UIViewController *)viewController isFormAutoLogin:(BOOL)isFormAutoLogin;
 
 +(void) bindGoogle:(UIViewController *)viewController;
 

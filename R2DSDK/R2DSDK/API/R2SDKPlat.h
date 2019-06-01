@@ -17,6 +17,8 @@ typedef void (^R2SDKLoginCompletionHandler)(R2LoginResponse* loginResponse);
 
 typedef void (^R2SDKLogoutHandler)(NSInteger logout);
 
+//#define GAME_LANGUAGE_
+
 @interface R2SDKPlat : NSObject
 
 @property (nonatomic)R2SDKLoginCompletionHandler loginCompletionHandler;
@@ -57,6 +59,9 @@ typedef void (^R2SDKLogoutHandler)(NSInteger logout);
  登录
  */
 - (void)loginWithViewController:(UIViewController *)gameUIViewController loginHandler:(R2SDKLoginCompletionHandler)loginHandler;
+
+
+- (void)loginWithViewController:(UIViewController *)gameUIViewController isAutoLogin:(BOOL)isNeedAutoLogin loginHandler:(R2SDKLoginCompletionHandler)loginHandler ;
 
 - (void)showCurrentLoginTypeWithViewController:(UIViewController *)gameUIViewController logoutHandler:(R2SDKLogoutHandler)logoutHandler;
 

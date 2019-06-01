@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) BOOL isBindFb;
 @property(nonatomic,assign) BOOL isBindGoogle;
+@property(nonatomic,assign) BOOL isNeedAutoLogin;
 
 + (instancetype)sharedSdkData;
 
