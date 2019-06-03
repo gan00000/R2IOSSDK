@@ -180,6 +180,7 @@
 +(void) logoutAccount:(UIViewController *) mController
 {
     [[R2SDKMgrApi  sharedInstance] logout];//清楚R2SDK token
+    [[R2FacebookHelper sharedInstance] logOut];
     [mController dismissViewControllerAnimated:NO completion:nil];
     if ([R2SDKPlat shareR2SDK].logoutHandler) {
         
