@@ -120,7 +120,7 @@
 //            SDK_DATA.isBindFb
 //            SDK_DATA.isBindGoogle
             if (SDK_DATA.isBindFb) {
-                [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_ACCOUNT_ARLEADY_BIND")];
+                [UIUtil showAlertTips:self.theViewUIViewController msg:GET_SDK_LOCALIZED(@"R2SDK_ACCOUNT_ARLEADY_BIND")];
                 return;
             }
             if (self.delegate) {
@@ -132,7 +132,7 @@
         {
             
             if (SDK_DATA.isBindGoogle) {
-                [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_ACCOUNT_ARLEADY_BIND")];
+                [UIUtil showAlertTips:self.theViewUIViewController msg:GET_SDK_LOCALIZED(@"R2SDK_ACCOUNT_ARLEADY_BIND")];
                 return;
             }
             if (self.delegate) {

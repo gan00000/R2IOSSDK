@@ -48,7 +48,7 @@
 }
 
 
-+(void)showAlertTips:(NSString *)msg
++(void)showAlertTips:(UIViewController *)viewController msg:(NSString *)msg
 {
     UIAlertController *mAlert = [UIAlertController alertControllerWithTitle:nil message:msg preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
@@ -57,16 +57,28 @@
                                                               NSLog(@"action = %@", action);
                                                           }];
     [mAlert addAction:defaultAction];
-    [hillTopViewController presentViewController:mAlert animated:YES completion:nil];
+    if (viewController) {
+        [viewController presentViewController:mAlert animated:YES completion:nil];
+    }else
+    {
+        [hillTopViewController presentViewController:mAlert animated:YES completion:nil];
+    }
+    
 }
 
-+(void)showAlertTips:(NSString *)msg okHandler:(void (^ __nullable)(UIAlertAction *action))handler
++(void)showAlertTips:(UIViewController *)viewController msg:(NSString *)msg okHandler:(void (^ __nullable)(UIAlertAction *action))handler
 {
     UIAlertController *mAlert = [UIAlertController alertControllerWithTitle:nil message:msg preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                           handler:handler];
     [mAlert addAction:defaultAction];
-    [hillTopViewController presentViewController:mAlert animated:YES completion:nil];
+    if (viewController) {
+        [viewController presentViewController:mAlert animated:YES completion:nil];
+    }else
+    {
+         [hillTopViewController presentViewController:mAlert animated:YES completion:nil];
+    }
+   
 }
 
 

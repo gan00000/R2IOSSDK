@@ -15,10 +15,10 @@
 
 +(void) loginGuestAccount:(UIViewController *)viewController isFormAutoLogin:(BOOL)isFormAutoLogin
 {
-    [self startLoadingView];
+    [self startLoadingView:viewController];
     [R2SDKApi loginAsyncWithFixedGuestAccount:^(int code, NSString *msg, R2LoginResponse *result) {
         
-        [self stopLoadingView];
+        [self stopLoadingView:viewController];
         
         if (code == R2_LOGIN_SUCCESS && result) {
 //            //取得帐号的 r2 uid，便于游戏自身定位玩家
@@ -51,12 +51,12 @@
         }else{
             if (isFormAutoLogin) {
                 //自动登录失败回到主登录界面
-                [UIUtil showAlertTips:msg okHandler:^(UIAlertAction * _Nonnull action) {
+                [UIUtil showAlertTips:viewController msg:msg okHandler:^(UIAlertAction * _Nonnull action) {
                      [[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
                 }];
                 
             }else{
-                [UIUtil showAlertTips:msg];
+                [UIUtil showAlertTips:viewController msg:msg];
             }
             SDK_LOG(@"failed to login，code:%d,error:%@",code,msg);
         }
@@ -80,14 +80,14 @@
 //            SDK_LOG(@"[fbUserId=%@,fbUserImageUrl=%@,fbUserName=%@]",fbUserId,fbUserImageUrl,fbUserName)
 //            ;
     
-    [self startLoadingView];
+    [self startLoadingView:viewController];
     [[R2FacebookHelper sharedInstance]UIDLoginWithViewController:viewController
                                                completionHandler:^(int code,
                                                                    NSString *msg,
                                              R2FacebookLoginResult *facebookLoginResult,
                                              R2LoginResponse *r2LoginResult) {
                                                    
-                                                   [self stopLoadingView];
+                                                   [self stopLoadingView:viewController];
         if (code == R2_RESPONSE_SUCCESS_CODE) {
             
 //                                             R2FacebookLoginResult *facebookLoginResult,
@@ -110,11 +110,11 @@
             if (isFormAutoLogin) {
                 //自动登录失败回到主登录界面
                 //[[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
-                [UIUtil showAlertTips:msg okHandler:^(UIAlertAction * _Nonnull action) {
+                [UIUtil showAlertTips:viewController msg:msg okHandler:^(UIAlertAction * _Nonnull action) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
                 }];
             }else{
-                 [UIUtil showAlertTips:msg];
+                 [UIUtil showAlertTips:viewController msg:msg];
             }
            
         }
@@ -124,14 +124,14 @@
 
 +(void) loginGoogleAccount:(UIViewController *)viewController isFormAutoLogin:(BOOL)isFormAutoLogin
 {
- [self startLoadingView];
+ [self startLoadingView:viewController];
     [[R2GoogleHelper sharedInstance] loginFromViewController:viewController
                                          onCompletionHandler:^(int code,
                                                                NSString *msg,
                                                                R2LoginResponse  * r2LoginResult,
                                                                NSDictionary *result) {
                                              
-                                             [self stopLoadingView];
+                                             [self stopLoadingView:viewController];
         if (code == 0) {
             [SDK_DATA saveLoginType:LoginTypeGoogle];
             [self loginSuccess:r2LoginResult mController:viewController];
@@ -141,11 +141,11 @@
             if (isFormAutoLogin) {
                 //自动登录失败回到主登录界面
                // [[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
-                [UIUtil showAlertTips:msg okHandler:^(UIAlertAction * _Nonnull action) {
+                [UIUtil showAlertTips:viewController msg:msg okHandler:^(UIAlertAction * _Nonnull action) {
                     [[NSNotificationCenter defaultCenter] postNotificationName:SDK_AUTO_LOGIN_FAIL object:nil];
                 }];
             }else{
-                [UIUtil showAlertTips:msg];
+                [UIUtil showAlertTips:viewController msg:msg];
             }
         }
     }];
@@ -192,20 +192,20 @@
 
 +(void)bindFacebook:(UIViewController *)viewController
 {
-    [self startLoadingView];
+    [self startLoadingView:viewController];
     [[R2FacebookMgrHelper sharedHelper]bindFBWithViewController:viewController
                                             withReadPermissions:@[@"public_profile"]
                                               andR2UidToBeBound:SDK_DATA.gameUserId
                                               completionHandler:^(int code, NSString *msg, R2FacebookLoginResult *result) {
-                                                  [self stopLoadingView];
+                                                  [self stopLoadingView:viewController];
                                                   if (code == 1009) {
-                                                      [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"FB_HAS_BIND")];
+                                                      [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"FB_HAS_BIND")];
                                                   }else  if (code == FACEBOOK_BIND_SUCCESS) {
                                                       NSLog(@"facebook login and bind r2 account successfully,[%@%@%@]",result.fbUserId,result.fbUsername,result.fbImageUrl);
                                                             [SDK_DATA saveLoginType:LoginTypeFacebook];
                                                       
                                                       
-                                                      [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_BIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
+                                                      [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"R2SDK_BIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
                                                           [viewController dismissViewControllerAnimated:NO completion:nil];
                                                       }];
                                                       
@@ -213,10 +213,10 @@
                                                   }else {
                                                       
                                                       if (![msg isEqualToString:@""]) {
-                                                          [UIUtil showAlertTips:msg];
+                                                          [UIUtil showAlertTips:viewController msg:msg];
                                                       }else
                                                       {
-                                                          [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"BIND_FAIL")];
+                                                          [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"BIND_FAIL")];
                                                       }
                                                       
                                                               NSLog(@"facebook login and bind r2 account failed,code = %d,msg = %@",code,msg);
@@ -231,20 +231,20 @@
 +(void) bindGoogle:(UIViewController *)viewController
 {
     
-    [self startLoadingView];
+    [self startLoadingView:viewController];
     [[R2GoogleHelper sharedInstance] bindFromViewController:viewController
                                                   withR2Uid:SDK_DATA.gameUserId
                                         onCompletionHandler:^(int code, NSString *msg, R2LoginResponse *loginResponse, NSDictionary *result) {
                                             
-                                            [self stopLoadingView];
+                                            [self stopLoadingView:viewController];
                                             
                                             if (code == 1009) {
-                                                [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"FB_HAS_BIND")];
+                                                [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"FB_HAS_BIND")];
                                             }else if (code == 0) {
                                                 //绑定成功
                                                 [SDK_DATA saveLoginType:LoginTypeGoogle];
                                                 
-                                                [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_BIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
+                                                [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"R2SDK_BIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
                                                     [viewController dismissViewControllerAnimated:NO completion:nil];
                                                 }];
                                                 
@@ -252,10 +252,10 @@
                                             }else{
                                                 
                                                 if (![msg isEqualToString:@""]) {
-                                                    [UIUtil showAlertTips:msg];
+                                                    [UIUtil showAlertTips:viewController msg:msg];
                                                 }else
                                                 {
-                                                    [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"BIND_FAIL")];
+                                                    [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"BIND_FAIL")];
                                                 }
                                                
                                                 NSLog(@"bind failed,code -> %d,msg -> %@",code,msg);
@@ -268,21 +268,21 @@
 +(void)unbindFacebook:(UIViewController *)viewController
 {
     
-    [self startLoadingView];
+    [self startLoadingView:viewController];
     [[R2SDKMgrApi sharedInstance]unwrap:SDK_DATA.gameUserId openType:@"2" completionHandler:^(int code, NSString *msg, R2UnwrapResponse *result) {
         
-        [self stopLoadingView];
+        [self stopLoadingView:viewController];
         if (code == 0) {
             NSLog(@"Unwrap successful,msg:%@",msg);
               [SDK_DATA saveLoginType:LoginTypeGuest];
             SDK_DATA.isBindFb = NO;
-            [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
+            [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
                 [viewController dismissViewControllerAnimated:NO completion:nil];
             }];
             
         }else{
             NSLog(@"Unwrap failed,msg:%@,code:%d",msg,code);
-             [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_FAIL")];
+             [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_FAIL")];
         }
     }];
     
@@ -290,29 +290,29 @@
 //type:第三方账号类型(GameCenter 传入"1"，Facebook 账号传入"2", Google 账 号传入"8")(必须)
 +(void) unbindGoogle:(UIViewController *)viewController
 {
-    [self startLoadingView];
+    [self startLoadingView:viewController];
     [[R2SDKMgrApi sharedInstance]unwrap:SDK_DATA.gameUserId openType:@"8" completionHandler:^(int code, NSString *msg, R2UnwrapResponse *result) {
         
-        [self stopLoadingView];
+        [self stopLoadingView:viewController];
         if (code == 0) {
             NSLog(@"Unwrap successful,msg:%@",msg);
             [SDK_DATA saveLoginType:LoginTypeGuest];
             SDK_DATA.isBindGoogle = NO;
             
-            [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
+            [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_SUCCESS") okHandler:^(UIAlertAction * _Nonnull action) {
                 [viewController dismissViewControllerAnimated:NO completion:nil];
             }];
             
          //   [viewController dismissViewControllerAnimated:NO completion:nil];
         }else{
             NSLog(@"Unwrap failed,msg:%@,code:%d",msg,code);
-             [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_FAIL")];
+             [UIUtil showAlertTips:viewController msg:GET_SDK_LOCALIZED(@"R2SDK_UNBIND_FAIL")];
         }
     }];
 }
 
 
-+ (void)startLoadingView
++ (void)startLoadingView:(UIViewController *)viewController
 {
 
     UIView *v=[[UIView alloc] initWithFrame:CGRectZero];
@@ -320,7 +320,7 @@
     v.tag = 1002;
     v.layer.cornerRadius = 10.0f;
     
-    [hillTopViewController.view addSubview:v];
+    [viewController.view addSubview:v];
     
     [v mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(@(0));
@@ -342,13 +342,13 @@
 }
 
 
-+ (void)stopLoadingView
++ (void)stopLoadingView:(UIViewController *)viewController
 {
-    UIActivityIndicatorView *indicator = (UIActivityIndicatorView *)[hillTopViewController.view viewWithTag:1003];
+    UIActivityIndicatorView *indicator = (UIActivityIndicatorView *)[viewController.view viewWithTag:1003];
     if (indicator) {
         [indicator stopAnimating];
     }
-    UIView *loadingView = [hillTopViewController.view viewWithTag:1002];
+    UIView *loadingView = [viewController.view viewWithTag:1002];
     [loadingView removeFromSuperview];
 }
 

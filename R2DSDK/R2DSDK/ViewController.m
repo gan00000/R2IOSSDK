@@ -55,14 +55,14 @@
         //取得相关验证登录合法性的数据
         NSString *loginTimestamp = r2LoginResult.timestamp;
         NSString *sign = r2LoginResult.sign;
-        NSString *msg = [NSString stringWithFormat:@"current r2 uid=%@  loginTimestamp=%@ sign=%@ ",r2UserId, loginTimestamp, sign];
+        NSString *msg = [NSString stringWithFormat:@"登录成功current r2 uid=%@  loginTimestamp=%@ sign=%@ ",r2UserId, loginTimestamp, sign];
         
         [self showTips:msg];
     }];
 }
 
 
--(void)openLoginFormLogout
+-(void)openLoginFromLogout
 {
     [[R2SDKPlat shareR2SDK] loginWithViewController:self isAutoLogin:NO loginHandler:^(R2LoginResponse * _Nonnull r2LoginResult) {
         
@@ -84,7 +84,10 @@
     [[R2SDKPlat shareR2SDK] showCurrentLoginTypeWithViewController:self
                                                      logoutHandler:^(NSInteger logout) {
                                                          [self showTips:@"退出登录了" handler:^(UIAlertAction *action) {
-                                                             [self openLoginFormLogout];
+                                                             //游戏研发 处理游戏退出
+                                                             
+                                                             //登出后回到登录界面
+                                                             [self openLoginFromLogout];
                                                          }];
                                                      }];
 }
@@ -95,7 +98,12 @@
     [[R2SDKPlat shareR2SDK] showUnbindWithViewController:self
                                                      logoutHandler:^(NSInteger logout) {
                                                          [self showTips:@"退出登录了" handler:^(UIAlertAction *action) {
-                                                              [self openLoginFormLogout];
+                                                             
+                                                             //游戏研发 处理游戏退出
+                                                             
+                                                             //登出后回到登录界面
+                                                             
+                                                              [self openLoginFromLogout];
                                                          }];
                                                      }];
 }

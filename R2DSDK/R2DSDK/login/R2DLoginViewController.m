@@ -23,6 +23,7 @@
     CurrentLoginInfoView *mCurrentLoginInfoView;
     BindAccountView *mBindAccountView;
     FBGGUnbindView *mFBGGUnbindView;
+    BOOL autoLoginDone;
 }
 
 -(instancetype)initWithPageType:(SDKPage) pageType
@@ -54,12 +55,8 @@
     // Do any additional setup after loading the view.
     SDK_LOG(@"viewDidLoad");
     self.view.backgroundColor = [UIColor clearColor];
-
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    SDK_LOG(@"viewDidAppear");
+    autoLoginDone = NO;
+    
     switch (sdkPageType) {
         case SDKPage_Login:
         {
@@ -82,8 +79,59 @@
         default:
             break;
     }
+
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    SDK_LOG(@"viewDidAppear");
+    
+    switch (sdkPageType) {
+        case SDKPage_Login:
+        {
+            if (SDK_DATA.isNeedAutoLogin && !autoLoginDone) {
+                
+                autoLoginDone = YES;
+                
+                if (SDK_DATA.gameLoginType == LoginTypeGoogle) {//自动登录
+                    
+                    [LoginImp loginGoogleAccount:self isFormAutoLogin:YES];
+                    
+                }else if (SDK_DATA.gameLoginType == LoginTypeFacebook){//自动登录
+                    
+                    [LoginImp loginFBAccount:self isFormAutoLogin:YES];
+                    
+                }else if (SDK_DATA.gameLoginType == LoginTypeGuest){//自动登录
+                    
+                    [LoginImp loginGuestAccount:self isFormAutoLogin:YES];
+                    
+                }else{//弹出登录界面
+                    [self showLoginPage];
+                }
+                
+            }
+        }
+            break;
+        default:
+            break;
+    }
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    SDK_LOG(@"viewWillAppear");
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    SDK_LOG(@"viewWillDisappear");
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    SDK_LOG(@"viewDidDisappear");
+}
 -(void)showGuestLoginWarnTipsView
 {
     //移除所有子视图
@@ -105,22 +153,24 @@
  
     if (SDK_DATA.isNeedAutoLogin) {//是否需要自动登录
         
-        if (SDK_DATA.gameLoginType == LoginTypeGoogle) {//自动登录
-            [self addAutoLoginTipsView];
-             [LoginImp loginGoogleAccount:self isFormAutoLogin:YES];
-            
-        }else if (SDK_DATA.gameLoginType == LoginTypeFacebook){//自动登录
-            [self addAutoLoginTipsView];
-             [LoginImp loginFBAccount:self isFormAutoLogin:YES];
-            
-        }else if (SDK_DATA.gameLoginType == LoginTypeGuest){//自动登录
-            [self addAutoLoginTipsView];
-            
-            [LoginImp loginGuestAccount:self isFormAutoLogin:YES];
-            
-        }else{//弹出登录界面
-            [self showLoginPage];
-        }
+        [self addAutoLoginTipsView];
+        
+//        if (SDK_DATA.gameLoginType == LoginTypeGoogle) {//自动登录
+//            [self addAutoLoginTipsView];
+//             [LoginImp loginGoogleAccount:self isFormAutoLogin:YES];
+//
+//        }else if (SDK_DATA.gameLoginType == LoginTypeFacebook){//自动登录
+//            [self addAutoLoginTipsView];
+//             [LoginImp loginFBAccount:self isFormAutoLogin:YES];
+//
+//        }else if (SDK_DATA.gameLoginType == LoginTypeGuest){//自动登录
+//            [self addAutoLoginTipsView];
+//
+//            [LoginImp loginGuestAccount:self isFormAutoLogin:YES];
+//
+//        }else{//弹出登录界面
+//            [self showLoginPage];
+//        }
     }else{
          [self showLoginPage];
     }

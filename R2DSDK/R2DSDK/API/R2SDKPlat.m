@@ -138,7 +138,7 @@
     self.gameUIViewController = gameUIViewController;
     self.logoutHandler = logoutHandler;
     if (SDK_DATA.gameLoginType < 1 || !SDK_DATA.isLogin) {
-        [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_LOGIN_FIRST")];
+        [UIUtil showAlertTips:gameUIViewController msg:GET_SDK_LOCALIZED(@"R2SDK_LOGIN_FIRST")];
         return;
     }
     
@@ -159,7 +159,7 @@
     self.gameUIViewController = gameUIViewController;
     self.logoutHandler = logoutHandler;
     if (SDK_DATA.gameLoginType < 1 || !SDK_DATA.isLogin) {
-        [UIUtil showAlertTips:GET_SDK_LOCALIZED(@"R2SDK_LOGIN_FIRST")];
+        [UIUtil showAlertTips:gameUIViewController msg:GET_SDK_LOCALIZED(@"R2SDK_LOGIN_FIRST")];
         return;
     }
     
