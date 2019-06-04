@@ -22,6 +22,7 @@
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     
+    //添加下面的SDK代码
     BOOL handled = [[R2SDKPlat shareR2SDK] application:application openURL:url options:options];
     // Add any custom logic here.
     return handled;
@@ -31,19 +32,17 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    
-    NSLog(@"UIScreen mainScreen --- height:%f,with:%f",  [[UIScreen mainScreen] bounds].size.height, [[UIScreen mainScreen] bounds].size.width);
-    
-    NSLog(@"UIScreen applicationFrame --- height:%f,with:%f",  [[UIScreen mainScreen] applicationFrame].size.height, [[UIScreen mainScreen] applicationFrame].size.width);
-    // Override point for customization after application launch.
     ViewController *viewController = [[ViewController alloc] init];
     self.window.rootViewController = viewController;
-    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    
+    //添加下面的SDK代码
     [[R2SDKPlat shareR2SDK] application:application didFinishLaunchingWithOptions:launchOptions];
+    //googleClientId联系SDK人员获取
+    NSString *googleClientId = @"113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com";
+    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
     
     return YES;
 }
@@ -74,6 +73,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
+    //添加下面的SDK代码
      [[R2SDKPlat shareR2SDK] applicationWillTerminate:application];
 }
 

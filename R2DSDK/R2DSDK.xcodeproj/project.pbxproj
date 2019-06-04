@@ -6,43 +6,78 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3267FC2022A610C2008AD571 /* WAPR2SDK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3267FC2122A610C2008AD571 /* Build configuration list for PBXAggregateTarget "WAPR2SDK" */;
+			buildPhases = (
+				3267FC2622A610EB008AD571 /* ShellScript */,
+			);
+			dependencies = (
+				3267FC2522A610CF008AD571 /* PBXTargetDependency */,
+			);
+			name = WAPR2SDK;
+			productName = WAPR2SDK;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		3212476422A6164800B6A385 /* R2DLIB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212476322A6164800B6A385 /* R2DLIB.framework */; };
 		325182A0229E24BB00623AFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251829F229E24BB00623AFF /* AppDelegate.m */; };
 		325182A3229E24BB00623AFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182A2229E24BB00623AFF /* ViewController.m */; };
 		325182A6229E24BB00623AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325182A4229E24BB00623AFF /* Main.storyboard */; };
 		325182A8229E24BD00623AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325182A7229E24BD00623AFF /* Assets.xcassets */; };
 		325182AB229E24BD00623AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325182A9229E24BD00623AFF /* LaunchScreen.storyboard */; };
 		325182AE229E24BD00623AFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182AD229E24BD00623AFF /* main.m */; };
-		325182B8229E26CA00623AFF /* R2DLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182B7229E26CA00623AFF /* R2DLoginViewController.m */; };
-		325182BE229E28EF00623AFF /* GamaFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182BB229E28EF00623AFF /* GamaFunction.m */; };
-		325182FC229E2F6C00623AFF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182E3229E2F6B00623AFF /* View+MASAdditions.m */; };
-		325182FD229E2F6C00623AFF /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182E5229E2F6B00623AFF /* MASConstraint.m */; };
-		325182FE229E2F6C00623AFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182E7229E2F6B00623AFF /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		325182FF229E2F6C00623AFF /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182EA229E2F6B00623AFF /* MASLayoutConstraint.m */; };
-		32518300229E2F6C00623AFF /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F1229E2F6C00623AFF /* NSArray+MASAdditions.m */; };
-		32518301229E2F6C00623AFF /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F2229E2F6C00623AFF /* MASViewAttribute.m */; };
-		32518302229E2F6C00623AFF /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F3229E2F6C00623AFF /* MASConstraintMaker.m */; };
-		32518303229E2F6C00623AFF /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F6229E2F6C00623AFF /* MASCompositeConstraint.m */; };
-		32518304229E2F6C00623AFF /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F8229E2F6C00623AFF /* MASViewConstraint.m */; };
-		32518305229E2F6C00623AFF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182FB229E2F6C00623AFF /* ViewController+MASAdditions.m */; };
-		32518309229E398C00623AFF /* UIImage+GamaBundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518308229E398B00623AFF /* UIImage+GamaBundleImage.m */; };
 		3251830C229E4C8900623AFF /* R2DSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3251830B229E4C8900623AFF /* R2DSDKResources.bundle */; };
-		3251830F229E599800623AFF /* UIColor+HexStringToColorTW.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251830E229E599800623AFF /* UIColor+HexStringToColorTW.m */; };
-		32518312229E5AE300623AFF /* LoginTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518311229E5AE300623AFF /* LoginTitleView.m */; };
-		32518315229E5FD800623AFF /* LoginMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518314229E5FD800623AFF /* LoginMainView.m */; };
-		32518318229E6E0B00623AFF /* UIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518317229E6E0B00623AFF /* UIUtil.m */; };
-		3251831B229E979B00623AFF /* GuestLoginWarnTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */; };
-		32518322229EAAA100623AFF /* R2SDKDATA.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518321229EAAA100623AFF /* R2SDKDATA.m */; };
-		3251A0E722A0342A004A0CCD /* UIViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251A0E622A0342A004A0CCD /* UIViewUtil.m */; };
-		3253B2A0229EC407007C23CD /* ConfigCoreUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253B29F229EC407007C23CD /* ConfigCoreUtil.m */; };
-		3253B2A5229ED684007C23CD /* CurrentLoginInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253B2A4229ED684007C23CD /* CurrentLoginInfoView.m */; };
-		3260C1E122A0D6F800E30FE9 /* SDKBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */; };
-		3260C1E422A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E322A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m */; };
-		3260C1E722A0F6F700E30FE9 /* FBGGUnbindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E622A0F6F700E30FE9 /* FBGGUnbindView.m */; };
+		3267FBF322A60E72008AD571 /* R2SDKPlat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA228229FA08200B9CC7C /* R2SDKPlat.m */; };
+		3267FBF422A60E72008AD571 /* ConfigCoreUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253B29F229EC407007C23CD /* ConfigCoreUtil.m */; };
+		3267FBF522A60E72008AD571 /* R2SDKDATA.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518321229EAAA100623AFF /* R2SDKDATA.m */; };
+		3267FBF622A60E72008AD571 /* UIColor+HexStringToColorTW.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251830E229E599800623AFF /* UIColor+HexStringToColorTW.m */; };
+		3267FBF722A60E72008AD571 /* UIImage+GamaBundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518308229E398B00623AFF /* UIImage+GamaBundleImage.m */; };
+		3267FBF822A60E72008AD571 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F6229E2F6C00623AFF /* MASCompositeConstraint.m */; };
+		3267FBF922A60E72008AD571 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182E5229E2F6B00623AFF /* MASConstraint.m */; };
+		3267FBFA22A60E72008AD571 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F3229E2F6C00623AFF /* MASConstraintMaker.m */; };
+		3267FBFB22A60E72008AD571 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182EA229E2F6B00623AFF /* MASLayoutConstraint.m */; };
+		3267FBFC22A60E72008AD571 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F2229E2F6C00623AFF /* MASViewAttribute.m */; };
+		3267FBFD22A60E72008AD571 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F8229E2F6C00623AFF /* MASViewConstraint.m */; };
+		3267FBFE22A60E72008AD571 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F1229E2F6C00623AFF /* NSArray+MASAdditions.m */; };
+		3267FBFF22A60E72008AD571 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182E7229E2F6B00623AFF /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		3267FC0022A60E72008AD571 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182E3229E2F6B00623AFF /* View+MASAdditions.m */; };
+		3267FC0122A60E72008AD571 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182FB229E2F6C00623AFF /* ViewController+MASAdditions.m */; };
+		3267FC0222A60E72008AD571 /* GamaFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182BB229E28EF00623AFF /* GamaFunction.m */; };
+		3267FC0322A60E72008AD571 /* UIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518317229E6E0B00623AFF /* UIUtil.m */; };
+		3267FC0422A60E72008AD571 /* LoginImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA22C229FAC1500B9CC7C /* LoginImp.m */; };
+		3267FC0522A60E72008AD571 /* LoginTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518311229E5AE300623AFF /* LoginTitleView.m */; };
+		3267FC0622A60E72008AD571 /* LoginMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518314229E5FD800623AFF /* LoginMainView.m */; };
+		3267FC0722A60E72008AD571 /* GuestLoginWarnTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */; };
+		3267FC0822A60E72008AD571 /* CurrentLoginInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253B2A4229ED684007C23CD /* CurrentLoginInfoView.m */; };
+		3267FC0922A60E72008AD571 /* BindAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA206229F7C7500B9CC7C /* BindAccountView.m */; };
+		3267FC0A22A60E72008AD571 /* UIViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251A0E622A0342A004A0CCD /* UIViewUtil.m */; };
+		3267FC0B22A60E72008AD571 /* SDKBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */; };
+		3267FC0C22A60E72008AD571 /* GuestLogoutWarnTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E322A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m */; };
+		3267FC0D22A60E72008AD571 /* FBGGUnbindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E622A0F6F700E30FE9 /* FBGGUnbindView.m */; };
+		3267FC0E22A60E72008AD571 /* R2DLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182B7229E26CA00623AFF /* R2DLoginViewController.m */; };
+		3267FC0F22A60F1F008AD571 /* R2SDKPlat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 32CEA227229FA08200B9CC7C /* R2SDKPlat.h */; };
+		3267FC1022A60F5C008AD571 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09722A141710071BF80 /* StoreKit.framework */; };
+		3267FC1122A60F62008AD571 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */; };
+		3267FC1222A60F72008AD571 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA233229FAF3B00B9CC7C /* SafariServices.framework */; };
+		3267FC1322A60F86008AD571 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09322A1415E0071BF80 /* AdSupport.framework */; };
+		3267FC1422A60F8C008AD571 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
+		3267FC1522A60FAE008AD571 /* R2GoogleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20C229F9EDE00B9CC7C /* R2GoogleFramework.framework */; };
+		3267FC1622A60FB1008AD571 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20E229F9EDE00B9CC7C /* GoogleSignInDependencies.framework */; };
+		3267FC1722A60FB2008AD571 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20F229F9EDE00B9CC7C /* GoogleSignIn.framework */; };
+		3267FC1822A60FB9008AD571 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA211229F9EDE00B9CC7C /* FBSDKLoginKit.framework */; };
+		3267FC1922A60FBB008AD571 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA212229F9EDE00B9CC7C /* FBSDKShareKit.framework */; };
+		3267FC1A22A60FBD008AD571 /* R2FacebookFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA213229F9EDE00B9CC7C /* R2FacebookFramework.framework */; };
+		3267FC1B22A60FC2008AD571 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA214229F9EDE00B9CC7C /* FBSDKCoreKit.framework */; };
+		3267FC1C22A60FC5008AD571 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA215229F9EDE00B9CC7C /* Bolts.framework */; };
+		3267FC1D22A60FCB008AD571 /* R2SDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA218229F9EDE00B9CC7C /* R2SDKFramework.framework */; };
+		3267FC1E22A60FCF008AD571 /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA217229F9EDE00B9CC7C /* AppsFlyerLib.framework */; };
+		3267FC1F22A6100E008AD571 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09522A141630071BF80 /* GameKit.framework */; };
 		32B3E09422A1415E0071BF80 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09322A1415E0071BF80 /* AdSupport.framework */; };
 		32B3E09622A141630071BF80 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09522A141630071BF80 /* GameKit.framework */; };
 		32B3E09822A141720071BF80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09722A141710071BF80 /* StoreKit.framework */; };
-		32CEA207229F7C7500B9CC7C /* BindAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA206229F7C7500B9CC7C /* BindAccountView.m */; };
 		32CEA219229F9EDF00B9CC7C /* R2SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32CEA209229F9EDE00B9CC7C /* R2SDK.bundle */; };
 		32CEA21A229F9EDF00B9CC7C /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32CEA20B229F9EDE00B9CC7C /* GoogleSignIn.bundle */; };
 		32CEA21B229F9EDF00B9CC7C /* R2GoogleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20C229F9EDE00B9CC7C /* R2GoogleFramework.framework */; };
@@ -56,14 +91,36 @@
 		32CEA223229F9EDF00B9CC7C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA215229F9EDE00B9CC7C /* Bolts.framework */; };
 		32CEA224229F9EDF00B9CC7C /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA217229F9EDE00B9CC7C /* AppsFlyerLib.framework */; };
 		32CEA225229F9EDF00B9CC7C /* R2SDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA218229F9EDE00B9CC7C /* R2SDKFramework.framework */; };
-		32CEA229229FA08200B9CC7C /* R2SDKPlat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA228229FA08200B9CC7C /* R2SDKPlat.m */; };
-		32CEA22D229FAC1500B9CC7C /* LoginImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA22C229FAC1500B9CC7C /* LoginImp.m */; };
 		32CEA230229FAF1000B9CC7C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
 		32CEA232229FAF1800B9CC7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */; };
 		32CEA234229FAF3B00B9CC7C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA233229FAF3B00B9CC7C /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3267FC2422A610CF008AD571 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 32518293229E24BB00623AFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3267FBE922A60DF8008AD571;
+			remoteInfo = R2DLIB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3267FBE822A60DF8008AD571 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				3267FC0F22A60F1F008AD571 /* R2SDKPlat.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3212476322A6164800B6A385 /* R2DLIB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = R2DLIB.framework; path = R2DLIB/R2DLIB.framework; sourceTree = "<group>"; };
 		3251829B229E24BB00623AFF /* R2DSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = R2DSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3251829E229E24BB00623AFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3251829F229E24BB00623AFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -132,6 +189,8 @@
 		3260C1E322A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuestLogoutWarnTipsView.m; sourceTree = "<group>"; };
 		3260C1E522A0F6F700E30FE9 /* FBGGUnbindView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBGGUnbindView.h; sourceTree = "<group>"; };
 		3260C1E622A0F6F700E30FE9 /* FBGGUnbindView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBGGUnbindView.m; sourceTree = "<group>"; };
+		3267FBEA22A60DF8008AD571 /* libR2DLIB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libR2DLIB.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3267FC2822A61256008AD571 /* FrameworkScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = FrameworkScript.sh; sourceTree = "<group>"; };
 		32B3E09322A1415E0071BF80 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		32B3E09522A141630071BF80 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		32B3E09722A141710071BF80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -164,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3212476422A6164800B6A385 /* R2DLIB.framework in Frameworks */,
 				32B3E09822A141720071BF80 /* StoreKit.framework in Frameworks */,
 				32B3E09622A141630071BF80 /* GameKit.framework in Frameworks */,
 				32B3E09422A1415E0071BF80 /* AdSupport.framework in Frameworks */,
@@ -183,13 +243,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3267FBE722A60DF8008AD571 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3267FC1F22A6100E008AD571 /* GameKit.framework in Frameworks */,
+				3267FC1E22A60FCF008AD571 /* AppsFlyerLib.framework in Frameworks */,
+				3267FC1D22A60FCB008AD571 /* R2SDKFramework.framework in Frameworks */,
+				3267FC1C22A60FC5008AD571 /* Bolts.framework in Frameworks */,
+				3267FC1B22A60FC2008AD571 /* FBSDKCoreKit.framework in Frameworks */,
+				3267FC1A22A60FBD008AD571 /* R2FacebookFramework.framework in Frameworks */,
+				3267FC1922A60FBB008AD571 /* FBSDKShareKit.framework in Frameworks */,
+				3267FC1822A60FB9008AD571 /* FBSDKLoginKit.framework in Frameworks */,
+				3267FC1722A60FB2008AD571 /* GoogleSignIn.framework in Frameworks */,
+				3267FC1622A60FB1008AD571 /* GoogleSignInDependencies.framework in Frameworks */,
+				3267FC1522A60FAE008AD571 /* R2GoogleFramework.framework in Frameworks */,
+				3267FC1422A60F8C008AD571 /* LocalAuthentication.framework in Frameworks */,
+				3267FC1322A60F86008AD571 /* AdSupport.framework in Frameworks */,
+				3267FC1222A60F72008AD571 /* SafariServices.framework in Frameworks */,
+				3267FC1122A60F62008AD571 /* SystemConfiguration.framework in Frameworks */,
+				3267FC1022A60F5C008AD571 /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		32518292229E24BB00623AFF = {
 			isa = PBXGroup;
 			children = (
+				3267FC2822A61256008AD571 /* FrameworkScript.sh */,
 				3251829D229E24BB00623AFF /* R2DSDK */,
+				3267FBEB22A60DF8008AD571 /* R2DLIB */,
 				3251829C229E24BB00623AFF /* Products */,
 				32CEA22E229FAF0F00B9CC7C /* Frameworks */,
 			);
@@ -199,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				3251829B229E24BB00623AFF /* R2DSDK.app */,
+				3267FBEA22A60DF8008AD571 /* libR2DLIB.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,6 +426,13 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		3267FBEB22A60DF8008AD571 /* R2DLIB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = R2DLIB;
+			sourceTree = "<group>";
+		};
 		32CEA208229F9EDE00B9CC7C /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +489,7 @@
 		32CEA22E229FAF0F00B9CC7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3212476322A6164800B6A385 /* R2DLIB.framework */,
 				32B3E09722A141710071BF80 /* StoreKit.framework */,
 				32B3E09522A141630071BF80 /* GameKit.framework */,
 				32B3E09322A1415E0071BF80 /* AdSupport.framework */,
@@ -426,6 +520,23 @@
 			productReference = 3251829B229E24BB00623AFF /* R2DSDK.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3267FBE922A60DF8008AD571 /* R2DLIB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3267FBF222A60DF8008AD571 /* Build configuration list for PBXNativeTarget "R2DLIB" */;
+			buildPhases = (
+				3267FBE622A60DF8008AD571 /* Sources */,
+				3267FBE722A60DF8008AD571 /* Frameworks */,
+				3267FBE822A60DF8008AD571 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = R2DLIB;
+			productName = R2DLIB;
+			productReference = 3267FBEA22A60DF8008AD571 /* libR2DLIB.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -437,6 +548,12 @@
 				TargetAttributes = {
 					3251829A229E24BB00623AFF = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					3267FBE922A60DF8008AD571 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					3267FC2022A610C2008AD571 = {
+						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
 			};
@@ -454,6 +571,8 @@
 			projectRoot = "";
 			targets = (
 				3251829A229E24BB00623AFF /* R2DSDK */,
+				3267FBE922A60DF8008AD571 /* R2DLIB */,
+				3267FC2022A610C2008AD571 /* WAPR2SDK */,
 			);
 		};
 /* End PBXProject section */
@@ -465,8 +584,8 @@
 			files = (
 				325182AB229E24BD00623AFF /* LaunchScreen.storyboard in Resources */,
 				325182A8229E24BD00623AFF /* Assets.xcassets in Resources */,
-				32CEA219229F9EDF00B9CC7C /* R2SDK.bundle in Resources */,
 				325182A6229E24BB00623AFF /* Main.storyboard in Resources */,
+				32CEA219229F9EDF00B9CC7C /* R2SDK.bundle in Resources */,
 				32CEA21A229F9EDF00B9CC7C /* GoogleSignIn.bundle in Resources */,
 				3251830C229E4C8900623AFF /* R2DSDKResources.bundle in Resources */,
 				32CEA21C229F9EDF00B9CC7C /* R2GoogleBundle.bundle in Resources */,
@@ -475,46 +594,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3267FC2622A610EB008AD571 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "chmod 755 \"$PROJECT_DIR/FrameworkScript.sh\" \n\"$PROJECT_DIR/FrameworkScript.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		32518297229E24BB00623AFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3253B2A0229EC407007C23CD /* ConfigCoreUtil.m in Sources */,
 				325182A3229E24BB00623AFF /* ViewController.m in Sources */,
-				32518301229E2F6C00623AFF /* MASViewAttribute.m in Sources */,
 				325182AE229E24BD00623AFF /* main.m in Sources */,
-				32518309229E398C00623AFF /* UIImage+GamaBundleImage.m in Sources */,
-				32518300229E2F6C00623AFF /* NSArray+MASAdditions.m in Sources */,
-				3251A0E722A0342A004A0CCD /* UIViewUtil.m in Sources */,
-				32CEA207229F7C7500B9CC7C /* BindAccountView.m in Sources */,
-				32518303229E2F6C00623AFF /* MASCompositeConstraint.m in Sources */,
-				325182FC229E2F6C00623AFF /* View+MASAdditions.m in Sources */,
-				32518312229E5AE300623AFF /* LoginTitleView.m in Sources */,
-				3251830F229E599800623AFF /* UIColor+HexStringToColorTW.m in Sources */,
-				32518302229E2F6C00623AFF /* MASConstraintMaker.m in Sources */,
-				3260C1E422A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m in Sources */,
-				3260C1E722A0F6F700E30FE9 /* FBGGUnbindView.m in Sources */,
-				325182BE229E28EF00623AFF /* GamaFunction.m in Sources */,
-				3251831B229E979B00623AFF /* GuestLoginWarnTipsView.m in Sources */,
 				325182A0229E24BB00623AFF /* AppDelegate.m in Sources */,
-				32518315229E5FD800623AFF /* LoginMainView.m in Sources */,
-				325182FD229E2F6C00623AFF /* MASConstraint.m in Sources */,
-				325182B8229E26CA00623AFF /* R2DLoginViewController.m in Sources */,
-				32518318229E6E0B00623AFF /* UIUtil.m in Sources */,
-				32518305229E2F6C00623AFF /* ViewController+MASAdditions.m in Sources */,
-				32CEA22D229FAC1500B9CC7C /* LoginImp.m in Sources */,
-				32518304229E2F6C00623AFF /* MASViewConstraint.m in Sources */,
-				3260C1E122A0D6F800E30FE9 /* SDKBaseView.m in Sources */,
-				3253B2A5229ED684007C23CD /* CurrentLoginInfoView.m in Sources */,
-				32518322229EAAA100623AFF /* R2SDKDATA.m in Sources */,
-				32CEA229229FA08200B9CC7C /* R2SDKPlat.m in Sources */,
-				325182FF229E2F6C00623AFF /* MASLayoutConstraint.m in Sources */,
-				325182FE229E2F6C00623AFF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3267FBE622A60DF8008AD571 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3267FBF322A60E72008AD571 /* R2SDKPlat.m in Sources */,
+				3267FBF422A60E72008AD571 /* ConfigCoreUtil.m in Sources */,
+				3267FBF522A60E72008AD571 /* R2SDKDATA.m in Sources */,
+				3267FBF622A60E72008AD571 /* UIColor+HexStringToColorTW.m in Sources */,
+				3267FBF722A60E72008AD571 /* UIImage+GamaBundleImage.m in Sources */,
+				3267FBF822A60E72008AD571 /* MASCompositeConstraint.m in Sources */,
+				3267FBF922A60E72008AD571 /* MASConstraint.m in Sources */,
+				3267FBFA22A60E72008AD571 /* MASConstraintMaker.m in Sources */,
+				3267FBFB22A60E72008AD571 /* MASLayoutConstraint.m in Sources */,
+				3267FBFC22A60E72008AD571 /* MASViewAttribute.m in Sources */,
+				3267FBFD22A60E72008AD571 /* MASViewConstraint.m in Sources */,
+				3267FBFE22A60E72008AD571 /* NSArray+MASAdditions.m in Sources */,
+				3267FBFF22A60E72008AD571 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				3267FC0022A60E72008AD571 /* View+MASAdditions.m in Sources */,
+				3267FC0122A60E72008AD571 /* ViewController+MASAdditions.m in Sources */,
+				3267FC0222A60E72008AD571 /* GamaFunction.m in Sources */,
+				3267FC0322A60E72008AD571 /* UIUtil.m in Sources */,
+				3267FC0422A60E72008AD571 /* LoginImp.m in Sources */,
+				3267FC0522A60E72008AD571 /* LoginTitleView.m in Sources */,
+				3267FC0622A60E72008AD571 /* LoginMainView.m in Sources */,
+				3267FC0722A60E72008AD571 /* GuestLoginWarnTipsView.m in Sources */,
+				3267FC0822A60E72008AD571 /* CurrentLoginInfoView.m in Sources */,
+				3267FC0922A60E72008AD571 /* BindAccountView.m in Sources */,
+				3267FC0A22A60E72008AD571 /* UIViewUtil.m in Sources */,
+				3267FC0B22A60E72008AD571 /* SDKBaseView.m in Sources */,
+				3267FC0C22A60E72008AD571 /* GuestLogoutWarnTipsView.m in Sources */,
+				3267FC0D22A60E72008AD571 /* FBGGUnbindView.m in Sources */,
+				3267FC0E22A60E72008AD571 /* R2DLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3267FC2522A610CF008AD571 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3267FBE922A60DF8008AD571 /* R2DLIB */;
+			targetProxy = 3267FC2422A610CF008AD571 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		325182A4229E24BB00623AFF /* Main.storyboard */ = {
@@ -660,6 +814,7 @@
 					"$(PROJECT_DIR)/R2DSDK/ThirdLib/facebook",
 					"$(PROJECT_DIR)/R2DSDK/ThirdLib/appsflyer",
 					"$(PROJECT_DIR)/R2DSDK/ThirdLib",
+					"$(PROJECT_DIR)/R2DLIB",
 				);
 				INFOPLIST_FILE = R2DSDK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -690,6 +845,7 @@
 					"$(PROJECT_DIR)/R2DSDK/ThirdLib/facebook",
 					"$(PROJECT_DIR)/R2DSDK/ThirdLib/appsflyer",
 					"$(PROJECT_DIR)/R2DSDK/ThirdLib",
+					"$(PROJECT_DIR)/R2DLIB",
 				);
 				INFOPLIST_FILE = R2DSDK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -705,6 +861,60 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "yyxmbkr-dev";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3267FBF022A60DF8008AD571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/google",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/facebook",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/appsflyer",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3267FBF122A60DF8008AD571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/google",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/facebook",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib",
+					"$(PROJECT_DIR)/R2DSDK/ThirdLib/appsflyer",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3267FC2222A610C2008AD571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3267FC2322A610C2008AD571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -725,6 +935,24 @@
 			buildConfigurations = (
 				325182B2229E24BD00623AFF /* Debug */,
 				325182B3229E24BD00623AFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3267FBF222A60DF8008AD571 /* Build configuration list for PBXNativeTarget "R2DLIB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3267FBF022A60DF8008AD571 /* Debug */,
+				3267FBF122A60DF8008AD571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3267FC2122A610C2008AD571 /* Build configuration list for PBXAggregateTarget "WAPR2SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3267FC2222A610C2008AD571 /* Debug */,
+				3267FC2322A610C2008AD571 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,6 +11,7 @@
 #import "GamaFunction.h"
 #import <R2SDKFramework/R2SDKFramework.h>
 #import "R2DLoginViewController.h"
+#import "R2DHeader.h"
 
 @implementation R2SDKPlat
 
@@ -84,8 +85,8 @@
     
     //google 113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com
 //    NSString *googleClientId = @"9825068096-ama8dc07lj0vp7bo052l5muv142a2qas.apps.googleusercontent.com";
-    NSString *googleClientId = @"113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com";
-    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
+//    NSString *googleClientId = @"113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com";
+//    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
     
     SDK_DATA;
     return YES;

@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "R2DHeader.h"
+#import <R2FacebookFramework/R2FacebookFramework.h>
+#import <R2GoogleFramework/R2GoogleFramework.h>
+
+#import <R2SDKFramework/R2SDKFramework.h>
+
 
 NS_ASSUME_NONNULL_BEGIN
 
