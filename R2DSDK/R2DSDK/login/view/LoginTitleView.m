@@ -42,16 +42,19 @@
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:GetImage(@"r2_logo_mini.png")]; //[UIImage gama_imageNamed:@"r2_logo_mini.png"];
     
     titleImageView.backgroundColor = [UIColor clearColor];
+    titleImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:titleImageView];
     
     [titleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
         make.centerY.equalTo(self);
         
-        make.size.mas_equalTo(CGSizeMake( kBgWidth / 4, 60));
+//        make.size.mas_equalTo(self).mas_offset(20,10,-10,-20);
         
         make.top.offset(10);
         make.bottom.offset(-10);
+        make.left.offset(20);
+        make.right.offset(-20);
     }];
     return self;
 }

@@ -68,7 +68,7 @@
     [currentTipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.width.mas_equalTo(kBgWidth / 2);
-        make.height.mas_equalTo(40);
+//        make.height.mas_equalTo(40);
         make.top.mas_equalTo(contentView).offset(15);
         make.left.mas_equalTo(contentView).offset(10);
     }];

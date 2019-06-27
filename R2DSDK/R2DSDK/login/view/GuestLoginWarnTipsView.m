@@ -27,6 +27,7 @@
     self.backgroundColor = [UIColor colorWithHexString:ContentViewBgColor];
     
     UIImageView *warnImageView = [[UIImageView alloc] initWithImage:[UIImage gama_imageNamed:@"r2d_guest_warning.png"]];
+    warnImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:warnImageView];
     [warnImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(@(0));
