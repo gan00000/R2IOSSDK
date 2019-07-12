@@ -30,5 +30,6 @@
 
 
 +(NSString *)makeFixedUniqueLoginID;
++(NSString *)remakeFixedUniqueLoginID;
 
 @end

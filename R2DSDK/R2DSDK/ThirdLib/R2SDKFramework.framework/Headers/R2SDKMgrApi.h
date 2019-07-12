@@ -26,6 +26,8 @@ typedef void (^RNShareLinkHandler) (int code,NSString *msg,R2ShareResponse *resu
 
 @property(nonatomic,strong)R2SDKPaymentTransactionObserverV2 *transactionObserver;
 
+@property R2LoginHandler guestUidLoginHandler;
+
 +(id)sharedInstance;
 
 /* SDK initialization */
@@ -43,6 +45,10 @@ typedef void (^RNShareLinkHandler) (int code,NSString *msg,R2ShareResponse *resu
 -(void)doTokenLogin:(R2LoginHandler)handler;
 
 -(void)loginWithBandNewAccount:(R2LoginHandler)handler;
+
+
+//我的勇者海外游客登陆接口,特别定制
+-(void)guestUidLoginWithCompletionHandler:(R2LoginHandler)handler;
 
 /**
  登出

@@ -22,7 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		3212476422A6164800B6A385 /* R2DLIB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212476322A6164800B6A385 /* R2DLIB.framework */; };
+		321F7CDE22C461D500ADABEE /* libR2DLIB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3267FBEA22A60DF8008AD571 /* libR2DLIB.a */; };
 		325182A0229E24BB00623AFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251829F229E24BB00623AFF /* AppDelegate.m */; };
 		325182A3229E24BB00623AFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182A2229E24BB00623AFF /* ViewController.m */; };
 		325182A6229E24BB00623AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325182A4229E24BB00623AFF /* Main.storyboard */; };
@@ -223,7 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3212476422A6164800B6A385 /* R2DLIB.framework in Frameworks */,
+				321F7CDE22C461D500ADABEE /* libR2DLIB.a in Frameworks */,
 				32B3E09822A141720071BF80 /* StoreKit.framework in Frameworks */,
 				32B3E09622A141630071BF80 /* GameKit.framework in Frameworks */,
 				32B3E09422A1415E0071BF80 /* AdSupport.framework in Frameworks */,
@@ -826,9 +826,9 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.woori.billionaire.krapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.r2.sgmnz.smapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "yyxmbkr-dev";
+				PROVISIONING_PROFILE_SPECIFIER = "sgmnz-smdev";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -857,9 +857,9 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.woori.billionaire.krapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.r2.sgmnz.smapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "yyxmbkr-dev";
+				PROVISIONING_PROFILE_SPECIFIER = "sgmnz-smdev";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
