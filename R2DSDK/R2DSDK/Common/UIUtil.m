@@ -1,14 +1,14 @@
 //
 //  UIUtil.m
-//  R2DSDK
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/29.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
 //
 
 #import "UIUtil.h"
-#import "R2DHeader.h"
-#import "R2SDKPlat.h"
+#import "CCSkyHourHeader.h"
+#import "CCSkyHourSDKPlat.h"
 
 @implementation UIUtil
 
@@ -91,7 +91,7 @@
 //      return  [GamaFunction getCurrentViewController];
 //    }
     
-     return  [GamaFunction getCurrentViewController];
+     return  [CCSkyHourFunction getCurrentViewController];
 }
 
 

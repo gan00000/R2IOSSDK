@@ -1,6 +1,6 @@
 //
 //  LoginImp.h
-//  R2DSDK
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/30.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "R2DHeader.h"
-#import "R2SDKPlat.h"
+#import "CCSkyHourHeader.h"
+#import "CCSkyHourSDKPlat.h"
 #import "../view/UIViewUtil.h"
 
 NS_ASSUME_NONNULL_BEGIN

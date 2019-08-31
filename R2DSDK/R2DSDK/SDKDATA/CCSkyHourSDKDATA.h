@@ -1,6 +1,6 @@
 //
 //  R2SDKDATA.h
-//  R2DSDK
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/29.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface R2SDKDATA : NSObject
+@interface CCSkyHourSDKDATA : NSObject
 
 @property (nonatomic, copy)NSString * gameLoginToken;
 @property (nonatomic, copy)NSString * gameLoginTimeStamp;

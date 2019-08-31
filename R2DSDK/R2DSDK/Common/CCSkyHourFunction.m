@@ -1,4 +1,4 @@
-#import "GamaFunction.h"
+#import "CCSkyHourFunction.h"
 
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "netdb.h"
@@ -12,26 +12,26 @@
 #import <net/if.h>
 #import <net/if_dl.h>
 
-@implementation GamaFunction
+@implementation CCSkyHourFunction
 
 + (NSString *)getBundleName
 {
-    return [GamaFunction getProjectInfoPlist][@"CFBundleName"];
+    return [CCSkyHourFunction getProjectInfoPlist][@"CFBundleName"];
 }
 
 + (NSString *)getBundleIdentifier
 {
-    return [GamaFunction getProjectInfoPlist][@"CFBundleIdentifier"];
+    return [CCSkyHourFunction getProjectInfoPlist][@"CFBundleIdentifier"];
 }
 
 + (NSString *)getBundleShortVersionString
 {
-    return [GamaFunction getProjectInfoPlist][@"CFBundleShortVersionString"];
+    return [CCSkyHourFunction getProjectInfoPlist][@"CFBundleShortVersionString"];
 }
 
 + (NSString *)getBundleVersion
 {
-    return [GamaFunction getProjectInfoPlist][@"CFBundleVersion"];
+    return [CCSkyHourFunction getProjectInfoPlist][@"CFBundleVersion"];
 }
 
 #pragma mark - 获取时间戳
@@ -346,7 +346,7 @@
 {
     // 获取系统语言
     NSString *preferredLang = [[NSLocale preferredLanguages] firstObject];
-    if ([GamaFunction getSystemVersion].intValue >= 9.0) {
+    if ([CCSkyHourFunction getSystemVersion].intValue >= 9.0) {
         NSDictionary *languageDic = [NSLocale componentsFromLocaleIdentifier:preferredLang];
         NSString *countryCode = [languageDic objectForKey:@"kCFLocaleCountryCodeKey"];
         NSString *languageCode = [languageDic objectForKey:@"kCFLocaleLanguageCodeKey"];

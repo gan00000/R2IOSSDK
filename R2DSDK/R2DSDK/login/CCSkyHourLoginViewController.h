@@ -1,6 +1,6 @@
 //
-//  R2DLoginViewController.h
-//  R2DSDK
+//  CCSkyHourLoginViewController.h
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/29.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
-#import "R2DHeader.h"
+#import "CCSkyHourHeader.h"
 #import "LoginViewDelegate.h"
 
 
@@ -22,7 +22,7 @@ typedef NS_OPTIONS(NSUInteger, SDKPage)
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface R2DLoginViewController : UIViewController <LoginViewDelegate>
+@interface CCSkyHourLoginViewController : UIViewController <LoginViewDelegate>
 
 -(instancetype)initWithPageType:(SDKPage) pageType;
 

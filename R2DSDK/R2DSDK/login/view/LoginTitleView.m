@@ -1,13 +1,13 @@
 //
 //  LoginTitleView.m
-//  R2DSDK
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/29.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
 //
 
 #import "LoginTitleView.h"
-#import "GamaFunction.h"
+#import "CCSkyHourFunction.h"
 
 @implementation LoginTitleView
 

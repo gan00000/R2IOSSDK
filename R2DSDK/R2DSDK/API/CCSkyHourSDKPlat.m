@@ -1,16 +1,16 @@
 //
 //  R2SDKPlat.m
-//  R2DSDK
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/30.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
 //
 
 #import "CCSkyHourSDKPlat.h"
-#import "R2DHeader.h"
-#import "GamaFunction.h"
-#import "R2DLoginViewController.h"
-#import "R2DHeader.h"
+#import "CCSkyHourHeader.h"
+#import "CCSkyHourFunction.h"
+#import "CCSkyHourLoginViewController.h"
+#import "CCSkyHourHeader.h"
 
 @implementation CCSkyHourSDKPlat
 
@@ -109,7 +109,7 @@
     }
     SDK_DATA.isNeedAutoLogin = YES;
     self.gameUIViewController = gameUIViewController;
-     R2DLoginViewController *sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_Login)];
+     CCSkyHourLoginViewController *sdkPresentedVC = [[CCSkyHourLoginViewController alloc] initWithPageType:(SDKPage_Login)];
 
 //    self.sdkPresentedVC.definesPresentationContext = YES;
 //    self.sdkPresentedVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有
@@ -128,7 +128,7 @@
     SDK_DATA.isNeedAutoLogin = isNeedAutoLogin;
     
     self.gameUIViewController = gameUIViewController;
-    R2DLoginViewController *sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_Login)];
+    CCSkyHourLoginViewController *sdkPresentedVC = [[CCSkyHourLoginViewController alloc] initWithPageType:(SDKPage_Login)];
    [self showController:sdkPresentedVC];
 }
 
@@ -143,7 +143,7 @@
     }
     
     self.gameUIViewController = gameUIViewController;
-    R2DLoginViewController *sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_LoginType)];
+    CCSkyHourLoginViewController *sdkPresentedVC = [[CCSkyHourLoginViewController alloc] initWithPageType:(SDKPage_LoginType)];
     //    presentedVC.view.backgroundColor = [UIColor clearColor];
     
 //    self.sdkPresentedVC.definesPresentationContext = YES;
@@ -164,14 +164,14 @@
     }
     
     self.gameUIViewController = gameUIViewController;
-    R2DLoginViewController *sdkPresentedVC = [[R2DLoginViewController alloc] initWithPageType:(SDKPage_UnBind)];
+    CCSkyHourLoginViewController *sdkPresentedVC = [[CCSkyHourLoginViewController alloc] initWithPageType:(SDKPage_UnBind)];
     //    presentedVC.view.backgroundColor = [UIColor clearColor];
     
     [self showController:sdkPresentedVC];
     
 }
 
--(void)showController:(R2DLoginViewController *)controller
+-(void)showController:(CCSkyHourLoginViewController *)controller
 {
     controller.definesPresentationContext = YES;
     controller.modalPresentationStyle = UIModalPresentationOverCurrentContext;//关键语句，必须有

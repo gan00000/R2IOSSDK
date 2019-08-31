@@ -1,15 +1,15 @@
 //
 //  AppDelegate.m
-//  R2DSDK
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/29.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "login/R2DLoginViewController.h"
+#import "login/CCSkyHourLoginViewController.h"
 #import "ViewController.h"
-#import "R2SDKPlat.h"
+#import "CCSkyHourSDKPlat.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +23,7 @@
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     
     //添加下面的SDK代码
-    BOOL handled = [[R2SDKPlat shareR2SDK] application:application openURL:url options:options];
+    BOOL handled = [[CCSkyHourSDKPlat shareR2SDK] application:application openURL:url options:options];
     // Add any custom logic here.
     return handled;
 }
@@ -39,7 +39,7 @@
     
     
     //添加下面的SDK代码
-    [[R2SDKPlat shareR2SDK] application:application didFinishLaunchingWithOptions:launchOptions];
+    [[CCSkyHourSDKPlat shareR2SDK] application:application didFinishLaunchingWithOptions:launchOptions];
     //googleClientId联系SDK人员获取
 //    NSString *googleClientId = @"113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com";
 //    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
@@ -74,7 +74,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
     //添加下面的SDK代码
-     [[R2SDKPlat shareR2SDK] applicationWillTerminate:application];
+     [[CCSkyHourSDKPlat shareR2SDK] applicationWillTerminate:application];
 }
 
 

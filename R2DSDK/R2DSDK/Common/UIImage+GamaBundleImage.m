@@ -1,7 +1,7 @@
 
 
 #import "UIImage+GamaBundleImage.h"
-#import "R2DHeader.h"
+#import "CCSkyHourHeader.h"
 
 @implementation UIImage (EFNBundleImage)
 

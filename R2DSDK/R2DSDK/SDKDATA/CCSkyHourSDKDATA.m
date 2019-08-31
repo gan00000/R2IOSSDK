@@ -1,21 +1,21 @@
 //
 //  R2SDKDATA.m
-//  R2DSDK
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/29.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
 //
 
-#import "R2SDKDATA.h"
+#import "CCSkyHourSDKDATA.h"
 
-@implementation R2SDKDATA
+@implementation CCSkyHourSDKDATA
 
 + (instancetype)sharedSdkData
 {
-    static R2SDKDATA * pfData = nil;
+    static CCSkyHourSDKDATA * pfData = nil;
     static dispatch_once_t once_dispatch;
     dispatch_once(&once_dispatch, ^{
-        pfData = [[R2SDKDATA alloc] initSDKDATA];
+        pfData = [[CCSkyHourSDKDATA alloc] initSDKDATA];
     });
     return pfData;
 }

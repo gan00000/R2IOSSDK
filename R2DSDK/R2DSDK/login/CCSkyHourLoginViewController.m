@@ -1,12 +1,12 @@
 //
-//  R2DLoginViewController.m
-//  R2DSDK
+//  CCSkyHourLoginViewController.m
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/29.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
 //
 
-#import "R2DLoginViewController.h"
+#import "CCSkyHourLoginViewController.h"
 #import "view/LoginMainView.h"
 #import "view/GuestLoginWarnTipsView.h"
 #import "view/CurrentLoginInfoView.h"
@@ -14,10 +14,10 @@
 #import "LoginImp.h"
 #import "view/GuestLogoutWarnTipsView.h"
 #import "view/FBGGUnbindView.h"
-#import "R2SDKPlat.h"
+#import "CCSkyHourSDKPlat.h"
 
 
-@implementation R2DLoginViewController{
+@implementation CCSkyHourLoginViewController{
     LoginMainView *loginMainView;
     SDKPage sdkPageType;
     CurrentLoginInfoView *mCurrentLoginInfoView;

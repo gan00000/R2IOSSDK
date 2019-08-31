@@ -7,7 +7,7 @@
 
 #define IS_INTERFACE_THWARTWISE_IN  [GAMA_GET_INFO(GAMA_GAME_IS_INTERFACE_THWARTWISE) isEqualToString:@"YES"]
 
-@interface GamaFunction : NSObject
+@interface CCSkyHourFunction : NSObject
 {}
 
 

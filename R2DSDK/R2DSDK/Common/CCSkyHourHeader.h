@@ -1,6 +1,6 @@
 //
-//  R2DHeader.h
-//  R2DSDK
+//  CCSkyHourHeader.h
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/29.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
@@ -11,16 +11,16 @@
 #import "UIImage+GamaBundleImage.h"
 #import "UIColor+HexStringToColorTW.h"
 #import "UIUtil.h"
-#import "R2SDKDATA.h"
+#import "CCSkyHourSDKDATA.h"
 #import "ConfigCoreUtil.h"
-#import "R2SDKPlat.h"
+#import "CCSkyHourSDKPlat.h"
 
 
-#import "GamaFunction.h"
+#import "CCSkyHourFunction.h"
 
 
-#ifndef R2DHeader_h
-#define R2DHeader_h
+#ifndef CCSkyHourHeader_h
+#define CCSkyHourHeader_h
 
 // cornerRadius
 #define kR2BtnCornerRadius                 8.0f
@@ -35,10 +35,10 @@
 
 #define ContentViewBgColor                    @"#bebebf"
 
-#define SDK_DEFAULT_BUNDLE_NAME  @"R2DSDKResources"
+#define SDK_DEFAULT_BUNDLE_NAME  @"CCSkyHourSDKResources"
 
 
-#define SDK_DATA                           [R2SDKDATA sharedSdkData]
+#define SDK_DATA                           [CCSkyHourSDKDATA sharedSdkData]
 
 #define LABEL_FONT_NAME_BOLD                 @"Helvetica-Bold"
 #define LABEL_FONT_NAME_Helvetica           @"Helvetica"
@@ -55,5 +55,5 @@
 
 typedef void (^ViewClickHandler)(NSString* msg, NSInteger m);
 
-#endif /* R2DHeader_h */
+#endif /* CCSkyHourHeader_h */
 

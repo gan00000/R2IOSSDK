@@ -1,13 +1,13 @@
 //
 //  LoginImp.m
-//  R2DSDK
+//  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/30.
 //  Copyright © 2019 ganyuanrong. All rights reserved.
 //
 
 #import "LoginImp.h"
-#import "R2DHeader.h"
+#import "CCSkyHourHeader.h"
 
 
 @implementation LoginImp
