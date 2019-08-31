@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <R2SDKFramework/R2SDKFramework.h>
+//#import <R2SDKFramework/R2SDKFramework.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic)Boolean isLogin;
 
-@property (nonatomic)R2LoginResponse * loginResult;
+@property  (nonatomic, copy)NSString * loginResult;
 
 @property(nonatomic,assign) BOOL isBindFb;
 @property(nonatomic,assign) BOOL isBindGoogle;

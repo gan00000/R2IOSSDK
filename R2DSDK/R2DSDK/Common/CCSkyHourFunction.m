@@ -150,7 +150,7 @@
     UIWindow *keyWindow = [self getCurrentWindow];
     // SDK expects a key window at this point, if it is not, make it one
     if (keyWindow !=  nil && !keyWindow.isKeyWindow) {
-        NSLog(@"Unable to obtain a key window, marking %@ as keyWindow");
+        NSLog(@"Unable to obtain a key window, marking as keyWindow");
         [keyWindow makeKeyWindow];
     }
     

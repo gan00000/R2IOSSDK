@@ -12,6 +12,7 @@
 #import "CCSkyHourHeader.h"
 #import "CCSkyHourSDKPlat.h"
 #import "../view/UIViewUtil.h"
+#import "CCSDKResponse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(void) logoutAccount:(UIViewController *) mController;
 
-+(void)loginSuccess:(R2LoginResponse *) r2LoginResult mController:(UIViewController *) mController;
++(void)loginSuccess:(CCSDKResponse *) r2LoginResult mController:(UIViewController *) mController;
 
 +(void)unbindFacebook:(UIViewController *)viewController;
 

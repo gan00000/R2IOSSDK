@@ -68,6 +68,7 @@
 		32B3E09622A141630071BF80 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09522A141630071BF80 /* GameKit.framework */; };
 		32B3E09822A141720071BF80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09722A141710071BF80 /* StoreKit.framework */; };
 		32BD6EDA231AB1F400F146EC /* CCSkyHourLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BD6ED9231AB1F400F146EC /* CCSkyHourLoginViewController.m */; };
+		32BD6F45231ABED800F146EC /* CCSDKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BD6F44231ABED800F146EC /* CCSDKResponse.m */; };
 		32CEA230229FAF1000B9CC7C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
 		32CEA232229FAF1800B9CC7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */; };
 		32CEA234229FAF3B00B9CC7C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA233229FAF3B00B9CC7C /* SafariServices.framework */; };
@@ -171,6 +172,8 @@
 		32B3E09722A141710071BF80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		32BD6ED8231AB1F400F146EC /* CCSkyHourLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSkyHourLoginViewController.h; sourceTree = "<group>"; };
 		32BD6ED9231AB1F400F146EC /* CCSkyHourLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSkyHourLoginViewController.m; sourceTree = "<group>"; };
+		32BD6F43231ABED800F146EC /* CCSDKResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSDKResponse.h; sourceTree = "<group>"; };
+		32BD6F44231ABED800F146EC /* CCSDKResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCSDKResponse.m; sourceTree = "<group>"; };
 		32CEA205229F7C7500B9CC7C /* BindAccountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindAccountView.h; sourceTree = "<group>"; };
 		32CEA206229F7C7500B9CC7C /* BindAccountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindAccountView.m; sourceTree = "<group>"; };
 		32CEA227229FA08200B9CC7C /* CCSkyHourSDKPlat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSkyHourSDKPlat.h; sourceTree = "<group>"; };
@@ -356,6 +359,8 @@
 				3251831C229EA7F000623AFF /* ConfigCoreUtil.h */,
 				32518320229EAAA100623AFF /* CCSkyHourSDKDATA.h */,
 				32518321229EAAA100623AFF /* CCSkyHourSDKDATA.m */,
+				32BD6F43231ABED800F146EC /* CCSDKResponse.h */,
+				32BD6F44231ABED800F146EC /* CCSDKResponse.m */,
 			);
 			path = SDKDATA;
 			sourceTree = "<group>";
@@ -531,6 +536,7 @@
 				3267FBF522A60E72008AD571 /* CCSkyHourSDKDATA.m in Sources */,
 				3267FBF622A60E72008AD571 /* UIColor+HexStringToColorTW.m in Sources */,
 				3267FBF722A60E72008AD571 /* UIImage+GamaBundleImage.m in Sources */,
+				32BD6F45231ABED800F146EC /* CCSDKResponse.m in Sources */,
 				3267FBF822A60E72008AD571 /* MASCompositeConstraint.m in Sources */,
 				3267FBF922A60E72008AD571 /* MASConstraint.m in Sources */,
 				3267FBFA22A60E72008AD571 /* MASConstraintMaker.m in Sources */,
@@ -764,13 +770,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/R2DSDK/ThirdLib/google",
-					"$(PROJECT_DIR)/R2DSDK/ThirdLib/facebook",
-					"$(PROJECT_DIR)/R2DSDK/ThirdLib",
-					"$(PROJECT_DIR)/R2DSDK/ThirdLib/appsflyer",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -783,13 +783,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/R2DSDK/ThirdLib/google",
-					"$(PROJECT_DIR)/R2DSDK/ThirdLib/facebook",
-					"$(PROJECT_DIR)/R2DSDK/ThirdLib",
-					"$(PROJECT_DIR)/R2DSDK/ThirdLib/appsflyer",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -14,6 +14,7 @@
 #import "CCSkyHourSDKDATA.h"
 #import "ConfigCoreUtil.h"
 #import "CCSkyHourSDKPlat.h"
+#import "CCSDKResponse.h"
 
 
 #import "CCSkyHourFunction.h"

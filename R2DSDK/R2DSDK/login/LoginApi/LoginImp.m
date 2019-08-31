@@ -16,7 +16,7 @@
 +(void) loginGuestAccount:(UIViewController *)viewController isFormAutoLogin:(BOOL)isFormAutoLogin
 {
     [self startLoadingView:viewController];
-//    [R2SDKApi loginAsyncWithFixedGuestAccount:^(int code, NSString *msg, R2LoginResponse *result) {
+//    [R2SDKApi loginAsyncWithFixedGuestAccount:^(int code, NSString *msg, CCSDKResponse *result) {
 //
 //        [self stopLoadingView:viewController];
 //
@@ -87,13 +87,13 @@
 //                                               completionHandler:^(int code,
 //                                                                   NSString *msg,
 //                                             R2FacebookLoginResult *facebookLoginResult,
-//                                             R2LoginResponse *r2LoginResult) {
+//                                             CCSDKResponse *r2LoginResult) {
 //
 //                                                   [self stopLoadingView:viewController];
 //        if (code == R2_RESPONSE_SUCCESS_CODE) {
 //
 ////                                             R2FacebookLoginResult *facebookLoginResult,
-////                                             R2LoginResponse *r2LoginResult) {
+////                                             CCSDKResponse *r2LoginResult) {
 ////        if (code == R2_RESPONSE_SUCCESS_CODE) {
 ////
 ////             NSLog(@"Facebook login successfully,msg -> %@,fbuid -> %@,fbimageURL -> %@,fbname -> %@",msg,facebookLoginResult.fbUserId,facebookLoginResult.fbImageUrl,facebookLoginResult.fbUsername);
@@ -130,7 +130,7 @@
 //    [[R2GoogleHelper sharedInstance] loginFromViewController:viewController
 //                                         onCompletionHandler:^(int code,
 //                                                               NSString *msg,
-//                                                               R2LoginResponse  * r2LoginResult,
+//                                                               CCSDKResponse  * r2LoginResult,
 //                                                               NSDictionary *result) {
 //                                             
 //                                             [self stopLoadingView:viewController];
@@ -154,7 +154,7 @@
 //    
 //}
 //
-//+(void)loginSuccess:(R2LoginResponse *) r2LoginResult mController:(UIViewController *) mController
+//+(void)loginSuccess:(CCSDKResponse *) r2LoginResult mController:(UIViewController *) mController
 //{
 //    SDK_DATA.loginResult = r2LoginResult;
 //    NSString *r2UserId = r2LoginResult.r2Uid;
@@ -236,7 +236,7 @@
 //    [self startLoadingView:viewController];
 //    [[R2GoogleHelper sharedInstance] bindFromViewController:viewController
 //                                                  withR2Uid:SDK_DATA.gameUserId
-//                                        onCompletionHandler:^(int code, NSString *msg, R2LoginResponse *loginResponse, NSDictionary *result) {
+//                                        onCompletionHandler:^(int code, NSString *msg, CCSDKResponse *loginResponse, NSDictionary *result) {
 //
 //                                            [self stopLoadingView:viewController];
 //
