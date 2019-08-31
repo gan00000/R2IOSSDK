@@ -8,16 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <R2FacebookFramework/R2FacebookFramework.h>
-#import <R2GoogleFramework/R2GoogleFramework.h>
-
-#import <R2SDKFramework/R2SDKFramework.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef void (^R2SDKLoginCompletionHandler)(R2LoginResponse* loginResponse);
+typedef void (^R2SDKLoginCompletionHandler)(NSString* loginResponse);
 
 typedef void (^R2SDKLogoutHandler)(NSInteger logout);
 

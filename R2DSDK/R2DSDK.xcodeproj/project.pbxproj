@@ -64,33 +64,10 @@
 		3267FC1222A60F72008AD571 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA233229FAF3B00B9CC7C /* SafariServices.framework */; };
 		3267FC1322A60F86008AD571 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09322A1415E0071BF80 /* AdSupport.framework */; };
 		3267FC1422A60F8C008AD571 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
-		3267FC1522A60FAE008AD571 /* R2GoogleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20C229F9EDE00B9CC7C /* R2GoogleFramework.framework */; };
-		3267FC1622A60FB1008AD571 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20E229F9EDE00B9CC7C /* GoogleSignInDependencies.framework */; };
-		3267FC1722A60FB2008AD571 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20F229F9EDE00B9CC7C /* GoogleSignIn.framework */; };
-		3267FC1822A60FB9008AD571 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA211229F9EDE00B9CC7C /* FBSDKLoginKit.framework */; };
-		3267FC1922A60FBB008AD571 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA212229F9EDE00B9CC7C /* FBSDKShareKit.framework */; };
-		3267FC1A22A60FBD008AD571 /* R2FacebookFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA213229F9EDE00B9CC7C /* R2FacebookFramework.framework */; };
-		3267FC1B22A60FC2008AD571 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA214229F9EDE00B9CC7C /* FBSDKCoreKit.framework */; };
-		3267FC1C22A60FC5008AD571 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA215229F9EDE00B9CC7C /* Bolts.framework */; };
-		3267FC1D22A60FCB008AD571 /* R2SDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA218229F9EDE00B9CC7C /* R2SDKFramework.framework */; };
-		3267FC1E22A60FCF008AD571 /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA217229F9EDE00B9CC7C /* AppsFlyerLib.framework */; };
 		3267FC1F22A6100E008AD571 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09522A141630071BF80 /* GameKit.framework */; };
 		32B3E09422A1415E0071BF80 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09322A1415E0071BF80 /* AdSupport.framework */; };
 		32B3E09622A141630071BF80 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09522A141630071BF80 /* GameKit.framework */; };
 		32B3E09822A141720071BF80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09722A141710071BF80 /* StoreKit.framework */; };
-		32CEA219229F9EDF00B9CC7C /* R2SDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32CEA209229F9EDE00B9CC7C /* R2SDK.bundle */; };
-		32CEA21A229F9EDF00B9CC7C /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32CEA20B229F9EDE00B9CC7C /* GoogleSignIn.bundle */; };
-		32CEA21B229F9EDF00B9CC7C /* R2GoogleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20C229F9EDE00B9CC7C /* R2GoogleFramework.framework */; };
-		32CEA21C229F9EDF00B9CC7C /* R2GoogleBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32CEA20D229F9EDE00B9CC7C /* R2GoogleBundle.bundle */; };
-		32CEA21D229F9EDF00B9CC7C /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20E229F9EDE00B9CC7C /* GoogleSignInDependencies.framework */; };
-		32CEA21E229F9EDF00B9CC7C /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA20F229F9EDE00B9CC7C /* GoogleSignIn.framework */; };
-		32CEA21F229F9EDF00B9CC7C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA211229F9EDE00B9CC7C /* FBSDKLoginKit.framework */; };
-		32CEA220229F9EDF00B9CC7C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA212229F9EDE00B9CC7C /* FBSDKShareKit.framework */; };
-		32CEA221229F9EDF00B9CC7C /* R2FacebookFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA213229F9EDE00B9CC7C /* R2FacebookFramework.framework */; };
-		32CEA222229F9EDF00B9CC7C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA214229F9EDE00B9CC7C /* FBSDKCoreKit.framework */; };
-		32CEA223229F9EDF00B9CC7C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA215229F9EDE00B9CC7C /* Bolts.framework */; };
-		32CEA224229F9EDF00B9CC7C /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA217229F9EDE00B9CC7C /* AppsFlyerLib.framework */; };
-		32CEA225229F9EDF00B9CC7C /* R2SDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA218229F9EDE00B9CC7C /* R2SDKFramework.framework */; };
 		32CEA230229FAF1000B9CC7C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
 		32CEA232229FAF1800B9CC7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */; };
 		32CEA234229FAF3B00B9CC7C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA233229FAF3B00B9CC7C /* SafariServices.framework */; };
@@ -196,19 +173,6 @@
 		32B3E09722A141710071BF80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		32CEA205229F7C7500B9CC7C /* BindAccountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindAccountView.h; sourceTree = "<group>"; };
 		32CEA206229F7C7500B9CC7C /* BindAccountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindAccountView.m; sourceTree = "<group>"; };
-		32CEA209229F9EDE00B9CC7C /* R2SDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = R2SDK.bundle; sourceTree = "<group>"; };
-		32CEA20B229F9EDE00B9CC7C /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
-		32CEA20C229F9EDE00B9CC7C /* R2GoogleFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = R2GoogleFramework.framework; sourceTree = "<group>"; };
-		32CEA20D229F9EDE00B9CC7C /* R2GoogleBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = R2GoogleBundle.bundle; sourceTree = "<group>"; };
-		32CEA20E229F9EDE00B9CC7C /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
-		32CEA20F229F9EDE00B9CC7C /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
-		32CEA211229F9EDE00B9CC7C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		32CEA212229F9EDE00B9CC7C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		32CEA213229F9EDE00B9CC7C /* R2FacebookFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = R2FacebookFramework.framework; sourceTree = "<group>"; };
-		32CEA214229F9EDE00B9CC7C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		32CEA215229F9EDE00B9CC7C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		32CEA217229F9EDE00B9CC7C /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppsFlyerLib.framework; sourceTree = "<group>"; };
-		32CEA218229F9EDE00B9CC7C /* R2SDKFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = R2SDKFramework.framework; sourceTree = "<group>"; };
 		32CEA227229FA08200B9CC7C /* R2SDKPlat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = R2SDKPlat.h; sourceTree = "<group>"; };
 		32CEA228229FA08200B9CC7C /* R2SDKPlat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = R2SDKPlat.m; sourceTree = "<group>"; };
 		32CEA22B229FAC1500B9CC7C /* LoginImp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginImp.h; sourceTree = "<group>"; };
@@ -230,16 +194,6 @@
 				32CEA234229FAF3B00B9CC7C /* SafariServices.framework in Frameworks */,
 				32CEA232229FAF1800B9CC7C /* SystemConfiguration.framework in Frameworks */,
 				32CEA230229FAF1000B9CC7C /* LocalAuthentication.framework in Frameworks */,
-				32CEA21D229F9EDF00B9CC7C /* GoogleSignInDependencies.framework in Frameworks */,
-				32CEA21E229F9EDF00B9CC7C /* GoogleSignIn.framework in Frameworks */,
-				32CEA220229F9EDF00B9CC7C /* FBSDKShareKit.framework in Frameworks */,
-				32CEA21F229F9EDF00B9CC7C /* FBSDKLoginKit.framework in Frameworks */,
-				32CEA222229F9EDF00B9CC7C /* FBSDKCoreKit.framework in Frameworks */,
-				32CEA21B229F9EDF00B9CC7C /* R2GoogleFramework.framework in Frameworks */,
-				32CEA225229F9EDF00B9CC7C /* R2SDKFramework.framework in Frameworks */,
-				32CEA221229F9EDF00B9CC7C /* R2FacebookFramework.framework in Frameworks */,
-				32CEA224229F9EDF00B9CC7C /* AppsFlyerLib.framework in Frameworks */,
-				32CEA223229F9EDF00B9CC7C /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,16 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3267FC1F22A6100E008AD571 /* GameKit.framework in Frameworks */,
-				3267FC1E22A60FCF008AD571 /* AppsFlyerLib.framework in Frameworks */,
-				3267FC1D22A60FCB008AD571 /* R2SDKFramework.framework in Frameworks */,
-				3267FC1C22A60FC5008AD571 /* Bolts.framework in Frameworks */,
-				3267FC1B22A60FC2008AD571 /* FBSDKCoreKit.framework in Frameworks */,
-				3267FC1A22A60FBD008AD571 /* R2FacebookFramework.framework in Frameworks */,
-				3267FC1922A60FBB008AD571 /* FBSDKShareKit.framework in Frameworks */,
-				3267FC1822A60FB9008AD571 /* FBSDKLoginKit.framework in Frameworks */,
-				3267FC1722A60FB2008AD571 /* GoogleSignIn.framework in Frameworks */,
-				3267FC1622A60FB1008AD571 /* GoogleSignInDependencies.framework in Frameworks */,
-				3267FC1522A60FAE008AD571 /* R2GoogleFramework.framework in Frameworks */,
 				3267FC1422A60F8C008AD571 /* LocalAuthentication.framework in Frameworks */,
 				3267FC1322A60F86008AD571 /* AdSupport.framework in Frameworks */,
 				3267FC1222A60F72008AD571 /* SafariServices.framework in Frameworks */,
@@ -292,7 +236,6 @@
 		3251829D229E24BB00623AFF /* R2DSDK */ = {
 			isa = PBXGroup;
 			children = (
-				32CEA208229F9EDE00B9CC7C /* ThirdLib */,
 				3253B2A1229EC8A5007C23CD /* API */,
 				3251831F229EAA3200623AFF /* SDKDATA */,
 				3251830A229E3B9400623AFF /* RES */,
@@ -433,50 +376,6 @@
 			path = R2DLIB;
 			sourceTree = "<group>";
 		};
-		32CEA208229F9EDE00B9CC7C /* ThirdLib */ = {
-			isa = PBXGroup;
-			children = (
-				32CEA209229F9EDE00B9CC7C /* R2SDK.bundle */,
-				32CEA20A229F9EDE00B9CC7C /* google */,
-				32CEA210229F9EDE00B9CC7C /* facebook */,
-				32CEA216229F9EDE00B9CC7C /* appsflyer */,
-				32CEA218229F9EDE00B9CC7C /* R2SDKFramework.framework */,
-			);
-			path = ThirdLib;
-			sourceTree = "<group>";
-		};
-		32CEA20A229F9EDE00B9CC7C /* google */ = {
-			isa = PBXGroup;
-			children = (
-				32CEA20B229F9EDE00B9CC7C /* GoogleSignIn.bundle */,
-				32CEA20C229F9EDE00B9CC7C /* R2GoogleFramework.framework */,
-				32CEA20D229F9EDE00B9CC7C /* R2GoogleBundle.bundle */,
-				32CEA20E229F9EDE00B9CC7C /* GoogleSignInDependencies.framework */,
-				32CEA20F229F9EDE00B9CC7C /* GoogleSignIn.framework */,
-			);
-			path = google;
-			sourceTree = "<group>";
-		};
-		32CEA210229F9EDE00B9CC7C /* facebook */ = {
-			isa = PBXGroup;
-			children = (
-				32CEA211229F9EDE00B9CC7C /* FBSDKLoginKit.framework */,
-				32CEA212229F9EDE00B9CC7C /* FBSDKShareKit.framework */,
-				32CEA213229F9EDE00B9CC7C /* R2FacebookFramework.framework */,
-				32CEA214229F9EDE00B9CC7C /* FBSDKCoreKit.framework */,
-				32CEA215229F9EDE00B9CC7C /* Bolts.framework */,
-			);
-			path = facebook;
-			sourceTree = "<group>";
-		};
-		32CEA216229F9EDE00B9CC7C /* appsflyer */ = {
-			isa = PBXGroup;
-			children = (
-				32CEA217229F9EDE00B9CC7C /* AppsFlyerLib.framework */,
-			);
-			path = appsflyer;
-			sourceTree = "<group>";
-		};
 		32CEA22A229FABE200B9CC7C /* LoginApi */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,10 +484,7 @@
 				325182AB229E24BD00623AFF /* LaunchScreen.storyboard in Resources */,
 				325182A8229E24BD00623AFF /* Assets.xcassets in Resources */,
 				325182A6229E24BB00623AFF /* Main.storyboard in Resources */,
-				32CEA219229F9EDF00B9CC7C /* R2SDK.bundle in Resources */,
-				32CEA21A229F9EDF00B9CC7C /* GoogleSignIn.bundle in Resources */,
 				3251830C229E4C8900623AFF /* R2DSDKResources.bundle in Resources */,
-				32CEA21C229F9EDF00B9CC7C /* R2GoogleBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,6 @@
 #import "R2SDKPlat.h"
 #import "R2DHeader.h"
 #import "GamaFunction.h"
-#import <R2SDKFramework/R2SDKFramework.h>
 #import "R2DLoginViewController.h"
 #import "R2DHeader.h"
 
@@ -63,25 +62,25 @@
 {
     //Facebook
     
-     [[FBSDKApplicationDelegate sharedInstance] application:app
-                                                    openURL:url
-                                    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
-                                                 annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+//     [[FBSDKApplicationDelegate sharedInstance] application:app
+//                                                    openURL:url
+//                                    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+//                                                 annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
  
     //google
     
-    [[R2GoogleHelper sharedInstance] handleURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+//    [[R2GoogleHelper sharedInstance] handleURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
     
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[R2SDKMgrApi sharedInstance]sdkInit];
+//    [[R2SDKMgrApi sharedInstance]sdkInit];
     
     //facebook
-    [[FBSDKApplicationDelegate sharedInstance] application:application
-                             didFinishLaunchingWithOptions:launchOptions];
+//    [[FBSDKApplicationDelegate sharedInstance] application:application
+//                             didFinishLaunchingWithOptions:launchOptions];
     
     //google 113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com
 //    NSString *googleClientId = @"9825068096-ama8dc07lj0vp7bo052l5muv142a2qas.apps.googleusercontent.com";
@@ -94,7 +93,7 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [[R2SDKMgrApi sharedInstance]sdkUninit];
+//    [[R2SDKMgrApi sharedInstance]sdkUninit];
 }
 
 

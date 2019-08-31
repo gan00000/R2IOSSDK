@@ -41,8 +41,8 @@
     //添加下面的SDK代码
     [[R2SDKPlat shareR2SDK] application:application didFinishLaunchingWithOptions:launchOptions];
     //googleClientId联系SDK人员获取
-    NSString *googleClientId = @"113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com";
-    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
+//    NSString *googleClientId = @"113678359411-jnvdc3e59persg70227kkunqqedtqv9g.apps.googleusercontent.com";
+//    [[R2GoogleHelper sharedInstance] initWithGoogleSignInClientId:googleClientId];
     
     return YES;
 }

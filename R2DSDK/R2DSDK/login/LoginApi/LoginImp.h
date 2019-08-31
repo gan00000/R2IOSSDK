@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import <R2SDKFramework/R2SDKFramework.h>
-#import <R2FacebookFramework/R2FacebookFramework.h>
-#import <R2GoogleFramework/R2GoogleFramework.h>
 #import "R2DHeader.h"
 #import "R2SDKPlat.h"
 #import "../view/UIViewUtil.h"

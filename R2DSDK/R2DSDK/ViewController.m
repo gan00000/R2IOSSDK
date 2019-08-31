@@ -46,36 +46,36 @@
 
 -(void)openLogin:(UIButton *)btn
 {
-    [[R2SDKPlat shareR2SDK] loginWithViewController:self isAutoLogin:YES loginHandler:^(R2LoginResponse * _Nonnull r2LoginResult) {
+    [[R2SDKPlat shareR2SDK] loginWithViewController:self isAutoLogin:NO loginHandler:^(NSString * _Nonnull r2LoginResult) {
         
         NSLog(@"登录完成");
         
         //取得帐号的 r2 uid，便于游戏自身定位玩家
-        NSString *r2UserId = r2LoginResult.r2Uid; //判断是否绑定 Game center 字段
-        //取得相关验证登录合法性的数据
-        NSString *loginTimestamp = r2LoginResult.timestamp;
-        NSString *sign = r2LoginResult.sign;
-        NSString *msg = [NSString stringWithFormat:@"登录成功current r2 uid=%@  loginTimestamp=%@ sign=%@ ",r2UserId, loginTimestamp, sign];
-        
-        [self showTips:msg];
+//        NSString *r2UserId = r2LoginResult.r2Uid; //判断是否绑定 Game center 字段
+//        //取得相关验证登录合法性的数据
+//        NSString *loginTimestamp = r2LoginResult.timestamp;
+//        NSString *sign = r2LoginResult.sign;
+//        NSString *msg = [NSString stringWithFormat:@"登录成功current r2 uid=%@  loginTimestamp=%@ sign=%@ ",r2UserId, loginTimestamp, sign];
+//
+//        [self showTips:msg];
     }];
 }
 
 
 -(void)openLoginFromLogout
 {
-    [[R2SDKPlat shareR2SDK] loginWithViewController:self isAutoLogin:NO loginHandler:^(R2LoginResponse * _Nonnull r2LoginResult) {
+    [[R2SDKPlat shareR2SDK] loginWithViewController:self isAutoLogin:NO loginHandler:^(NSString * _Nonnull r2LoginResult) {
         
         NSLog(@"登录完成");
         
-        //取得帐号的 r2 uid，便于游戏自身定位玩家
-        NSString *r2UserId = r2LoginResult.r2Uid; //判断是否绑定 Game center 字段
-        //取得相关验证登录合法性的数据
-        NSString *loginTimestamp = r2LoginResult.timestamp;
-        NSString *sign = r2LoginResult.sign;
-        NSString *msg = [NSString stringWithFormat:@"current r2 uid=%@  loginTimestamp=%@ sign=%@ ",r2UserId, loginTimestamp, sign];
-        
-        [self showTips:msg];
+//        //取得帐号的 r2 uid，便于游戏自身定位玩家
+//        NSString *r2UserId = r2LoginResult.r2Uid; //判断是否绑定 Game center 字段
+//        //取得相关验证登录合法性的数据
+//        NSString *loginTimestamp = r2LoginResult.timestamp;
+//        NSString *sign = r2LoginResult.sign;
+//        NSString *msg = [NSString stringWithFormat:@"current r2 uid=%@  loginTimestamp=%@ sign=%@ ",r2UserId, loginTimestamp, sign];
+//        
+//        [self showTips:msg];
     }];
 }
 
