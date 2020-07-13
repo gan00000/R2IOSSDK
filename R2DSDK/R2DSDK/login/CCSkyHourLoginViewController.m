@@ -17,6 +17,7 @@
 #import "RegisterAccountView.h"
 #import "ChangePasswordView.h"
 #import "SelectBindTypeView.h"
+#import "AutoLoginView.h"
 
 
 @implementation CCSkyHourLoginViewController{
@@ -25,6 +26,7 @@
    
     BindAccountView *mBindAccountView;
     AccountLoginView *mAccountLoginView;
+    AutoLoginView *mAutoLoginView;
     BOOL autoLoginDone;
 }
 
@@ -87,36 +89,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     SDK_LOG(@"viewDidAppear");
-    
-    switch (sdkPageType) {
-        case SDKPage_Login:
-        {
-            if (SDK_DATA.isNeedAutoLogin && !autoLoginDone) {
-                
-                autoLoginDone = YES;
-                
-                if (SDK_DATA.gameLoginType == LoginTypeGoogle) {//自动登录
-                    
-                    [LoginImp loginGoogleAccount:self isFormAutoLogin:YES];
-                    
-                }else if (SDK_DATA.gameLoginType == LoginTypeFacebook){//自动登录
-                    
-                    [LoginImp loginFBAccount:self isFormAutoLogin:YES];
-                    
-                }else if (SDK_DATA.gameLoginType == LoginTypeGuest){//自动登录
-                    
-                    [LoginImp loginGuestAccount:self isFormAutoLogin:YES];
-                    
-                }else{//弹出登录界面
-                    [self showLoginPage];
-                }
-                
-            }
-        }
-            break;
-        default:
-            break;
-    }
 
 }
 
@@ -152,26 +124,23 @@
 
 -(void)showLoginPageOrAutoLogin
 {
- 
+    SDK_DATA.isNeedAutoLogin = YES;
+    SDK_DATA.gameLoginType = LoginTypeAccount;
     if (SDK_DATA.isNeedAutoLogin) {//是否需要自动登录
         
-      
-//        if (SDK_DATA.gameLoginType == LoginTypeGoogle) {//自动登录
-//            [self addAutoLoginTipsView];
-//             [LoginImp loginGoogleAccount:self isFormAutoLogin:YES];
-//
-//        }else if (SDK_DATA.gameLoginType == LoginTypeFacebook){//自动登录
-//            [self addAutoLoginTipsView];
-//             [LoginImp loginFBAccount:self isFormAutoLogin:YES];
-//
-//        }else if (SDK_DATA.gameLoginType == LoginTypeGuest){//自动登录
-//            [self addAutoLoginTipsView];
-//
-//            [LoginImp loginGuestAccount:self isFormAutoLogin:YES];
-//
-//        }else{//弹出登录界面
-//            [self showLoginPage];
-//        }
+      if (SDK_DATA.gameLoginType == LoginTypeAccount) {//自动登录
+          [self addAutoLoginView];
+        }
+      else if (SDK_DATA.gameLoginType == LoginTypeApple) {//自动登录
+            [self addAutoLoginView];
+
+        }else if (SDK_DATA.gameLoginType == LoginTypeFacebook){//自动登录
+            [self addAutoLoginView];
+        }else if (SDK_DATA.gameLoginType == LoginTypeGuest){//自动登录
+            [self addAutoLoginView];
+        }else{//弹出登录界面
+            [self showLoginPage];
+        }
     }else{
          [self showLoginPage];
     }
@@ -181,9 +150,6 @@
 
 -(void)showLoginPage
 {
-    //移除所有子视图
-    [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
     
     [self addSelectLoginTypeView];
 //    [self addAccountLoginView];
@@ -192,9 +158,26 @@
 
 -(void)addSelectLoginTypeView
 {
-    
+    //移除所有子视图
+    [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     mSelectLoginTypeView = [[SelectLoginTypeView alloc] initView];
     [self addSubSdkLoginView:mSelectLoginTypeView];
+}
+
+-(void)addAutoLoginView //自动登录中界面
+{
+    
+    mAutoLoginView = [[AutoLoginView alloc] initView];
+    mAutoLoginView.delegate = self;
+    mAutoLoginView.theViewUIViewController = self;
+    [self.view addSubview:mAutoLoginView];
+    
+    [mAutoLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(@(0));
+        make.centerY.equalTo(@(0));
+        make.width.equalTo(@(kBgWidth + 50));
+        make.height.equalTo(@(kBgHeight - 100));
+    }];
 }
 
 -(void)addAccountLoginView
@@ -230,7 +213,6 @@
     
     mSDKBaseView.delegate = self;
     mSDKBaseView.theViewUIViewController = self;
-    mSDKBaseView.layer.cornerRadius = 10;
     [self.view addSubview:mSDKBaseView];
     
     [mSDKBaseView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -255,6 +237,10 @@
 }
 
 #pragma mark - 代理
+
+- (void)goSelectLoginTypeView{
+    [self addSelectLoginTypeView];
+}
 
 - (void)goAccountLoginView{
     [self addAccountLoginView];

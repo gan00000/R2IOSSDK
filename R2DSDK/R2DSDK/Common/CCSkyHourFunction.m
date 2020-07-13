@@ -11,6 +11,7 @@
 #import <sys/sysctl.h>
 #import <net/if.h>
 #import <net/if_dl.h>
+#import "CCSkyHourHeader.h"
 
 @implementation CCSkyHourFunction
 
@@ -150,7 +151,7 @@
     UIWindow *keyWindow = [self getCurrentWindow];
     // SDK expects a key window at this point, if it is not, make it one
     if (keyWindow !=  nil && !keyWindow.isKeyWindow) {
-        NSLog(@"Unable to obtain a key window, marking as keyWindow");
+        SDK_LOG(@"Unable to obtain a key window, marking as keyWindow");
         [keyWindow makeKeyWindow];
     }
     
@@ -172,7 +173,7 @@
         }
     }
     if (window == nil) {
-        NSLog(@"Unable to find a valid UIWindow");
+        SDK_LOG(@"Unable to find a valid UIWindow");
     }
     return window;
 }

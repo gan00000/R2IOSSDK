@@ -85,31 +85,31 @@
 {
     switch (sender.tag) {
         case kCheckBoxBtnTag:
-            NSLog(@"kCheckBoxBtnTag");
+            SDK_LOG(@"kCheckBoxBtnTag");
             break;
             
         case kFindPwdActTag:
-            NSLog(@"kFindPwdActTag");
+            SDK_LOG(@"kFindPwdActTag");
         break;
             
         case kBindAccountActTag:
-            NSLog(@"kBindAccountActTag");
+            SDK_LOG(@"kBindAccountActTag");
         break;
             
         case kRegisterAccountActTag:
-            NSLog(@"kRegisterAccountActTag");
+            SDK_LOG(@"kRegisterAccountActTag");
         break;
             
         case kChangePwdActTag:
-            NSLog(@"kChangePwdActTag");
+            SDK_LOG(@"kChangePwdActTag");
         break;
             
         case kBackBtnActTag:
-            NSLog(@"kBackBtnActTag");
+            SDK_LOG(@"kBackBtnActTag");
         break;
             
         case kAccountLoginActTag:
-            NSLog(@"kAccountLoginActTag");
+            SDK_LOG(@"kAccountLoginActTag");
         break;
             
             

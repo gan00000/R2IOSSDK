@@ -73,7 +73,7 @@
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               //响应事件
-                                                              NSLog(@"action = %@", action);
+                                                              SDK_LOG(@"action = %@", action);
                                                           }];
     [mAlert addAction:defaultAction];
     if (viewController) {

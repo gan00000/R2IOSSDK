@@ -72,6 +72,7 @@
 		32BD6F45231ABED800F146EC /* CCSDKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BD6F44231ABED800F146EC /* CCSDKResponse.m */; };
 		32C7D1A324BC02BF00BAC49C /* ChangePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C7D1A224BC02BF00BAC49C /* ChangePasswordView.m */; };
 		32C7D1A624BC09CC00BAC49C /* SelectBindTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C7D1A524BC09CC00BAC49C /* SelectBindTypeView.m */; };
+		32C7D1A924BC295300BAC49C /* AutoLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C7D1A824BC295300BAC49C /* AutoLoginView.m */; };
 		32CEA230229FAF1000B9CC7C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
 		32CEA232229FAF1800B9CC7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */; };
 		32CEA234229FAF3B00B9CC7C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA233229FAF3B00B9CC7C /* SafariServices.framework */; };
@@ -184,6 +185,8 @@
 		32C7D1A224BC02BF00BAC49C /* ChangePasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordView.m; sourceTree = "<group>"; };
 		32C7D1A424BC09CC00BAC49C /* SelectBindTypeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectBindTypeView.h; sourceTree = "<group>"; };
 		32C7D1A524BC09CC00BAC49C /* SelectBindTypeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectBindTypeView.m; sourceTree = "<group>"; };
+		32C7D1A724BC295300BAC49C /* AutoLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoLoginView.h; sourceTree = "<group>"; };
+		32C7D1A824BC295300BAC49C /* AutoLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoLoginView.m; sourceTree = "<group>"; };
 		32CEA205229F7C7500B9CC7C /* BindAccountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindAccountView.h; sourceTree = "<group>"; };
 		32CEA206229F7C7500B9CC7C /* BindAccountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindAccountView.m; sourceTree = "<group>"; };
 		32CEA227229FA08200B9CC7C /* CCSkyHourSDKPlat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSkyHourSDKPlat.h; sourceTree = "<group>"; };
@@ -367,6 +370,8 @@
 				32C7D1A224BC02BF00BAC49C /* ChangePasswordView.m */,
 				32C7D1A424BC09CC00BAC49C /* SelectBindTypeView.h */,
 				32C7D1A524BC09CC00BAC49C /* SelectBindTypeView.m */,
+				32C7D1A724BC295300BAC49C /* AutoLoginView.h */,
+				32C7D1A824BC295300BAC49C /* AutoLoginView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 				32C7D1A324BC02BF00BAC49C /* ChangePasswordView.m in Sources */,
 				325182AE229E24BD00623AFF /* main.m in Sources */,
 				32FB926524B566D5000E241C /* LoginButton.m in Sources */,
+				32C7D1A924BC295300BAC49C /* AutoLoginView.m in Sources */,
 				325182A0229E24BB00623AFF /* AppDelegate.m in Sources */,
 				327F214B24BADE3500C95016 /* RegisterAccountView.m in Sources */,
 				3212AF5624B72248008D3C62 /* AccountLoginView.m in Sources */,

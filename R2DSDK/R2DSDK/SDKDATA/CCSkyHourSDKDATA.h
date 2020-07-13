@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSString * gameLoginToken;
 @property (nonatomic, copy)NSString * gameLoginTimeStamp;
 
-//登入方式
+//当前登入方式
 @property (nonatomic, assign)NSInteger gameLoginType;
 
 @property (nonatomic, copy)NSString * gameUserId;

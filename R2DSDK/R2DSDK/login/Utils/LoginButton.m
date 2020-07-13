@@ -63,6 +63,12 @@
                         normalImage = @"sdk_btn_bdyk.png";
                         highlightedImage = @"sdk_btn_bdyk.png";
                        break;
+            
+            case BUTTON_TYPE_CHANGE_ACCOUNT:
+             normalImage = @"btn_change_account.png";
+             highlightedImage = @"btn_change_account.png";
+            break;
+            
            default:
                break;
        }

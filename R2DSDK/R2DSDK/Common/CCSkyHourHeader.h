@@ -33,8 +33,9 @@
 #define kInputTextFiledWidth                       48.0
 
 #define LoginTypeFacebook                 2
-#define LoginTypeGoogle                   8
+#define LoginTypeApple                    4
 #define LoginTypeGuest                    1
+#define LoginTypeAccount                  3
 
 #define ContentViewBgColor                    @"#f4f4f5"
 
@@ -47,7 +48,8 @@
 #define LABEL_FONT_NAME_Helvetica           @"Helvetica"
 
 #define GetImage(imageName)     [UIImage gama_imageNamed:imageName]
-#define SDK_LOG(format, ...) (NSLog)((format), ##__VA_ARGS__)
+#define SDK_LOG(format, ...) (NSLog)((@"FL_SDK:%@"), [NSString stringWithFormat:(format), ##__VA_ARGS__])
+
 #define GET_SDK_LOCALIZED(key) [[ConfigCoreUtil reader] getLocalizedStringForKey:key]
 
 #define hillTopViewController    [UIUtil getSDKController]

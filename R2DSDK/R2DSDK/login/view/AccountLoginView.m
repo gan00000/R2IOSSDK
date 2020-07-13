@@ -185,43 +185,43 @@
 {
     switch (sender.tag) {
         case kCheckBoxBtnTag:
-            NSLog(@"kCheckBoxBtnTag");
+            SDK_LOG(@"kCheckBoxBtnTag");
             break;
             
         case kFindPwdActTag:
-            NSLog(@"kFindPwdActTag");
+            SDK_LOG(@"kFindPwdActTag");
         break;
             
         case kBindAccountActTag:
-            NSLog(@"kBindAccountActTag");
+            SDK_LOG(@"kBindAccountActTag");
             if (self.delegate) {
                 [self.delegate goSelelctBindTypeView];
             }
         break;
             
         case kRegisterAccountActTag:
-            NSLog(@"kRegisterAccountActTag");
+            SDK_LOG(@"kRegisterAccountActTag");
             if (self.delegate) {
                 [self.delegate goRegisterAccountView];
             }
         break;
             
         case kChangePwdActTag:
-            NSLog(@"kChangePwdActTag");
+            SDK_LOG(@"kChangePwdActTag");
             if (self.delegate) {
                 [self.delegate goChangePasswordView];
             }
         break;
             
         case kBackBtnActTag:
-            NSLog(@"kBackBtnActTag");
+            SDK_LOG(@"kBackBtnActTag");
             if (self.delegate) {
                 [self.delegate goBackBtn:backBtn backCount:1];
             }
         break;
             
         case kAccountLoginActTag:
-            NSLog(@"kAccountLoginActTag");
+            SDK_LOG(@"kAccountLoginActTag");
         break;
             
             

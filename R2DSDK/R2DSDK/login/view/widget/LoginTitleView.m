@@ -56,7 +56,7 @@
 }
 
 -(void)closeLoginView:(UIButton *) btn{
-    NSLog(@"kBackBtnActTag");
+    SDK_LOG(@"kBackBtnActTag");
    // [hillTopViewController dismissViewControllerAnimated:NO completion:nil];
     if (self.delegate) {
         [self.delegate goBackBtn:btn backCount:2];

@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)goChangePasswordView;
 -(void)goSelelctBindTypeView;
 -(void)goAccountLoginView;
+-(void)goSelectLoginTypeView;
 
 -(void)goBackBtn:(UIButton *)backBtn backCount:(NSUInteger) count;
 
