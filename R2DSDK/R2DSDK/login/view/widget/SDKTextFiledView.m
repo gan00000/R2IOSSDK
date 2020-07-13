@@ -15,16 +15,9 @@
 
 @implementation SDKTextFiledView
 {
-   
+    UITextField *mUITextField;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 - (instancetype)initViewWithType:(SDKTextFiledView_Type) type
 {
@@ -45,7 +38,7 @@
     NSString *iconName;
     NSString *lableName;
     Boolean showEye = NO;
-    UIKeyboardType mUIKeyboardType;
+    UIKeyboardType mUIKeyboardType = UIKeyboardTypeDefault;
     
     switch (type) {
         case SDKTextFiledView_Type_VfCode:
@@ -108,7 +101,7 @@
        
    }];
 
-    UITextField *mUITextField = [[UITextField alloc] init];
+     mUITextField = [[UITextField alloc] init];
     if (mUIKeyboardType) {
         [mUITextField setKeyboardType:mUIKeyboardType];
     }
@@ -123,10 +116,15 @@
       }];
 
     if (showEye) {
-        UIImageView *eyeImageView = [[UIImageView alloc] initWithImage:[UIImage gama_imageNamed:@"fl_sdk_by.png"]];
-        eyeImageView.contentMode = UIViewContentModeScaleAspectFit;
-        [self addSubview:eyeImageView];
-        [eyeImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        mUITextField.secureTextEntry = NO;
+        UIButton *eyeBtn = [UIUtil initBtnWithNormalImage:@"fl_sdk_ky.png" highlightedImage:nil tag:22 selector:@selector(eyeViewBtnAction:) target:self];
+        eyeBtn.selected = NO;//设置为没有选择
+        
+//        UIImageView *eyeImageView = [[UIImageView alloc] initWithImage:[UIImage gama_imageNamed:@"fl_sdk_by.png"]];
+//        eyeImageView.contentMode = UIViewContentModeScaleAspectFit;
+        eyeBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [self addSubview:eyeBtn];
+        [eyeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             
 //            make.top.mas_equalTo(self).offset(10);
 //            make.bottom.mas_equalTo(self).offset(-10);
@@ -137,5 +135,29 @@
         }];
     }
     
+}
+
+- (void)eyeViewBtnAction:(UIButton *)sender
+{
+
+    if (sender.selected) { // 按下去了就是明文
+        
+        NSString *tempPwdStr = mUITextField.text;
+        mUITextField.text = @""; // 这句代码可以防止切换的时候光标偏移
+        mUITextField.secureTextEntry = NO;
+        mUITextField.text = tempPwdStr;
+        [sender setImage:GetImage(@"fl_sdk_ky.png") forState:UIControlStateNormal];
+        
+    } else { // 暗文
+        
+        NSString *tempPwdStr = mUITextField.text;
+        mUITextField.text = @"";
+        mUITextField.secureTextEntry = YES;
+        mUITextField.text = tempPwdStr;
+    
+        [sender setImage:GetImage(@"fl_sdk_by.png") forState:UIControlStateNormal];
+    }
+    // 切换按钮的状态
+    sender.selected = !sender.selected;
 }
 @end
