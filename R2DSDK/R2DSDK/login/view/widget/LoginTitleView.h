@@ -1,5 +1,5 @@
 //
-//  LoginMainView.h
+//  LoginTitleView.h
 //  CCSkyHourSDK
 //
 //  Created by ganyuanrong on 2019/5/29.
@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "CCSkyHourHeader.h"
 #import "SDKBaseView.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginMainView : SDKBaseView
+@interface LoginTitleView : SDKBaseView
 
-- (instancetype)initView;
+- (instancetype)initViewWithTitle:(NSString *)title;
 
 @end
 

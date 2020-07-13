@@ -7,22 +7,24 @@
 //
 
 #import "CCSkyHourLoginViewController.h"
-#import "view/LoginMainView.h"
+#import "view/SelectLoginTypeView.h"
 #import "view/GuestLoginWarnTipsView.h"
-#import "view/CurrentLoginInfoView.h"
 #import "view/BindAccountView.h"
 #import "LoginImp.h"
 #import "view/GuestLogoutWarnTipsView.h"
-#import "view/FBGGUnbindView.h"
 #import "CCSkyHourSDKPlat.h"
+#import "AccountLoginView.h"
+#import "RegisterAccountView.h"
+#import "ChangePasswordView.h"
+#import "SelectBindTypeView.h"
 
 
 @implementation CCSkyHourLoginViewController{
-    LoginMainView *loginMainView;
+    SelectLoginTypeView *mSelectLoginTypeView;
     SDKPage sdkPageType;
-    CurrentLoginInfoView *mCurrentLoginInfoView;
+   
     BindAccountView *mBindAccountView;
-    FBGGUnbindView *mFBGGUnbindView;
+    AccountLoginView *mAccountLoginView;
     BOOL autoLoginDone;
 }
 
@@ -66,14 +68,14 @@
             
         case SDKPage_LoginType:
         {
-            [self showLoginCurrentTypePage];
+            
             
         }
             break;
             
         case SDKPage_UnBind:
         {
-            [self showLoginUnbindPage];
+            
         }
             break;
         default:
@@ -153,8 +155,7 @@
  
     if (SDK_DATA.isNeedAutoLogin) {//是否需要自动登录
         
-        [self addAutoLoginTipsView];
-        
+      
 //        if (SDK_DATA.gameLoginType == LoginTypeGoogle) {//自动登录
 //            [self addAutoLoginTipsView];
 //             [LoginImp loginGoogleAccount:self isFormAutoLogin:YES];
@@ -182,13 +183,57 @@
 {
     //移除所有子视图
     [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-
-    loginMainView = [[LoginMainView alloc] initView];
-    loginMainView.delegate = self;
-    loginMainView.theViewUIViewController = self;
-    [self.view addSubview:loginMainView];
     
-    [loginMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    [self addSelectLoginTypeView];
+//    [self addAccountLoginView];
+//    [self addRegisterAccountView];
+}
+
+-(void)addSelectLoginTypeView
+{
+    
+    mSelectLoginTypeView = [[SelectLoginTypeView alloc] initView];
+    [self addSubSdkLoginView:mSelectLoginTypeView];
+}
+
+-(void)addAccountLoginView
+{
+    
+    mAccountLoginView = [[AccountLoginView alloc] initView];
+    [self addSubSdkLoginView:mAccountLoginView];
+}
+
+-(void)addRegisterAccountView
+{
+    
+    RegisterAccountView *mRegisterAccountView = [[RegisterAccountView alloc] initView];
+    [self addSubSdkLoginView:mRegisterAccountView];
+}
+
+-(void)addChangePasswordView
+{
+    
+    ChangePasswordView *view = [[ChangePasswordView alloc] initView];
+    [self addSubSdkLoginView:view];
+}
+
+-(void)addSelectBindTypeView
+{
+    
+    SelectBindTypeView *view = [[SelectBindTypeView alloc] initView];
+    [self addSubSdkLoginView:view];
+}
+
+-(void)addSubSdkLoginView:(SDKBaseView *)mSDKBaseView
+{
+    
+    mSDKBaseView.delegate = self;
+    mSDKBaseView.theViewUIViewController = self;
+    mSDKBaseView.layer.cornerRadius = 10;
+    [self.view addSubview:mSDKBaseView];
+    
+    [mSDKBaseView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(@(0));
         make.centerY.equalTo(@(0));
         make.width.equalTo(@(kBgWidth));
@@ -196,85 +241,6 @@
     }];
 }
 
--(void)addAutoLoginTipsView
-{
-    UILabel *autoLabe = [[UILabel alloc]init];
-    autoLabe.font = [UIFont systemFontOfSize:15];
-    autoLabe.text = GET_SDK_LOCALIZED(@"R2SDK_AUTO_LOGINING");
-    autoLabe.textAlignment = NSTextAlignmentCenter;
-    autoLabe.backgroundColor = [UIColor clearColor];
-    autoLabe.numberOfLines = 0;
-    
-    [self.view addSubview:autoLabe];
-    [autoLabe mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(@(0));
-        make.centerY.equalTo(@(0)).offset(40);
-        make.height.mas_equalTo(40);
-        make.width.mas_equalTo(160);
-        
-    }];
-    
-}
-
--(void)showLoginCurrentTypePage
-{
-    //gameLoginType为登录方式
-    mCurrentLoginInfoView = [[CurrentLoginInfoView alloc]initWithLoginType:SDK_DATA.gameLoginType];
-    mCurrentLoginInfoView.delegate = self;
-    mCurrentLoginInfoView.theViewUIViewController = self;
-    [self.view addSubview:mCurrentLoginInfoView];
-    
-    [mCurrentLoginInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(@(0));
-        make.centerY.equalTo(@(0));
-        make.width.equalTo(@(kBgWidth));
-        make.height.equalTo(@(kBgHeight));
-    }];
-}
-
--(void)showFBGGUnbindView
-{
-    //gameLoginType为登录方式
-    mFBGGUnbindView = [[FBGGUnbindView alloc]initWithLoginType:SDK_DATA.gameLoginType];
-    mFBGGUnbindView.delegate = self;
-    mFBGGUnbindView.theViewUIViewController = self;
-    [self.view addSubview:mFBGGUnbindView];
-    
-    [mFBGGUnbindView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(@(0));
-        make.centerY.equalTo(@(0));
-        make.width.equalTo(@(kBgWidth));
-        make.height.equalTo(@(kBgHeight));
-    }];
-}
-
-
--(void)showLoginUnbindPage
-{
-    if (SDK_DATA.gameLoginType == LoginTypeGuest) {
-        [self showLoginCurrentTypePage];
-    }else
-    {
-        [self showFBGGUnbindView];
-    }
-}
-
-
--(void)showLoginBind
-{
-        mBindAccountView = [[BindAccountView alloc]initView];
-    
-        mBindAccountView.delegate = self;
-        mBindAccountView.theViewUIViewController = self;
-        [self.view addSubview:mBindAccountView];
-    
-        [mBindAccountView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(@(0));
-            make.centerY.equalTo(@(0));
-            make.width.equalTo(@(kBgWidth));
-            make.height.equalTo(@(kBgHeight));
-        }];
-}
 
 #pragma mark - 通知方法
 - (void)_noteLisetner:(NSNotification *)note
@@ -290,23 +256,30 @@
 
 #pragma mark - 代理
 
-- (void)goBindView
-{
-    [self showLoginBind];
+- (void)goAccountLoginView{
+    [self addAccountLoginView];
 }
 
--(void)goGuestLoginoutTipsView
+- (void)goSelelctBindTypeView
 {
-    GuestLogoutWarnTipsView *mGuestLogoutWarnTipsView = [[GuestLogoutWarnTipsView alloc]initView];
-    mGuestLogoutWarnTipsView.theViewUIViewController = self;
-    [self.view addSubview:mGuestLogoutWarnTipsView];
+    [self addSelectBindTypeView];
+}
+
+-(void)goRegisterAccountView{
+    [self addRegisterAccountView];
+}
+
+- (void)goChangePasswordView{
+    [self addChangePasswordView];
+}
+
+- (void)goBackBtn:(UIButton *)backBtn backCount:(NSUInteger) count{
+    if (count == 1) {
+        [[backBtn superview] removeFromSuperview];
+    }else if (count == 2){
+        [[[backBtn superview] superview] removeFromSuperview];
+    }
     
-    [mGuestLogoutWarnTipsView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(@(0));
-        make.centerY.equalTo(@(0));
-        make.width.equalTo(@(kBgWidth));
-        make.height.equalTo(@(kBgHeight));
-    }];
 }
 
 - (void)logout
@@ -325,16 +298,6 @@
     [LoginImp bindGoogle:self];
 }
 
--(void)unBindGoogle
-{
-    SDK_LOG(@"unBindGoogle");
-    [LoginImp unbindGoogle:self];
-}
--(void)unBindFacebook
-{
-    SDK_LOG(@"unBindFacebook");
-    [LoginImp unbindFacebook:self];
-}
 
 -(void)clickFbLogin
 {   SDK_LOG(@"clickFbLogin");

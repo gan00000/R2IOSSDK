@@ -11,7 +11,6 @@
 
 #import "CCSkyHourHeader.h"
 #import "CCSkyHourSDKPlat.h"
-#import "../view/UIViewUtil.h"
 #import "CCSDKResponse.h"
 
 NS_ASSUME_NONNULL_BEGIN

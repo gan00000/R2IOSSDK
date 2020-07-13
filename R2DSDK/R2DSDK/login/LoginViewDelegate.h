@@ -16,13 +16,17 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)clickGoogleLogin;
 -(void)clickGuestLogin;
 
--(void)goBindView;
--(void)goGuestLoginoutTipsView;
+-(void)goRegisterAccountView;
+-(void)goChangePasswordView;
+-(void)goSelelctBindTypeView;
+-(void)goAccountLoginView;
+
+-(void)goBackBtn:(UIButton *)backBtn backCount:(NSUInteger) count;
+
 -(void)logout;
 -(void)clickBindFacebook;
 -(void)clickBindGoogle;
--(void)unBindGoogle;
--(void)unBindFacebook;
+
 
 @end
 

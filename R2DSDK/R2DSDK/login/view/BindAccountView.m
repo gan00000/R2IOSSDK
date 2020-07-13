@@ -29,7 +29,7 @@
     self.backgroundColor = [UIColor colorWithHexString:ContentViewBgColor];
     
     //title
-    LoginTitleView *loginTitleView = [[LoginTitleView alloc] initView];
+    LoginTitleView *loginTitleView = [[LoginTitleView alloc] initViewWithTitle:@""];
     
     [self addSubview:loginTitleView];
     

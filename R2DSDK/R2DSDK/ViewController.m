@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.view.backgroundColor = [UIColor lightGrayColor];
     [[CCSkyHourSDKPlat shareR2SDK] initWithLanguage:@""];
     
     UIButton *loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(40, 60, 160, 40)];

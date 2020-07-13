@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3212AF5324B71A6B008D3C62 /* SDKTextFiledView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3212AF5224B71A6B008D3C62 /* SDKTextFiledView.m */; };
+		3212AF5624B72248008D3C62 /* AccountLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3212AF5524B72248008D3C62 /* AccountLoginView.m */; };
 		321F7CDE22C461D500ADABEE /* libR2DLIB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3267FBEA22A60DF8008AD571 /* libR2DLIB.a */; };
 		325182A0229E24BB00623AFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251829F229E24BB00623AFF /* AppDelegate.m */; };
 		325182A3229E24BB00623AFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182A2229E24BB00623AFF /* ViewController.m */; };
@@ -49,14 +51,11 @@
 		3267FC0322A60E72008AD571 /* UIUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518317229E6E0B00623AFF /* UIUtil.m */; };
 		3267FC0422A60E72008AD571 /* LoginImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA22C229FAC1500B9CC7C /* LoginImp.m */; };
 		3267FC0522A60E72008AD571 /* LoginTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518311229E5AE300623AFF /* LoginTitleView.m */; };
-		3267FC0622A60E72008AD571 /* LoginMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518314229E5FD800623AFF /* LoginMainView.m */; };
+		3267FC0622A60E72008AD571 /* SelectLoginTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518314229E5FD800623AFF /* SelectLoginTypeView.m */; };
 		3267FC0722A60E72008AD571 /* GuestLoginWarnTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */; };
-		3267FC0822A60E72008AD571 /* CurrentLoginInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253B2A4229ED684007C23CD /* CurrentLoginInfoView.m */; };
 		3267FC0922A60E72008AD571 /* BindAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA206229F7C7500B9CC7C /* BindAccountView.m */; };
-		3267FC0A22A60E72008AD571 /* UIViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251A0E622A0342A004A0CCD /* UIViewUtil.m */; };
 		3267FC0B22A60E72008AD571 /* SDKBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */; };
 		3267FC0C22A60E72008AD571 /* GuestLogoutWarnTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E322A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m */; };
-		3267FC0D22A60E72008AD571 /* FBGGUnbindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3260C1E622A0F6F700E30FE9 /* FBGGUnbindView.m */; };
 		3267FC0F22A60F1F008AD571 /* CCSkyHourSDKPlat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 32CEA227229FA08200B9CC7C /* CCSkyHourSDKPlat.h */; };
 		3267FC1022A60F5C008AD571 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09722A141710071BF80 /* StoreKit.framework */; };
 		3267FC1122A60F62008AD571 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */; };
@@ -64,14 +63,19 @@
 		3267FC1322A60F86008AD571 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09322A1415E0071BF80 /* AdSupport.framework */; };
 		3267FC1422A60F8C008AD571 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
 		3267FC1F22A6100E008AD571 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09522A141630071BF80 /* GameKit.framework */; };
+		327F214B24BADE3500C95016 /* RegisterAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327F214A24BADE3500C95016 /* RegisterAccountView.m */; };
+		327F214E24BB073A00C95016 /* PhoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327F214D24BB073A00C95016 /* PhoneView.m */; };
 		32B3E09422A1415E0071BF80 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09322A1415E0071BF80 /* AdSupport.framework */; };
 		32B3E09622A141630071BF80 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09522A141630071BF80 /* GameKit.framework */; };
 		32B3E09822A141720071BF80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09722A141710071BF80 /* StoreKit.framework */; };
 		32BD6EDA231AB1F400F146EC /* CCSkyHourLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BD6ED9231AB1F400F146EC /* CCSkyHourLoginViewController.m */; };
 		32BD6F45231ABED800F146EC /* CCSDKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BD6F44231ABED800F146EC /* CCSDKResponse.m */; };
+		32C7D1A324BC02BF00BAC49C /* ChangePasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C7D1A224BC02BF00BAC49C /* ChangePasswordView.m */; };
+		32C7D1A624BC09CC00BAC49C /* SelectBindTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C7D1A524BC09CC00BAC49C /* SelectBindTypeView.m */; };
 		32CEA230229FAF1000B9CC7C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
 		32CEA232229FAF1800B9CC7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */; };
 		32CEA234229FAF3B00B9CC7C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA233229FAF3B00B9CC7C /* SafariServices.framework */; };
+		32FB926524B566D5000E241C /* LoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FB926424B566D5000E241C /* LoginButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,10 @@
 
 /* Begin PBXFileReference section */
 		3212476322A6164800B6A385 /* R2DLIB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = R2DLIB.framework; path = R2DLIB/R2DLIB.framework; sourceTree = "<group>"; };
+		3212AF5124B71A6B008D3C62 /* SDKTextFiledView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDKTextFiledView.h; sourceTree = "<group>"; };
+		3212AF5224B71A6B008D3C62 /* SDKTextFiledView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDKTextFiledView.m; sourceTree = "<group>"; };
+		3212AF5424B72248008D3C62 /* AccountLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountLoginView.h; sourceTree = "<group>"; };
+		3212AF5524B72248008D3C62 /* AccountLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountLoginView.m; sourceTree = "<group>"; };
 		3251829B229E24BB00623AFF /* R2DSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = R2DSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3251829E229E24BB00623AFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3251829F229E24BB00623AFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,8 +152,7 @@
 		3251830E229E599800623AFF /* UIColor+HexStringToColorTW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexStringToColorTW.m"; sourceTree = "<group>"; };
 		32518310229E5AE300623AFF /* LoginTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTitleView.h; sourceTree = "<group>"; };
 		32518311229E5AE300623AFF /* LoginTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTitleView.m; sourceTree = "<group>"; };
-		32518313229E5FD800623AFF /* LoginMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginMainView.h; sourceTree = "<group>"; };
-		32518314229E5FD800623AFF /* LoginMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginMainView.m; sourceTree = "<group>"; };
+		32518314229E5FD800623AFF /* SelectLoginTypeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectLoginTypeView.m; sourceTree = "<group>"; };
 		32518316229E6E0B00623AFF /* UIUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIUtil.h; sourceTree = "<group>"; };
 		32518317229E6E0B00623AFF /* UIUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIUtil.m; sourceTree = "<group>"; };
 		32518319229E979B00623AFF /* GuestLoginWarnTipsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuestLoginWarnTipsView.h; sourceTree = "<group>"; };
@@ -154,19 +161,18 @@
 		32518320229EAAA100623AFF /* CCSkyHourSDKDATA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSkyHourSDKDATA.h; sourceTree = "<group>"; };
 		32518321229EAAA100623AFF /* CCSkyHourSDKDATA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCSkyHourSDKDATA.m; sourceTree = "<group>"; };
 		3251A0E422A02F9E004A0CCD /* LoginViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewDelegate.h; sourceTree = "<group>"; };
-		3251A0E522A0342A004A0CCD /* UIViewUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewUtil.h; sourceTree = "<group>"; };
-		3251A0E622A0342A004A0CCD /* UIViewUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewUtil.m; sourceTree = "<group>"; };
 		3253B29F229EC407007C23CD /* ConfigCoreUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigCoreUtil.m; sourceTree = "<group>"; };
-		3253B2A3229ED684007C23CD /* CurrentLoginInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLoginInfoView.h; sourceTree = "<group>"; };
-		3253B2A4229ED684007C23CD /* CurrentLoginInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLoginInfoView.m; sourceTree = "<group>"; };
 		3260C1DF22A0D6F800E30FE9 /* SDKBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDKBaseView.h; sourceTree = "<group>"; };
 		3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDKBaseView.m; sourceTree = "<group>"; };
 		3260C1E222A0EF1900E30FE9 /* GuestLogoutWarnTipsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuestLogoutWarnTipsView.h; sourceTree = "<group>"; };
 		3260C1E322A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuestLogoutWarnTipsView.m; sourceTree = "<group>"; };
-		3260C1E522A0F6F700E30FE9 /* FBGGUnbindView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBGGUnbindView.h; sourceTree = "<group>"; };
-		3260C1E622A0F6F700E30FE9 /* FBGGUnbindView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBGGUnbindView.m; sourceTree = "<group>"; };
 		3267FBEA22A60DF8008AD571 /* libR2DLIB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libR2DLIB.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3267FC2822A61256008AD571 /* FrameworkScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = FrameworkScript.sh; sourceTree = "<group>"; };
+		327F214924BADE3500C95016 /* RegisterAccountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterAccountView.h; sourceTree = "<group>"; };
+		327F214A24BADE3500C95016 /* RegisterAccountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterAccountView.m; sourceTree = "<group>"; };
+		327F214C24BB073A00C95016 /* PhoneView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneView.h; sourceTree = "<group>"; };
+		327F214D24BB073A00C95016 /* PhoneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneView.m; sourceTree = "<group>"; };
+		327F215024BB1FA200C95016 /* SelectLoginTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLoginTypeView.h; sourceTree = "<group>"; };
 		32B3E09322A1415E0071BF80 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		32B3E09522A141630071BF80 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		32B3E09722A141710071BF80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -174,6 +180,10 @@
 		32BD6ED9231AB1F400F146EC /* CCSkyHourLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSkyHourLoginViewController.m; sourceTree = "<group>"; };
 		32BD6F43231ABED800F146EC /* CCSDKResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSDKResponse.h; sourceTree = "<group>"; };
 		32BD6F44231ABED800F146EC /* CCSDKResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCSDKResponse.m; sourceTree = "<group>"; };
+		32C7D1A124BC02BF00BAC49C /* ChangePasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordView.h; sourceTree = "<group>"; };
+		32C7D1A224BC02BF00BAC49C /* ChangePasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordView.m; sourceTree = "<group>"; };
+		32C7D1A424BC09CC00BAC49C /* SelectBindTypeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectBindTypeView.h; sourceTree = "<group>"; };
+		32C7D1A524BC09CC00BAC49C /* SelectBindTypeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectBindTypeView.m; sourceTree = "<group>"; };
 		32CEA205229F7C7500B9CC7C /* BindAccountView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindAccountView.h; sourceTree = "<group>"; };
 		32CEA206229F7C7500B9CC7C /* BindAccountView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindAccountView.m; sourceTree = "<group>"; };
 		32CEA227229FA08200B9CC7C /* CCSkyHourSDKPlat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSkyHourSDKPlat.h; sourceTree = "<group>"; };
@@ -183,6 +193,8 @@
 		32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		32CEA233229FAF3B00B9CC7C /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		32FB926324B566D5000E241C /* LoginButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginButton.h; sourceTree = "<group>"; };
+		32FB926424B566D5000E241C /* LoginButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +228,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3212AF5024B719E8008D3C62 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				32518310229E5AE300623AFF /* LoginTitleView.h */,
+				32518311229E5AE300623AFF /* LoginTitleView.m */,
+				3212AF5124B71A6B008D3C62 /* SDKTextFiledView.h */,
+				3212AF5224B71A6B008D3C62 /* SDKTextFiledView.m */,
+				327F214C24BB073A00C95016 /* PhoneView.h */,
+				327F214D24BB073A00C95016 /* PhoneView.m */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
 		32518292229E24BB00623AFF = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +285,7 @@
 		325182B4229E254C00623AFF /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				32FB926624B56A88000E241C /* Utils */,
 				32BD6ED8231AB1F400F146EC /* CCSkyHourLoginViewController.h */,
 				32BD6ED9231AB1F400F146EC /* CCSkyHourLoginViewController.m */,
 				32CEA22A229FABE200B9CC7C /* LoginApi */,
@@ -322,24 +348,25 @@
 		32518306229E38A800623AFF /* view */ = {
 			isa = PBXGroup;
 			children = (
-				32518310229E5AE300623AFF /* LoginTitleView.h */,
-				32518311229E5AE300623AFF /* LoginTitleView.m */,
-				32518313229E5FD800623AFF /* LoginMainView.h */,
-				32518314229E5FD800623AFF /* LoginMainView.m */,
+				3212AF5024B719E8008D3C62 /* widget */,
+				32518314229E5FD800623AFF /* SelectLoginTypeView.m */,
+				327F215024BB1FA200C95016 /* SelectLoginTypeView.h */,
 				32518319229E979B00623AFF /* GuestLoginWarnTipsView.h */,
 				3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */,
-				3253B2A3229ED684007C23CD /* CurrentLoginInfoView.h */,
-				3253B2A4229ED684007C23CD /* CurrentLoginInfoView.m */,
 				32CEA205229F7C7500B9CC7C /* BindAccountView.h */,
 				32CEA206229F7C7500B9CC7C /* BindAccountView.m */,
-				3251A0E522A0342A004A0CCD /* UIViewUtil.h */,
-				3251A0E622A0342A004A0CCD /* UIViewUtil.m */,
 				3260C1DF22A0D6F800E30FE9 /* SDKBaseView.h */,
 				3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */,
 				3260C1E222A0EF1900E30FE9 /* GuestLogoutWarnTipsView.h */,
 				3260C1E322A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m */,
-				3260C1E522A0F6F700E30FE9 /* FBGGUnbindView.h */,
-				3260C1E622A0F6F700E30FE9 /* FBGGUnbindView.m */,
+				3212AF5424B72248008D3C62 /* AccountLoginView.h */,
+				3212AF5524B72248008D3C62 /* AccountLoginView.m */,
+				327F214924BADE3500C95016 /* RegisterAccountView.h */,
+				327F214A24BADE3500C95016 /* RegisterAccountView.m */,
+				32C7D1A124BC02BF00BAC49C /* ChangePasswordView.h */,
+				32C7D1A224BC02BF00BAC49C /* ChangePasswordView.m */,
+				32C7D1A424BC09CC00BAC49C /* SelectBindTypeView.h */,
+				32C7D1A524BC09CC00BAC49C /* SelectBindTypeView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -402,6 +429,15 @@
 				32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32FB926624B56A88000E241C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				32FB926324B566D5000E241C /* LoginButton.h */,
+				32FB926424B566D5000E241C /* LoginButton.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,9 +557,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				32BD6EDA231AB1F400F146EC /* CCSkyHourLoginViewController.m in Sources */,
+				327F214E24BB073A00C95016 /* PhoneView.m in Sources */,
+				32C7D1A624BC09CC00BAC49C /* SelectBindTypeView.m in Sources */,
 				325182A3229E24BB00623AFF /* ViewController.m in Sources */,
+				32C7D1A324BC02BF00BAC49C /* ChangePasswordView.m in Sources */,
 				325182AE229E24BD00623AFF /* main.m in Sources */,
+				32FB926524B566D5000E241C /* LoginButton.m in Sources */,
 				325182A0229E24BB00623AFF /* AppDelegate.m in Sources */,
+				327F214B24BADE3500C95016 /* RegisterAccountView.m in Sources */,
+				3212AF5624B72248008D3C62 /* AccountLoginView.m in Sources */,
+				3212AF5324B71A6B008D3C62 /* SDKTextFiledView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,14 +594,11 @@
 				3267FC0322A60E72008AD571 /* UIUtil.m in Sources */,
 				3267FC0422A60E72008AD571 /* LoginImp.m in Sources */,
 				3267FC0522A60E72008AD571 /* LoginTitleView.m in Sources */,
-				3267FC0622A60E72008AD571 /* LoginMainView.m in Sources */,
+				3267FC0622A60E72008AD571 /* SelectLoginTypeView.m in Sources */,
 				3267FC0722A60E72008AD571 /* GuestLoginWarnTipsView.m in Sources */,
-				3267FC0822A60E72008AD571 /* CurrentLoginInfoView.m in Sources */,
 				3267FC0922A60E72008AD571 /* BindAccountView.m in Sources */,
-				3267FC0A22A60E72008AD571 /* UIViewUtil.m in Sources */,
 				3267FC0B22A60E72008AD571 /* SDKBaseView.m in Sources */,
 				3267FC0C22A60E72008AD571 /* GuestLogoutWarnTipsView.m in Sources */,
-				3267FC0D22A60E72008AD571 /* FBGGUnbindView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

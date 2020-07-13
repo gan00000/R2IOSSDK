@@ -28,13 +28,15 @@
 #define kBgAlpha                         0.9f
 
 #define kBgWidth                        350.0
-#define kBgHeight                       240.0
+#define kBgHeight                       350.0
+
+#define kInputTextFiledWidth                       48.0
 
 #define LoginTypeFacebook                 2
 #define LoginTypeGoogle                   8
 #define LoginTypeGuest                    1
 
-#define ContentViewBgColor                    @"#bebebf"
+#define ContentViewBgColor                    @"#f4f4f5"
 
 #define SDK_DEFAULT_BUNDLE_NAME  @"CCSkyHourSDKResources"
 
@@ -53,6 +55,23 @@
 #define Guest_Login_Tipe_OK  @"Guest_Login_Tipe_OK" //游客登录成功通知
 #define SDK_AUTO_LOGIN_FAIL @"SDK_AUTO_LOGIN_FAIL"  //自动登录失败通知
 
+typedef NS_OPTIONS(NSUInteger, CURRENT_PAGE_TYPE)
+{
+    CURRENT_PAGE_TYPE_REG_ACCOUNT,
+    CURRENT_PAGE_TYPE_LOGIN_ACCOUNT,
+    CURRENT_PAGE_TYPE_BIND,
+};
+
+//页面按钮button点击tag
+#define kCheckBoxBtnTag     20
+#define kAccountLoginActTag     21
+#define kChangePwdActTag     22
+#define kFindPwdActTag     23
+#define kRegisterAccountActTag     24
+#define kBindAccountActTag     25
+#define kBackBtnActTag     26
+#define kGetVfCodeActTag    27
+#define kChangePwdActTag    28
 
 typedef void (^ViewClickHandler)(NSString* msg, NSInteger m);
 

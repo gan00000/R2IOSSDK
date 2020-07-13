@@ -47,6 +47,25 @@
     return btn;
 }
 
++ (UIButton *)initBtnWithTitle2:(NSString *)titleText
+                           tag:(NSUInteger)tag
+                      selector:(SEL)selector
+                        target:(id)target
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn setTitle:titleText forState:0];
+    btn.titleLabel.font = [UIFont systemFontOfSize:16];
+    [btn setTitleColor:[UIColor colorWithHexString:@"#777777"] forState:0];
+    [btn setTag:tag];
+    [btn addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
+    //[btn.layer setBorderWidth:1.5f];
+    //[btn.layer setBorderColor:[UIColor grayColor].CGColor];
+   // [btn.layer setMasksToBounds:YES];
+    //[btn.layer setCornerRadius:5.0f];
+    
+    return btn;
+}
+
 
 +(void)showAlertTips:(UIViewController *)viewController msg:(NSString *)msg
 {

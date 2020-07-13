@@ -26,7 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
                            tag:(NSUInteger)tag
                       selector:(SEL)selector
                         target:(id)target;
-
++ (UIButton *)initBtnWithTitle2:(NSString *)titleText
+     tag:(NSUInteger)tag
+selector:(SEL)selector
+  target:(id)target;
 
 +(void)showAlertTips:(UIViewController *)viewController msg:(NSString *)msg;
 +(void)showAlertTips:(UIViewController *)viewController msg:(NSString *)msg okHandler:(void (^ __nullable)(UIAlertAction *action))handler;
