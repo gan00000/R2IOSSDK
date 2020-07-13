@@ -74,6 +74,7 @@ typedef NS_OPTIONS(NSUInteger, CURRENT_PAGE_TYPE)
 #define kBackBtnActTag     26
 #define kGetVfCodeActTag    27
 #define kChangePwdActTag    28
+#define kMoreAccountListActTag    29
 
 typedef void (^ViewClickHandler)(NSString* msg, NSInteger m);
 

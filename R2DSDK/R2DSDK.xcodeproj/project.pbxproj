@@ -78,6 +78,7 @@
 		32775C4D24BC6AFB00BDE4E7 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 32775C4A24BC6AFB00BDE4E7 /* YYClassInfo.m */; };
 		327F214B24BADE3500C95016 /* RegisterAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327F214A24BADE3500C95016 /* RegisterAccountView.m */; };
 		327F214E24BB073A00C95016 /* PhoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327F214D24BB073A00C95016 /* PhoneView.m */; };
+		3284E0FC24BCA2B40050BC3D /* AccountListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3284E0FB24BCA2B40050BC3D /* AccountListViewCell.m */; };
 		32B3E09422A1415E0071BF80 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09322A1415E0071BF80 /* AdSupport.framework */; };
 		32B3E09622A141630071BF80 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09522A141630071BF80 /* GameKit.framework */; };
 		32B3E09822A141720071BF80 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B3E09722A141710071BF80 /* StoreKit.framework */; };
@@ -217,6 +218,8 @@
 		327F214C24BB073A00C95016 /* PhoneView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneView.h; sourceTree = "<group>"; };
 		327F214D24BB073A00C95016 /* PhoneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneView.m; sourceTree = "<group>"; };
 		327F215024BB1FA200C95016 /* SelectLoginTypeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLoginTypeView.h; sourceTree = "<group>"; };
+		3284E0FA24BCA2B40050BC3D /* AccountListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountListViewCell.h; sourceTree = "<group>"; };
+		3284E0FB24BCA2B40050BC3D /* AccountListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountListViewCell.m; sourceTree = "<group>"; };
 		32B3E09322A1415E0071BF80 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		32B3E09522A141630071BF80 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		32B3E09722A141710071BF80 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -283,6 +286,8 @@
 				3212AF5224B71A6B008D3C62 /* SDKTextFiledView.m */,
 				327F214C24BB073A00C95016 /* PhoneView.h */,
 				327F214D24BB073A00C95016 /* PhoneView.m */,
+				3284E0FA24BCA2B40050BC3D /* AccountListViewCell.h */,
+				3284E0FB24BCA2B40050BC3D /* AccountListViewCell.m */,
 			);
 			path = widget;
 			sourceTree = "<group>";
@@ -682,6 +687,7 @@
 				32775C4224BC688800BDE4E7 /* BJServiceConfigurator.m in Sources */,
 				3212AF5324B71A6B008D3C62 /* SDKTextFiledView.m in Sources */,
 				32775C4324BC688800BDE4E7 /* BJHTTPServiceEngine.m in Sources */,
+				3284E0FC24BCA2B40050BC3D /* AccountListViewCell.m in Sources */,
 				32775C4424BC688800BDE4E7 /* BJBaseResponceModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

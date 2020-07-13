@@ -17,12 +17,17 @@ typedef NS_OPTIONS(NSUInteger, SDKTextFiledView_Type)
     SDKTextFiledView_Type_VfCode,
 };
 
+typedef void (^ClickItem)(NSInteger) ;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SDKTextFiledView : SDKBaseView
 
 - (instancetype)initViewWithType:(SDKTextFiledView_Type) type;
+
+@property (nonatomic) ClickItem clickAccountListItem;
+@property (nonatomic) UITextField *inputUITextField;
+
 @end
 
 NS_ASSUME_NONNULL_END

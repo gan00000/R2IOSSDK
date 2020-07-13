@@ -12,6 +12,14 @@
 #import "LoginTitleView.h"
 #import "LoginButton.h"
 #import "RegisterAccountView.h"
+#import "AccountListViewCell.h"
+
+
+static  NSString *AccountListViewCellID = @"AccountListViewCellID";
+
+@interface AccountLoginView() <UITableViewDelegate, UITableViewDataSource>
+
+@end
 
 //会员登入view
 @implementation AccountLoginView
@@ -21,6 +29,8 @@
     UIButton *checkBoxBtn;
     UIButton *accountLoginBtn;
     UIButton *backBtn;
+    UITableView *accountListTableView;
+
 }
 
 /*
@@ -114,13 +124,6 @@
                    }];
         
         //找回密碼
-//        UILabel *findPasswordLable = [[UILabel alloc] init];
-//         findPasswordLable.text =  @"找回密碼";
-//         findPasswordLable.font = [UIFont systemFontOfSize:12];
-//         findPasswordLable.textAlignment = NSTextAlignmentLeft;
-//         findPasswordLable.backgroundColor = [UIColor clearColor];
-//         findPasswordLable.numberOfLines = 1;
-//         findPasswordLable.textColor = [UIColor blackColor];
         
          UIButton *findPasswordBtn = [UIUtil initBtnWithTitle2:@"找回密碼" tag:kFindPwdActTag selector:@selector(registerViewBtnAction:) target:self];
         findPasswordBtn.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -176,8 +179,62 @@
           make.centerY.equalTo(changePasswordBtn);
           make.height.mas_equalTo(changePasswordBtn);
       }];
+        
+        //添加账号显示列表
+        accountSDKTextFiledView.clickAccountListItem = ^(NSInteger tag) {
+            
+            if (accountListTableView) {
+                //设置点击显示、隐藏
+                if (accountListTableView.tag == 0) {
+                    [self setTableViewHiden:YES];
+                }else{
+                   [self setTableViewHiden:NO];
+                }
+                
+                
+            }else{//第一次点击显示
+                [self addAccountListTableView];
+            }
+              
+          };
     }
     return self;
+}
+
+//设置隐藏或者显示
+-(void) setTableViewHiden:(BOOL) hiden
+{
+    accountListTableView.hidden = hiden;
+    if (hiden) {
+        accountListTableView.tag = 1;
+    }else{
+        accountListTableView.tag = 0;
+    }
+}
+
+
+- (void)addAccountListTableView
+{
+    
+    //账号下拉列表
+    accountListTableView = [[UITableView alloc] init];
+    accountListTableView.backgroundColor = [UIColor whiteColor];
+    [self setTableViewHiden:NO];
+    accountListTableView.delegate = self;
+    accountListTableView.dataSource = self;
+    accountListTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//    accountListTableView.estimatedRowHeight = 0;
+//    accountListTableView.estimatedSectionFooterHeight = 0;
+//    accountListTableView.estimatedSectionHeaderHeight = 0;
+    
+    [accountListTableView registerClass:[AccountListViewCell class] forCellReuseIdentifier:AccountListViewCellID];
+    [self addSubview:accountListTableView];
+    [accountListTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.mas_equalTo(accountSDKTextFiledView.mas_leading);
+        make.trailing.mas_equalTo(accountSDKTextFiledView.mas_trailing);
+        make.top.equalTo(accountSDKTextFiledView.mas_bottom);
+        make.height.mas_equalTo(100);
+    }];
 }
 
 
@@ -230,4 +287,30 @@
     }
     
 }
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 8;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 30;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    AccountListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:AccountListViewCellID forIndexPath:indexPath];
+    cell.accountUILabel.text = @"xxxx";
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SDK_LOG(@"didSelectRowAtIndexPath %ld", indexPath.row);
+    accountSDKTextFiledView.inputUITextField.text = @"ooo";
+    [self setTableViewHiden:YES];
+}
+
 @end

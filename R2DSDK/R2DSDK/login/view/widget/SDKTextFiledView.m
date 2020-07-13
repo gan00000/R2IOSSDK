@@ -37,7 +37,8 @@
     
     NSString *iconName;
     NSString *lableName;
-    Boolean showEye = NO;
+    BOOL showEye = NO;
+    BOOL addMoreAccountBtn = NO;
     UIKeyboardType mUIKeyboardType = UIKeyboardTypeDefault;
     
     switch (type) {
@@ -50,6 +51,7 @@
         case SDKTextFiledView_Type_Account:
             iconName = @"fl_sdk_ren.png";
             lableName = @"帳號";
+            addMoreAccountBtn = YES;
             break;
             
         case SDKTextFiledView_Type_Password:
@@ -102,6 +104,7 @@
    }];
 
      mUITextField = [[UITextField alloc] init];
+    self.inputUITextField = mUITextField;
     if (mUIKeyboardType) {
         [mUITextField setKeyboardType:mUIKeyboardType];
     }
@@ -114,6 +117,24 @@
           make.trailing.mas_equalTo(self.mas_trailing).mas_offset(-30);
           
       }];
+    
+    if (addMoreAccountBtn) {
+        
+        UIButton *moreAccountBtn = [UIUtil initBtnWithNormalImage:@"sdk_list_down.png" highlightedImage:nil tag:kMoreAccountListActTag selector:@selector(clickItemBtn:) target:self];
+          
+        moreAccountBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [self addSubview:moreAccountBtn];
+        [moreAccountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.trailing.mas_equalTo(self.mas_trailing).mas_offset(-10);
+            make.centerY.mas_equalTo(mUITextField.mas_centerY);
+            make.height.mas_equalTo(mUITextField);
+            make.width.mas_equalTo(26);
+        }];
+        
+    }
+     
+    
 
     if (showEye) {
         mUITextField.secureTextEntry = NO;
@@ -160,4 +181,13 @@
     // 切换按钮的状态
     sender.selected = !sender.selected;
 }
+
+//点击账号记录下拉列表
+- (void)clickItemBtn:(UIButton *)sender
+{
+    if (self.clickAccountListItem) {
+        self.clickAccountListItem(sender.tag);
+    }
+}
+
 @end

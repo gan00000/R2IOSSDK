@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString * gameLanguage;
 
-@property (nonatomic)Boolean isLogin;
+@property (nonatomic)BOOL isLogin;
 
 @property  (nonatomic, copy)NSString * loginResult;
 
