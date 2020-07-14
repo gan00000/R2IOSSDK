@@ -34,7 +34,7 @@
 		3251830C229E4C8900623AFF /* CCSkyHourSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3251830B229E4C8900623AFF /* CCSkyHourSDKResources.bundle */; };
 		3267FBF322A60E72008AD571 /* CCSkyHourSDKPlat.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CEA228229FA08200B9CC7C /* CCSkyHourSDKPlat.m */; };
 		3267FBF422A60E72008AD571 /* ConfigCoreUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3253B29F229EC407007C23CD /* ConfigCoreUtil.m */; };
-		3267FBF522A60E72008AD571 /* CCSkyHourSDKDATA.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518321229EAAA100623AFF /* CCSkyHourSDKDATA.m */; };
+		3267FBF522A60E72008AD571 /* CCSDKDATA.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518321229EAAA100623AFF /* CCSDKDATA.m */; };
 		3267FBF622A60E72008AD571 /* UIColor+HexStringToColorTW.m in Sources */ = {isa = PBXBuildFile; fileRef = 3251830E229E599800623AFF /* UIColor+HexStringToColorTW.m */; };
 		3267FBF722A60E72008AD571 /* UIImage+GamaBundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32518308229E398B00623AFF /* UIImage+GamaBundleImage.m */; };
 		3267FBF822A60E72008AD571 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 325182F6229E2F6C00623AFF /* MASCompositeConstraint.m */; };
@@ -173,8 +173,7 @@
 		32518319229E979B00623AFF /* GuestLoginWarnTipsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuestLoginWarnTipsView.h; sourceTree = "<group>"; };
 		3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuestLoginWarnTipsView.m; sourceTree = "<group>"; };
 		3251831C229EA7F000623AFF /* ConfigCoreUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigCoreUtil.h; sourceTree = "<group>"; };
-		32518320229EAAA100623AFF /* CCSkyHourSDKDATA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSkyHourSDKDATA.h; sourceTree = "<group>"; };
-		32518321229EAAA100623AFF /* CCSkyHourSDKDATA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCSkyHourSDKDATA.m; sourceTree = "<group>"; };
+		32518321229EAAA100623AFF /* CCSDKDATA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCSDKDATA.m; sourceTree = "<group>"; };
 		3251A0E422A02F9E004A0CCD /* LoginViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewDelegate.h; sourceTree = "<group>"; };
 		3253B29F229EC407007C23CD /* ConfigCoreUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigCoreUtil.m; sourceTree = "<group>"; };
 		3260C1DF22A0D6F800E30FE9 /* SDKBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDKBaseView.h; sourceTree = "<group>"; };
@@ -227,6 +226,7 @@
 		32BD6ED9231AB1F400F146EC /* CCSkyHourLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSkyHourLoginViewController.m; sourceTree = "<group>"; };
 		32BD6F43231ABED800F146EC /* CCSDKResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCSDKResponse.h; sourceTree = "<group>"; };
 		32BD6F44231ABED800F146EC /* CCSDKResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCSDKResponse.m; sourceTree = "<group>"; };
+		32C03F0624BD72F600114B21 /* CCSDKDATA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSDKDATA.h; sourceTree = "<group>"; };
 		32C7D1A124BC02BF00BAC49C /* ChangePasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordView.h; sourceTree = "<group>"; };
 		32C7D1A224BC02BF00BAC49C /* ChangePasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordView.m; sourceTree = "<group>"; };
 		32C7D1A424BC09CC00BAC49C /* SelectBindTypeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectBindTypeView.h; sourceTree = "<group>"; };
@@ -315,8 +315,9 @@
 		3251829D229E24BB00623AFF /* R2DSDK */ = {
 			isa = PBXGroup;
 			children = (
-				3253B2A1229EC8A5007C23CD /* API */,
-				3251831F229EAA3200623AFF /* SDKDATA */,
+				32C03F0724BD73F100114B21 /* Plat */,
+				3253B2A1229EC8A5007C23CD /* Model */,
+				3251831F229EAA3200623AFF /* SdkHelper */,
 				3251830A229E3B9400623AFF /* RES */,
 				325182B9229E281900623AFF /* Common */,
 				325182B4229E254C00623AFF /* Login */,
@@ -336,7 +337,7 @@
 		325182B4229E254C00623AFF /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				32FB926624B56A88000E241C /* Utils */,
+				32FB926624B56A88000E241C /* UIUtils */,
 				32BD6ED8231AB1F400F146EC /* CCSkyHourLoginViewController.h */,
 				32BD6ED9231AB1F400F146EC /* CCSkyHourLoginViewController.m */,
 				32CEA22A229FABE200B9CC7C /* LoginApi */,
@@ -350,19 +351,11 @@
 		325182B9229E281900623AFF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				32C03F0824BD958300114B21 /* Utils */,
 				32775C4624BC6AFB00BDE4E7 /* YYModel */,
 				32775C3524BC688800BDE4E7 /* HttpService */,
 				32775C2024BC673F00BDE4E7 /* AFNetworking */,
-				325182BC229E28EF00623AFF /* CCSkyHourFunction.h */,
-				325182BB229E28EF00623AFF /* CCSkyHourFunction.m */,
-				325182BD229E28EF00623AFF /* CCSkyHourHeader.h */,
 				325182E2229E2F5900623AFF /* Masonry */,
-				3251830D229E599800623AFF /* UIColor+HexStringToColorTW.h */,
-				3251830E229E599800623AFF /* UIColor+HexStringToColorTW.m */,
-				32518307229E398B00623AFF /* UIImage+GamaBundleImage.h */,
-				32518308229E398B00623AFF /* UIImage+GamaBundleImage.m */,
-				32518316229E6E0B00623AFF /* UIUtil.h */,
-				32518317229E6E0B00623AFF /* UIUtil.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -435,26 +428,25 @@
 			path = RES;
 			sourceTree = "<group>";
 		};
-		3251831F229EAA3200623AFF /* SDKDATA */ = {
+		3251831F229EAA3200623AFF /* SdkHelper */ = {
 			isa = PBXGroup;
 			children = (
+				325182BD229E28EF00623AFF /* CCSkyHourHeader.h */,
 				3253B29F229EC407007C23CD /* ConfigCoreUtil.m */,
 				3251831C229EA7F000623AFF /* ConfigCoreUtil.h */,
-				32518320229EAAA100623AFF /* CCSkyHourSDKDATA.h */,
-				32518321229EAAA100623AFF /* CCSkyHourSDKDATA.m */,
+			);
+			path = SdkHelper;
+			sourceTree = "<group>";
+		};
+		3253B2A1229EC8A5007C23CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32C03F0624BD72F600114B21 /* CCSDKDATA.h */,
+				32518321229EAAA100623AFF /* CCSDKDATA.m */,
 				32BD6F43231ABED800F146EC /* CCSDKResponse.h */,
 				32BD6F44231ABED800F146EC /* CCSDKResponse.m */,
 			);
-			path = SDKDATA;
-			sourceTree = "<group>";
-		};
-		3253B2A1229EC8A5007C23CD /* API */ = {
-			isa = PBXGroup;
-			children = (
-				32CEA227229FA08200B9CC7C /* CCSkyHourSDKPlat.h */,
-				32CEA228229FA08200B9CC7C /* CCSkyHourSDKPlat.m */,
-			);
-			path = API;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3267FBEB22A60DF8008AD571 /* R2DLIB */ = {
@@ -515,6 +507,30 @@
 			path = YYModel;
 			sourceTree = "<group>";
 		};
+		32C03F0724BD73F100114B21 /* Plat */ = {
+			isa = PBXGroup;
+			children = (
+				32CEA227229FA08200B9CC7C /* CCSkyHourSDKPlat.h */,
+				32CEA228229FA08200B9CC7C /* CCSkyHourSDKPlat.m */,
+			);
+			path = Plat;
+			sourceTree = "<group>";
+		};
+		32C03F0824BD958300114B21 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				325182BC229E28EF00623AFF /* CCSkyHourFunction.h */,
+				325182BB229E28EF00623AFF /* CCSkyHourFunction.m */,
+				3251830D229E599800623AFF /* UIColor+HexStringToColorTW.h */,
+				3251830E229E599800623AFF /* UIColor+HexStringToColorTW.m */,
+				32518307229E398B00623AFF /* UIImage+GamaBundleImage.h */,
+				32518308229E398B00623AFF /* UIImage+GamaBundleImage.m */,
+				32518316229E6E0B00623AFF /* UIUtil.h */,
+				32518317229E6E0B00623AFF /* UIUtil.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		32CEA22A229FABE200B9CC7C /* LoginApi */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,13 +554,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		32FB926624B56A88000E241C /* Utils */ = {
+		32FB926624B56A88000E241C /* UIUtils */ = {
 			isa = PBXGroup;
 			children = (
 				32FB926324B566D5000E241C /* LoginButton.h */,
 				32FB926424B566D5000E241C /* LoginButton.m */,
 			);
-			path = Utils;
+			path = UIUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -698,7 +714,7 @@
 			files = (
 				3267FBF322A60E72008AD571 /* CCSkyHourSDKPlat.m in Sources */,
 				3267FBF422A60E72008AD571 /* ConfigCoreUtil.m in Sources */,
-				3267FBF522A60E72008AD571 /* CCSkyHourSDKDATA.m in Sources */,
+				3267FBF522A60E72008AD571 /* CCSDKDATA.m in Sources */,
 				3267FBF622A60E72008AD571 /* UIColor+HexStringToColorTW.m in Sources */,
 				3267FBF722A60E72008AD571 /* UIImage+GamaBundleImage.m in Sources */,
 				32BD6F45231ABED800F146EC /* CCSDKResponse.m in Sources */,

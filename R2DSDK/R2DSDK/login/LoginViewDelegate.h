@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)goBackBtn:(UIButton *)backBtn backCount:(NSUInteger) count;
 
 -(void)logout;
+-(void)loginSuccess;
+
 -(void)clickBindFacebook;
 -(void)clickBindGoogle;
 

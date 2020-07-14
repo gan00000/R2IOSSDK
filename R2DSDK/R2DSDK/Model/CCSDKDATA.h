@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import <R2SDKFramework/R2SDKFramework.h>
+#import "CCSDKResponse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CCSkyHourSDKDATA : NSObject
+@interface CCSDKDATA : NSObject
+
+@property (nonatomic)CCSDKResponse *mCCSDKResponse;
 
 @property (nonatomic, copy)NSString * gameLoginToken;
 @property (nonatomic, copy)NSString * gameLoginTimeStamp;

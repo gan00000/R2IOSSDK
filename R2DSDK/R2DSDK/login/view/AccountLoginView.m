@@ -13,6 +13,8 @@
 #import "LoginButton.h"
 #import "RegisterAccountView.h"
 #import "AccountListViewCell.h"
+#import "BJHTTPServiceEngine.h"
+#import "YYModel.h"
 
 
 static  NSString *AccountListViewCellID = @"AccountListViewCellID";
@@ -288,7 +290,28 @@ static  NSString *AccountListViewCellID = @"AccountListViewCellID";
     
 }
 
+-(void) requestAccountLogin
+{
+    
+    NSString *accountName = @"";
+    NSString *pwd = @"";
+//    https://login.gamesword.com/login.app?spy_advertiser=&gameCode=twsmios&osLanguage=en&versionName=1.0&captcha=&packageName=com.gamamobi.twsm&deviceType=x86_64&gameLanguage=zh-TW&uuid=ca0a311f-281d-4650-a173-4b91e35d680c&versionCode=1.0.3&signature=1949184f908a1290d90805244c2e2fde&loginTimestamp=1594696873798&name=666666&accessToken=38c9ce91f8cd022a37348f8dcbff7877&pwd=e10adc3949ba59abbe56e057f20f883e&operatingSystem=ios&timestamp=1594697614993&uniqueId=ca0a311f-281d-4650-a173-4b91e35d680c&systemVersion=13.3&adId=00000000-0000-0000-0000-000000000000&spy_platForm=&idfa=00000000-0000-0000-0000-000000000000
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"captcha"] = @"";
+    param[@"name"] = accountName;
+    param[@"pwd"] = pwd;
+    
+    
+    [BJHTTPServiceEngine postRequestWithFunctionPath:@"" params:param successBlock:^(id responseData) {
+        
+       CCSDKResponse *mCCSDKResponse = [CCSDKResponse yy_modelWithDictionary:responseData];
+        
+    } errorBlock:^(BJError *error) {
+        
+    }];
+}
 
+#pragma mark tableview deletage
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;

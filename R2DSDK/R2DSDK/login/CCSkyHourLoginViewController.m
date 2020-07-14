@@ -48,10 +48,8 @@
 // 视图被销毁
 - (void)dealloc
 {
-//    [super dealloc];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     SDK_LOG(@"dealloc视图被销毁");
-//    [R2SDKPlat shareR2SDK].sdkPresentedVC = nil;
 }
 
 - (void)viewDidLoad {
@@ -269,6 +267,11 @@
 }
 
 - (void)logout
+{
+    
+}
+
+- (void)loginSuccess
 {
     
 }

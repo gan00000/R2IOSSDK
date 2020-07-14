@@ -23,15 +23,8 @@ typedef NS_ENUM(NSInteger, BJResponseCode) {
 /**
  *	@brief	提示信息
  */
-@property (nonatomic, copy) NSString *msg;
+@property (nonatomic, copy) NSString *message;
 
-//当接口有分页时，里面包含两个值, pages和total
-@property (nonatomic, copy) NSDictionary *page;
-
-@property (nonatomic, assign) unsigned int total;
-
-- (NSInteger)pagesValueOfPage; //当有分页时，此值表示第几页
-- (NSInteger)totalValueOfPage; //当有分页时，此值表示总数据量
-
+-(BOOL) isSuccess;
 @end
 

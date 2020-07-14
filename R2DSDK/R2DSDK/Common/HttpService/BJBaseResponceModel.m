@@ -1,27 +1,14 @@
-//
-//  BJBaseResponceModel.m
-//  BenjiaPro
-//
-//  Created by 吕磊 on 2017/5/26.
-//  Copyright © 2017年 Benjia. All rights reserved.
-//
+
 #import "BJBaseResponceModel.h"
 
 @implementation BJBaseResponceModel
 
-- (NSInteger)pagesValueOfPage {
-    if (self.page) {
-        return [self.page[@"pages"] integerValue];
+-(BOOL) isSuccess
+{
+    
+    if (self.code == 1000) {
+        return YES;
     }
-    return 0;
+    return NO;
 }
-
-- (NSInteger)totalValueOfPage {
-//    if (self.page) {
-//        return [self.page[@"total"] integerValue];
-//    }
-//    return 0;
-    return self.total;
-}
-
 @end

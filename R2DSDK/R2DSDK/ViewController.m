@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "API/CCSkyHourSDKPlat.h"
+#import "CCSkyHourSDKPlat.h"
 
 @interface ViewController ()
 

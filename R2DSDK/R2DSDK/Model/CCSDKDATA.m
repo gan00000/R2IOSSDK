@@ -6,16 +6,16 @@
 //  Copyright © 2019 ganyuanrong. All rights reserved.
 //
 
-#import "CCSkyHourSDKDATA.h"
+#import "CCSDKDATA.h"
 
-@implementation CCSkyHourSDKDATA
+@implementation CCSDKDATA
 
 + (instancetype)sharedSdkData
 {
-    static CCSkyHourSDKDATA * pfData = nil;
+    static CCSDKDATA * pfData = nil;
     static dispatch_once_t once_dispatch;
     dispatch_once(&once_dispatch, ^{
-        pfData = [[CCSkyHourSDKDATA alloc] initSDKDATA];
+        pfData = [[CCSDKDATA alloc] initSDKDATA];
     });
     return pfData;
 }

@@ -11,7 +11,7 @@
 #import "UIImage+GamaBundleImage.h"
 #import "UIColor+HexStringToColorTW.h"
 #import "UIUtil.h"
-#import "CCSkyHourSDKDATA.h"
+#import "CCSDKDATA.h"
 #import "ConfigCoreUtil.h"
 #import "CCSkyHourSDKPlat.h"
 #import "CCSDKResponse.h"
@@ -22,6 +22,8 @@
 
 #ifndef CCSkyHourHeader_h
 #define CCSkyHourHeader_h
+
+#define ENABLE_REQUEST_LOG 1
 
 // cornerRadius
 #define kR2BtnCornerRadius                 8.0f
@@ -42,7 +44,7 @@
 #define SDK_DEFAULT_BUNDLE_NAME  @"CCSkyHourSDKResources"
 
 
-#define SDK_DATA                           [CCSkyHourSDKDATA sharedSdkData]
+#define SDK_DATA                           [CCSDKDATA sharedSdkData]
 
 #define LABEL_FONT_NAME_BOLD                 @"Helvetica-Bold"
 #define LABEL_FONT_NAME_Helvetica           @"Helvetica"

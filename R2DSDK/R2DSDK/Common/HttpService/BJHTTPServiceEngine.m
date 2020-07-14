@@ -76,7 +76,7 @@
         if (errorBlock) {
             BJError *errorObject = [[BJError alloc] init];
             errorObject.code = error.code;
-            errorObject.msg = @"请求失败"; //TODO:获取NSError里面的描述信息
+            errorObject.message = @"请求失败"; //TODO:获取NSError里面的描述信息
             errorBlock(errorObject);
         }
     }];
@@ -117,7 +117,7 @@
         if (errorBlock) {
             BJError *errorObject = [[BJError alloc] init];
             errorObject.code = error.code;
-            errorObject.msg = @"请求失败"; //TODO:获取NSError里面的描述信息
+            errorObject.message = @"请求失败"; //TODO:获取NSError里面的描述信息
             errorBlock(errorObject);
         }
     }];
@@ -160,7 +160,7 @@
         if (errorBlock) {
             BJError *errorObject = [[BJError alloc] init];
             errorObject.code = error.code;
-            errorObject.msg = @"请求失败"; //TODO:获取NSError里面的描述信息
+            errorObject.message = @"请求失败"; //TODO:获取NSError里面的描述信息
             errorBlock(errorObject);
         }
         
@@ -202,10 +202,40 @@
         if (errorBlock) {
             BJError *errorObject = [[BJError alloc] init];
             errorObject.code = error.code;
-            errorObject.msg = @"请求失败"; //TODO:获取NSError里面的描述信息
+            errorObject.message = @"请求失败"; //TODO:获取NSError里面的描述信息
             errorBlock(errorObject);
         }
     }];
+}
+
++ (NSDictionary *)commDic
+{
+    NSDictionary * _commDic =
+    @{
+      // 公共的参数拼接
+      @"packageName"      :     [CCSkyHourFunction getBundleIdentifier],
+      
+      @"adId"             :     [[CCSkyHourFunction getIdfa]       lowercaseString]? : @"",
+      @"idfa"             :     [[CCSkyHourFunction getIdfa]       lowercaseString]? : @"",
+      @"uuid"             :     [[CCSkyHourFunction getGamaUUID]     lowercaseString]? : @"",
+      @"versionName"      :     [CCSkyHourFunction getBundleShortVersionString]? : @"",
+      @"versionCode"      :     [CCSkyHourFunction getBundleVersion]? : @"",
+      @"systemVersion"    :     [CCSkyHourFunction getSystemVersion]? : @"",
+      @"deviceType"       :     [CCSkyHourFunction getDeviceType]? : @"",
+      @"operatingSystem"  :     @"ios",
+//      @"gameLanguage"     :     GAMA_GET_BOOL(GAMA_GMAE_mLanguge) ?[GamaFunction getServerLanguage]:[GamaFunction getServerLocaleStrWithGameLanguage:GAMA_GET_INFO(GAMA_GAME_LANGUAGE)]? : @"",
+      @"osLanguage"       :     [CCSkyHourFunction getPreferredLanguage]? : @"",
+      
+//      @"loginTimestamp"   :     [GamaUserInfoModel shareInfoModel].timestamp ? : @"",
+//      @"accessToken"      :     [GamaUserInfoModel shareInfoModel].accessToken ? : @"",
+      @"uniqueId"         :     [[CCSkyHourFunction getGamaUUID] lowercaseString]? : @"",
+      
+//      @"spy_platForm"       :   GAMA_GET_INFO(@"gama_platForm")? :@"",
+//      @"spy_advertiser"     :   GAMA_GET_INFO(@"gama_advertiser")? :@"",
+      
+      };
+    
+    return _commDic;
 }
 
 @end
