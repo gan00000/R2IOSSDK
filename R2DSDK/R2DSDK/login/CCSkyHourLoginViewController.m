@@ -7,18 +7,19 @@
 //
 
 #import "CCSkyHourLoginViewController.h"
-#import "view/SelectLoginTypeView.h"
-#import "view/GuestLoginWarnTipsView.h"
-#import "view/BindAccountView.h"
+
 #import "LoginImp.h"
-#import "view/GuestLogoutWarnTipsView.h"
+#import "GuestLogoutWarnTipsView.h"
 #import "CCSkyHourSDKPlat.h"
+
 #import "AccountLoginView.h"
 #import "RegisterAccountView.h"
 #import "ChangePasswordView.h"
 #import "SelectBindTypeView.h"
 #import "AutoLoginView.h"
-
+#import "FindPasswordView.h"
+#import "SelectLoginTypeView.h"
+#import "BindAccountView.h"
 
 @implementation CCSkyHourLoginViewController{
     SelectLoginTypeView *mSelectLoginTypeView;
@@ -104,21 +105,7 @@
 {
     SDK_LOG(@"viewDidDisappear");
 }
--(void)showGuestLoginWarnTipsView
-{
-    //移除所有子视图
-    [self.view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
-        GuestLoginWarnTipsView *mGuestLoginWarnTipsView = [[GuestLoginWarnTipsView alloc]initView];
-        mGuestLoginWarnTipsView.theViewUIViewController = self;
-        [self.view addSubview:mGuestLoginWarnTipsView];
-        [mGuestLoginWarnTipsView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(@(0));
-            make.centerY.equalTo(@(0));
-            make.width.equalTo(@(kBgWidth));
-            make.height.equalTo(@(kBgHeight - 40));
-        }];
-}
 
 -(void)showLoginPageOrAutoLogin
 {
@@ -154,6 +141,7 @@
 //    [self addRegisterAccountView];
 }
 
+#pragma mark -頁面添加部分
 -(void)addSelectLoginTypeView
 {
     //移除所有子视图
@@ -206,6 +194,14 @@
     [self addSubSdkLoginView:view];
 }
 
+-(void)addFindPasswordView
+{
+    
+    FindPasswordView *view = [[FindPasswordView alloc] initView];
+    [self addSubSdkLoginView:view];
+}
+
+
 -(void)addSubSdkLoginView:(SDKBaseView *)mSDKBaseView
 {
     
@@ -228,33 +224,48 @@
     NSString *noteName = note.name;
     if ([noteName isEqualToString: Guest_Login_Tipe_OK]) {
         
-        [self showGuestLoginWarnTipsView];
     }else if ([noteName isEqualToString:SDK_AUTO_LOGIN_FAIL]){
         [self showLoginPage];
     }
 }
 
-#pragma mark - 代理
+#pragma mark - LoginViewDelegate代理
 
-- (void)goSelectLoginTypeView{
-    [self addSelectLoginTypeView];
-}
-
-- (void)goAccountLoginView{
-    [self addAccountLoginView];
-}
-
-- (void)goSelelctBindTypeView
+-(void)goPageView:(CURRENT_PAGE_TYPE) pageType;
 {
-    [self addSelectBindTypeView];
-}
-
--(void)goRegisterAccountView{
-    [self addRegisterAccountView];
-}
-
-- (void)goChangePasswordView{
-    [self addChangePasswordView];
+    switch (pageType) {
+        case CURRENT_PAGE_TYPE_AUTO:
+            
+            break;
+            
+        case CURRENT_PAGE_TYPE_FIND_PWD:
+            [self addFindPasswordView];
+            break;
+            
+        case CURRENT_PAGE_TYPE_SELECT_LOGIN_TYPE:
+            [self addSelectLoginTypeView];//選擇登入方式
+            break;
+            
+        case CURRENT_PAGE_TYPE_LOGIN_ACCOUNT:
+            [self addAccountLoginView];//賬號登入頁面
+            break;
+            
+        case CURRENT_PAGE_TYPE_REG_ACCOUNT:
+            [self addRegisterAccountView];//註冊
+            break;
+            
+        case CURRENT_PAGE_TYPE_CHANGE_PWD:
+            [self addChangePasswordView];
+            break;
+            
+        case CURRENT_PAGE_TYPE_SELECT_BIND_TYPE:
+            [self addSelectBindTypeView];//選擇綁定方式頁面
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 - (void)goBackBtn:(UIButton *)backBtn backCount:(NSUInteger) count{

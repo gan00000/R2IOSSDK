@@ -1,23 +1,22 @@
 //
-//  RegisterAccountView.m
+//  FindPasswordView.m
 //  R2DSDK
 //
-//  Created by ganyuanrong on 2020/7/12.
+//  Created by ganyuanrong on 2020/7/14.
 //  Copyright © 2020 ganyuanrong. All rights reserved.
 //
 
-#import "RegisterAccountView.h"
+#import "FindPasswordView.h"
 #import "CCSkyHourHeader.h"
-#import "LoginTitleView.h"
 #import "SDKTextFiledView.h"
+#import "LoginTitleView.h"
 #import "PhoneView.h"
 #import "LoginButton.h"
 
-@implementation RegisterAccountView
+@implementation FindPasswordView
+
 {
     SDKTextFiledView *accountSDKTextFiledView;
-    SDKTextFiledView *passwordSDKTextFiledView;
-    SDKTextFiledView *passwordAgainSDKTextFiledView;
     LoginTitleView   *mLoginTitleView;
 }
 
@@ -33,17 +32,18 @@
 //        self.layer.borderWidth = 2;
         self.layer.masksToBounds = YES; //不设置这里会不生成圆角，原因查找中
         
-        //title
-        mLoginTitleView = [[LoginTitleView alloc] initViewWithTitle:@"註冊會員"];
-        mLoginTitleView.delegate = self.delegate;
-        
-        [self addSubview:mLoginTitleView];
-       [mLoginTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.top.mas_equalTo(self.mas_top).mas_offset(8);
-           make.centerX.mas_equalTo(self);
-          make.width.mas_equalTo(self).mas_offset(-12);
-           make.height.mas_equalTo(40);
-       }];
+         //title
+          mLoginTitleView = [[LoginTitleView alloc] initViewWithTitle:@"找回密碼"];
+          mLoginTitleView.delegate = self.delegate;//此处不起作用
+          
+          [self addSubview:mLoginTitleView];
+         [mLoginTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.mas_top).mas_offset(8);
+             make.centerX.mas_equalTo(self);
+            make.width.mas_equalTo(self).mas_offset(-12);
+             make.height.mas_equalTo(40);
+         }];
+            
           
         
         //账号
@@ -58,42 +58,18 @@
          }];
         
         
-        //密碼
-        passwordSDKTextFiledView = [[SDKTextFiledView alloc] initViewWithType:(SDKTextFiledView_Type_Password)];
-       [self addSubview:passwordSDKTextFiledView];
-            
-       [passwordSDKTextFiledView mas_makeConstraints:^(MASConstraintMaker *make) {
-           
-           make.top.equalTo(accountSDKTextFiledView.mas_bottom).mas_offset(10);
-           make.leading.mas_equalTo(accountSDKTextFiledView.mas_leading);
-           make.trailing.mas_equalTo(accountSDKTextFiledView.mas_trailing);
-           make.height.mas_equalTo(accountSDKTextFiledView.mas_height);
-        }];
-        
-        
-        //再次輸入密碼
-         passwordAgainSDKTextFiledView = [[SDKTextFiledView alloc] initViewWithType:(SDKTextFiledView_Type_Password)];
-        [self addSubview:passwordAgainSDKTextFiledView];
-             
-        [passwordAgainSDKTextFiledView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            make.top.equalTo(passwordSDKTextFiledView.mas_bottom).mas_offset(10);
-            make.leading.mas_equalTo(accountSDKTextFiledView.mas_leading);
-            make.trailing.mas_equalTo(accountSDKTextFiledView.mas_trailing);
-            make.height.mas_equalTo(accountSDKTextFiledView.mas_height);
-         }];
-
-        
+        //電話號碼
         PhoneView *mPhoneView = [[PhoneView alloc] initView];
            
            [self addSubview:mPhoneView];
            [mPhoneView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(passwordAgainSDKTextFiledView.mas_bottom).mas_offset(10);
+                make.top.equalTo(accountSDKTextFiledView.mas_bottom).mas_offset(10);
                  make.leading.mas_equalTo(accountSDKTextFiledView.mas_leading);
                  make.trailing.mas_equalTo(accountSDKTextFiledView.mas_trailing);
                  make.height.mas_equalTo(accountSDKTextFiledView.mas_height);
            }];
-          
+        
+        //驗證碼
          SDKTextFiledView *vfCodeFiledView = [[SDKTextFiledView alloc] initViewWithType:(SDKTextFiledView_Type_VfCode)];
           
           [self addSubview:vfCodeFiledView];
@@ -103,7 +79,7 @@
                 make.width.mas_equalTo(accountSDKTextFiledView.mas_width).multipliedBy(0.6);
                 make.height.mas_equalTo(accountSDKTextFiledView.mas_height);
           }];
-         
+         //獲取驗證碼
         UIButton *getVfCodeBtn = [UIUtil initBtnWithTitle2:@"獲取驗證碼" tag:kGetVfCodeActTag selector:@selector(registerViewBtnAction:) target:self];
         
         getVfCodeBtn.layer.borderColor = [UIColor grayColor].CGColor;
@@ -120,18 +96,17 @@
         }];
         [getVfCodeBtn setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
         
-         //账号登入
-      UIButton *registorAccountBtn = [LoginButton initBtnWithType:(BUTTON_TYPE_ACCOUNT_LOGIN) tag:kAccountLoginActTag selector:@selector(registerViewBtnAction:)  target:self];
-      [self addSubview:registorAccountBtn];
+         //確認
+      UIButton *okBtn = [LoginButton initBtnWithType:(BUTTON_TYPE_OK) tag:kAccountLoginActTag selector:@selector(registerViewBtnAction:)  target:self];
+      [self addSubview:okBtn];
       
-      [registorAccountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+      [okBtn mas_makeConstraints:^(MASConstraintMaker *make) {
           make.centerX.equalTo(self);
           make.top.equalTo(vfCodeFiledView.mas_bottom).mas_offset(10);
           make.width.mas_equalTo(self).offset(-30);
           make.height.mas_equalTo(40);
       }];
         
-       // [self layoutIfNeeded];
     }
     return self;
 }
@@ -177,4 +152,5 @@
             break;
     }
 }
+
 @end

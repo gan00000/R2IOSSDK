@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCSkyHourHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,11 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)clickGoogleLogin;
 -(void)clickGuestLogin;
 
--(void)goRegisterAccountView;
--(void)goChangePasswordView;
--(void)goSelelctBindTypeView;
--(void)goAccountLoginView;
--(void)goSelectLoginTypeView;
+-(void)goPageView:(CURRENT_PAGE_TYPE) pageType;
 
 -(void)goBackBtn:(UIButton *)backBtn backCount:(NSUInteger) count;
 

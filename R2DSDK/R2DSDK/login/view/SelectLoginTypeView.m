@@ -149,7 +149,7 @@
          case accountLoginActTag:
         {
             if (self.delegate) {
-                [self.delegate goAccountLoginView];
+                [self.delegate goPageView: CURRENT_PAGE_TYPE_LOGIN_ACCOUNT];
             }
         }
             break;

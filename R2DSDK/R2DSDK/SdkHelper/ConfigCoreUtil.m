@@ -28,7 +28,7 @@ static dispatch_once_t onceToken;
     _m_stringsBundle = nil;
     _m_stringsName = nil;
     
-//    [super dealloc];
+    //    [super dealloc];
 }
 
 + (ConfigCoreUtil *)share
@@ -60,10 +60,10 @@ static dispatch_once_t onceToken;
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject: m];
         [dataList addObject: data];
     }
-   
-     //转为不可变数组才能保存
+    
+    //转为不可变数组才能保存
     NSArray *nsdataArray = [NSArray arrayWithArray: dataList];
-     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:nsdataArray forKey:@"Key_AccountModelArray"];
     [userDefaults synchronize];
 }
@@ -94,7 +94,7 @@ static dispatch_once_t onceToken;
 
 #pragma mark - 初始化 Bundle
 - (void)setBundleInfo {
-
+    
     
     self.m_stringsBundle = [NSBundle mainBundle];
     self.m_stringsName = @"";

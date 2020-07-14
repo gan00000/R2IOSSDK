@@ -121,7 +121,7 @@
     if (addMoreAccountBtn) {
         
         self.moreAccountBtn = [UIUtil initBtnWithNormalImage:@"sdk_list_down.png" highlightedImage:nil tag:kMoreAccountListActTag selector:@selector(clickItemBtn:) target:self];
-        self.moreAccountBtn.hidden = NO;
+        self.moreAccountBtn.hidden = YES;
         self.moreAccountBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:self.moreAccountBtn];
         [self.moreAccountBtn mas_makeConstraints:^(MASConstraintMaker *make) {

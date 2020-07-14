@@ -93,6 +93,7 @@
 		32CEA230229FAF1000B9CC7C /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */; };
 		32CEA232229FAF1800B9CC7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */; };
 		32CEA234229FAF3B00B9CC7C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32CEA233229FAF3B00B9CC7C /* SafariServices.framework */; };
+		32F121F224BDE1EA005E2EEC /* FindPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F121F124BDE1EA005E2EEC /* FindPasswordView.m */; };
 		32FB926524B566D5000E241C /* LoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FB926424B566D5000E241C /* LoginButton.m */; };
 /* End PBXBuildFile section */
 
@@ -251,6 +252,8 @@
 		32CEA22F229FAF1000B9CC7C /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		32CEA231229FAF1800B9CC7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		32CEA233229FAF3B00B9CC7C /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		32F121F024BDE1EA005E2EEC /* FindPasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindPasswordView.h; sourceTree = "<group>"; };
+		32F121F124BDE1EA005E2EEC /* FindPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindPasswordView.m; sourceTree = "<group>"; };
 		32FB926324B566D5000E241C /* LoginButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginButton.h; sourceTree = "<group>"; };
 		32FB926424B566D5000E241C /* LoginButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -405,27 +408,29 @@
 		32518306229E38A800623AFF /* view */ = {
 			isa = PBXGroup;
 			children = (
-				3212AF5024B719E8008D3C62 /* widget */,
-				32518314229E5FD800623AFF /* SelectLoginTypeView.m */,
-				327F215024BB1FA200C95016 /* SelectLoginTypeView.h */,
-				32518319229E979B00623AFF /* GuestLoginWarnTipsView.h */,
-				3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */,
-				32CEA205229F7C7500B9CC7C /* BindAccountView.h */,
-				32CEA206229F7C7500B9CC7C /* BindAccountView.m */,
-				3260C1DF22A0D6F800E30FE9 /* SDKBaseView.h */,
-				3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */,
-				3260C1E222A0EF1900E30FE9 /* GuestLogoutWarnTipsView.h */,
-				3260C1E322A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m */,
 				3212AF5424B72248008D3C62 /* AccountLoginView.h */,
 				3212AF5524B72248008D3C62 /* AccountLoginView.m */,
-				327F214924BADE3500C95016 /* RegisterAccountView.h */,
-				327F214A24BADE3500C95016 /* RegisterAccountView.m */,
-				32C7D1A124BC02BF00BAC49C /* ChangePasswordView.h */,
-				32C7D1A224BC02BF00BAC49C /* ChangePasswordView.m */,
-				32C7D1A424BC09CC00BAC49C /* SelectBindTypeView.h */,
-				32C7D1A524BC09CC00BAC49C /* SelectBindTypeView.m */,
 				32C7D1A724BC295300BAC49C /* AutoLoginView.h */,
 				32C7D1A824BC295300BAC49C /* AutoLoginView.m */,
+				32CEA205229F7C7500B9CC7C /* BindAccountView.h */,
+				32CEA206229F7C7500B9CC7C /* BindAccountView.m */,
+				32C7D1A124BC02BF00BAC49C /* ChangePasswordView.h */,
+				32C7D1A224BC02BF00BAC49C /* ChangePasswordView.m */,
+				32F121F024BDE1EA005E2EEC /* FindPasswordView.h */,
+				32F121F124BDE1EA005E2EEC /* FindPasswordView.m */,
+				32518319229E979B00623AFF /* GuestLoginWarnTipsView.h */,
+				3251831A229E979B00623AFF /* GuestLoginWarnTipsView.m */,
+				3260C1E222A0EF1900E30FE9 /* GuestLogoutWarnTipsView.h */,
+				3260C1E322A0EF1900E30FE9 /* GuestLogoutWarnTipsView.m */,
+				327F214924BADE3500C95016 /* RegisterAccountView.h */,
+				327F214A24BADE3500C95016 /* RegisterAccountView.m */,
+				3260C1DF22A0D6F800E30FE9 /* SDKBaseView.h */,
+				3260C1E022A0D6F800E30FE9 /* SDKBaseView.m */,
+				32C7D1A424BC09CC00BAC49C /* SelectBindTypeView.h */,
+				32C7D1A524BC09CC00BAC49C /* SelectBindTypeView.m */,
+				327F215024BB1FA200C95016 /* SelectLoginTypeView.h */,
+				32518314229E5FD800623AFF /* SelectLoginTypeView.m */,
+				3212AF5024B719E8008D3C62 /* widget */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -728,6 +733,7 @@
 				32775C4224BC688800BDE4E7 /* BJServiceConfigurator.m in Sources */,
 				32C03F1024BD9F1700114B21 /* GamaSecurity.m in Sources */,
 				3212AF5324B71A6B008D3C62 /* SDKTextFiledView.m in Sources */,
+				32F121F224BDE1EA005E2EEC /* FindPasswordView.m in Sources */,
 				32775C4324BC688800BDE4E7 /* BJHTTPServiceEngine.m in Sources */,
 				3284E0FC24BCA2B40050BC3D /* AccountListViewCell.m in Sources */,
 				32775C4424BC688800BDE4E7 /* BJBaseResponceModel.m in Sources */,

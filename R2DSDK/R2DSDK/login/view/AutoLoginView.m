@@ -65,7 +65,7 @@
 {
     SDK_LOG(@"changeLoginAccount");
     if (self.delegate) {
-        [self.delegate goSelectLoginTypeView];
+        [self.delegate goPageView:CURRENT_PAGE_TYPE_SELECT_LOGIN_TYPE];
     }
 }
 

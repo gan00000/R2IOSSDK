@@ -211,18 +211,19 @@ static  NSString *AccountListViewCellID = @"AccountListViewCellID";
         }
         
         //添加账号显示列表
+        kWeakSelf
         accountSDKTextFiledView.clickAccountListItem = ^(NSInteger tag) {
             
             if (accountListTableView) {
                 //设置点击显示、隐藏
                 if (accountListTableView.tag == 0) {
-                    [self setTableViewHiden:YES];
+                    [weakSelf setTableViewHiden:YES];
                     NSArray *mAccountArray = [[ConfigCoreUtil share] getAccountModels];//获取保存的数据
                     [accountDataList removeAllObjects];
                     [accountDataList addObjectsFromArray:mAccountArray];
                     [accountListTableView reloadData];
                 }else{
-                    [self setTableViewHiden:NO];
+                    [weakSelf setTableViewHiden:NO];
                 }
                 
                 
@@ -281,26 +282,27 @@ static  NSString *AccountListViewCellID = @"AccountListViewCellID";
             
         case kFindPwdActTag:
             SDK_LOG(@"kFindPwdActTag");
+            [self.delegate goPageView:CURRENT_PAGE_TYPE_FIND_PWD];
             break;
             
         case kBindAccountActTag:
             SDK_LOG(@"kBindAccountActTag");
             if (self.delegate) {
-                [self.delegate goSelelctBindTypeView];
+                [self.delegate goPageView:CURRENT_PAGE_TYPE_SELECT_BIND_TYPE];
             }
             break;
             
         case kRegisterAccountActTag:
             SDK_LOG(@"kRegisterAccountActTag");
             if (self.delegate) {
-                [self.delegate goRegisterAccountView];
+                [self.delegate goPageView:CURRENT_PAGE_TYPE_REG_ACCOUNT];
             }
             break;
             
         case kChangePwdActTag:
             SDK_LOG(@"kChangePwdActTag");
             if (self.delegate) {
-                [self.delegate goChangePasswordView];
+                [self.delegate goPageView:CURRENT_PAGE_TYPE_CHANGE_PWD];
             }
             break;
             
@@ -368,7 +370,7 @@ static  NSString *AccountListViewCellID = @"AccountListViewCellID";
             [tableView reloadData];
             [[ConfigCoreUtil share] saveAccountModels:accountDataList];//保存
             if (accountDataList.count == 0) { //删除到位0的时候隐藏tableview和moreAccountBtn
-                [self setTableViewHiden:YES];
+                [weakSelf setTableViewHiden:YES];
                 accountSDKTextFiledView.moreAccountBtn.hidden = YES;
             }
         }
