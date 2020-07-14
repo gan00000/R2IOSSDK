@@ -12,9 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ConfigCoreUtil : NSObject
 
-+ (ConfigCoreUtil *)reader;
++ (ConfigCoreUtil *)share;
 
 -(NSString *)getLocalizedStringForKey:(NSString *)key;
+
+-(void)saveAccountModels:(NSArray *) mAccountModelArray;
+
+-(NSArray *)getAccountModels;
 
 @end
 

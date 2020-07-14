@@ -50,14 +50,22 @@
 #define LABEL_FONT_NAME_Helvetica           @"Helvetica"
 
 #define GetImage(imageName)     [UIImage gama_imageNamed:imageName]
-#define SDK_LOG(format, ...) (NSLog)((@"FL_SDK:%@"), [NSString stringWithFormat:(format), ##__VA_ARGS__])
 
-#define GET_SDK_LOCALIZED(key) [[ConfigCoreUtil reader] getLocalizedStringForKey:key]
+#ifdef DEBUG // 开发
+#define SDK_LOG(format, ...) NSLog((@"\n[文件名:%s]\n" "[函数名:%s]\n" "[行号:%d]\n" @"[输出:" format@"]"@"\n\n"), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else // 发布
+#define SDK_LOG(format, ...) (NSLog)((@"FL_SDK:%@"), [NSString stringWithFormat:(format), ##__VA_ARGS__])
+#endif
+
+
+#define GET_SDK_LOCALIZED(key) [[ConfigCoreUtil share] getLocalizedStringForKey:key]
 
 #define hillTopViewController    [UIUtil getSDKController]
 
 #define Guest_Login_Tipe_OK  @"Guest_Login_Tipe_OK" //游客登录成功通知
 #define SDK_AUTO_LOGIN_FAIL @"SDK_AUTO_LOGIN_FAIL"  //自动登录失败通知
+
+#define kWeakSelf __weak typeof(self) weakSelf = self;
 
 typedef NS_OPTIONS(NSUInteger, CURRENT_PAGE_TYPE)
 {
@@ -65,6 +73,8 @@ typedef NS_OPTIONS(NSUInteger, CURRENT_PAGE_TYPE)
     CURRENT_PAGE_TYPE_LOGIN_ACCOUNT,
     CURRENT_PAGE_TYPE_BIND,
 };
+
+typedef void (^ItemViewClickHander)(NSInteger);
 
 //页面按钮button点击tag
 #define kCheckBoxBtnTag     20
@@ -77,6 +87,7 @@ typedef NS_OPTIONS(NSUInteger, CURRENT_PAGE_TYPE)
 #define kGetVfCodeActTag    27
 #define kChangePwdActTag    28
 #define kMoreAccountListActTag    29
+#define kMoreAccountDeleteActTag    30
 
 typedef void (^ViewClickHandler)(NSString* msg, NSInteger m);
 

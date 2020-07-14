@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCSkyHourHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UILabel *accountUILabel;
 @property (nonatomic, strong) UIButton *deleteAccountBtn;
+
+@property (nonatomic, strong) ItemViewClickHander mItemViewClickHander;
 
 @end
 

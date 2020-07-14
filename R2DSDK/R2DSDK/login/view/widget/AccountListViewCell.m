@@ -23,14 +23,14 @@
 
 - (void)addCellView{
     
-    self.deleteAccountBtn = [UIUtil initBtnWithNormalImage:@"fl_sdk_close.png" highlightedImage:nil tag:33 selector:@selector(deleteAccontClick:) target:self];
+    self.deleteAccountBtn = [UIUtil initBtnWithNormalImage:@"fl_sdk_close.png" highlightedImage:@"fl_sdk_close.png" tag:kMoreAccountDeleteActTag selector:@selector(deleteAccontClick:) target:self];
     self.deleteAccountBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.contentView addSubview:self.deleteAccountBtn];
     [self.deleteAccountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.equalTo(self.contentView.mas_trailing).mas_offset(-10);
         make.top.mas_equalTo(self.contentView).offset(2);
         make.bottom.mas_equalTo(self.contentView).offset(-2);
-        make.width.mas_equalTo(20);
+        make.width.mas_equalTo(16);
         
     }];
     
@@ -54,7 +54,9 @@
 
 - (void)deleteAccontClick:(UIButton *)sender
 {
-    
+    if (self.mItemViewClickHander) {
+        self.mItemViewClickHander(sender.tag);
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

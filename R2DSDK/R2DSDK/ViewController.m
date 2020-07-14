@@ -41,7 +41,6 @@
     [unbindBtn addTarget:self action:@selector(unbindPage:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.view addSubview:unbindBtn];
     
-    
 }
 
 -(void)openLogin:(UIButton *)btn

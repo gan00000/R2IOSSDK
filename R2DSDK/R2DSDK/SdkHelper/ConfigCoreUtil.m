@@ -8,6 +8,7 @@
 
 #import "ConfigCoreUtil.h"
 #import "CCSkyHourHeader.h"
+#import "AccountModel.h"
 
 
 @interface ConfigCoreUtil()
@@ -30,7 +31,7 @@ static dispatch_once_t onceToken;
 //    [super dealloc];
 }
 
-+ (ConfigCoreUtil *)reader
++ (ConfigCoreUtil *)share
 {
     
     dispatch_once(&onceToken,^{
@@ -49,6 +50,42 @@ static dispatch_once_t onceToken;
     }
     return self;
 }
+
+-(void)saveAccountModels:(NSArray<AccountModel *> *) mAccountModelArray
+{
+    
+    NSMutableArray  *dataList = [NSMutableArray array];
+    for (AccountModel *m in mAccountModelArray) {
+        //存储到NSUserDefaults
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject: m];
+        [dataList addObject: data];
+    }
+   
+     //转为不可变数组才能保存
+    NSArray *nsdataArray = [NSArray arrayWithArray: dataList];
+     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:nsdataArray forKey:@"Key_AccountModelArray"];
+    [userDefaults synchronize];
+}
+
+-(NSMutableArray<AccountModel *> *)getAccountModels
+{
+    NSMutableArray  *accountModelList = [NSMutableArray array];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *array = [userDefaults objectForKey:@"Key_AccountModelArray"];
+    for (NSData *data in array) {
+        AccountModel *m = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        [accountModelList addObject:m];
+    }
+    //根据创建时间排序
+    [accountModelList sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return -[((AccountModel *)obj1).lastLoginTime compare: ((AccountModel *)obj2).lastLoginTime];
+    }];
+    return accountModelList;
+}
+
+
+
 
 -(NSString *)getLocalizedStringForKey:(NSString *)key
 {

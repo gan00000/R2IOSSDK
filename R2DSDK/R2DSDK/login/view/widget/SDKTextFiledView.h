@@ -7,6 +7,7 @@
 //
 
 #import "SDKBaseView.h"
+#import "CCSkyHourHeader.h"
 
 typedef NS_OPTIONS(NSUInteger, SDKTextFiledView_Type)
 {
@@ -17,7 +18,6 @@ typedef NS_OPTIONS(NSUInteger, SDKTextFiledView_Type)
     SDKTextFiledView_Type_VfCode,
 };
 
-typedef void (^ClickItem)(NSInteger) ;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,8 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initViewWithType:(SDKTextFiledView_Type) type;
 
-@property (nonatomic) ClickItem clickAccountListItem;
+@property (nonatomic) ItemViewClickHander clickAccountListItem;
 @property (nonatomic) UITextField *inputUITextField;
+@property (nonatomic) UIButton *moreAccountBtn;
 
 @end
 
