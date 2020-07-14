@@ -54,7 +54,7 @@
             make.centerX.mas_equalTo(self);
             make.top.equalTo(mLoginTitleView.mas_bottom).mas_offset(10);
             make.width.mas_equalTo(self).offset(-30);
-            make.height.mas_equalTo(kInputTextFiledWidth - 10);
+            make.height.mas_equalTo(kInputTextFiledWidth);
          }];
         
         
@@ -102,7 +102,7 @@
       
       [okBtn mas_makeConstraints:^(MASConstraintMaker *make) {
           make.centerX.equalTo(self);
-          make.top.equalTo(vfCodeFiledView.mas_bottom).mas_offset(10);
+          make.top.equalTo(vfCodeFiledView.mas_bottom).mas_offset(40);
           make.width.mas_equalTo(self).offset(-30);
           make.height.mas_equalTo(40);
       }];

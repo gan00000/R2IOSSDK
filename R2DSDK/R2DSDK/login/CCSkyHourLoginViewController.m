@@ -268,11 +268,11 @@
     
 }
 
-- (void)goBackBtn:(UIButton *)backBtn backCount:(NSUInteger) count{
+- (void)goBackBtn:(UIView *)backView backCount:(NSUInteger) count{
     if (count == 1) {
-        [[backBtn superview] removeFromSuperview];
+        [[backView superview] removeFromSuperview];
     }else if (count == 2){
-        [[[backBtn superview] superview] removeFromSuperview];
+        [[[backView superview] superview] removeFromSuperview];
     }
     
 }

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)goPageView:(CURRENT_PAGE_TYPE) pageType;
 
--(void)goBackBtn:(UIButton *)backBtn backCount:(NSUInteger) count;
+-(void)goBackBtn:(UIView *)backView backCount:(NSUInteger) count;
 
 -(void)logout;
 -(void)loginSuccess;
