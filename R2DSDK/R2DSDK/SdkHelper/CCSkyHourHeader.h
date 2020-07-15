@@ -93,6 +93,7 @@ typedef void (^ItemViewClickHander)(NSInteger);
 #define kChangePwdActTag    28
 #define kMoreAccountListActTag    29
 #define kMoreAccountDeleteActTag    30
+//#define kBindAccountActTag    31
 
 typedef void (^ViewClickHandler)(NSString* msg, NSInteger m);
 

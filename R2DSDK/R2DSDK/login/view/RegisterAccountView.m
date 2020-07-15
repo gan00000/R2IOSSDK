@@ -33,13 +33,15 @@
 //        self.layer.borderWidth = 2;
         self.layer.masksToBounds = YES; //不设置这里会不生成圆角，原因查找中
         
+        int rowMargin = 6;
+        
         //title
         mLoginTitleView = [[LoginTitleView alloc] initViewWithTitle:@"註冊會員"];
         mLoginTitleView.delegate = self.delegate;
         
         [self addSubview:mLoginTitleView];
        [mLoginTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.top.mas_equalTo(self.mas_top).mas_offset(8);
+          make.top.mas_equalTo(self.mas_top).mas_offset(10);
            make.centerX.mas_equalTo(self);
           make.width.mas_equalTo(self).mas_offset(-12);
            make.height.mas_equalTo(40);
@@ -52,7 +54,7 @@
              
         [accountSDKTextFiledView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(self);
-            make.top.equalTo(mLoginTitleView.mas_bottom).mas_offset(10);
+            make.top.equalTo(mLoginTitleView.mas_bottom).mas_offset(rowMargin);
             make.width.mas_equalTo(self).offset(-30);
             make.height.mas_equalTo(kInputTextFiledWidth - 10);
          }];
@@ -64,7 +66,7 @@
             
        [passwordSDKTextFiledView mas_makeConstraints:^(MASConstraintMaker *make) {
            
-           make.top.equalTo(accountSDKTextFiledView.mas_bottom).mas_offset(10);
+           make.top.equalTo(accountSDKTextFiledView.mas_bottom).mas_offset(rowMargin);
            make.leading.mas_equalTo(accountSDKTextFiledView.mas_leading);
            make.trailing.mas_equalTo(accountSDKTextFiledView.mas_trailing);
            make.height.mas_equalTo(accountSDKTextFiledView.mas_height);
@@ -77,7 +79,7 @@
              
         [passwordAgainSDKTextFiledView mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.top.equalTo(passwordSDKTextFiledView.mas_bottom).mas_offset(10);
+            make.top.equalTo(passwordSDKTextFiledView.mas_bottom).mas_offset(rowMargin);
             make.leading.mas_equalTo(accountSDKTextFiledView.mas_leading);
             make.trailing.mas_equalTo(accountSDKTextFiledView.mas_trailing);
             make.height.mas_equalTo(accountSDKTextFiledView.mas_height);
@@ -88,7 +90,7 @@
            
            [self addSubview:mPhoneView];
            [mPhoneView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(passwordAgainSDKTextFiledView.mas_bottom).mas_offset(10);
+                make.top.equalTo(passwordAgainSDKTextFiledView.mas_bottom).mas_offset(rowMargin);
                  make.leading.mas_equalTo(accountSDKTextFiledView.mas_leading);
                  make.trailing.mas_equalTo(accountSDKTextFiledView.mas_trailing);
                  make.height.mas_equalTo(accountSDKTextFiledView.mas_height);
@@ -98,7 +100,7 @@
           
           [self addSubview:vfCodeFiledView];
           [vfCodeFiledView mas_makeConstraints:^(MASConstraintMaker *make) {
-               make.top.equalTo(mPhoneView.mas_bottom).mas_offset(10);
+               make.top.equalTo(mPhoneView.mas_bottom).mas_offset(rowMargin);
                 make.leading.mas_equalTo(accountSDKTextFiledView.mas_leading);
                 make.width.mas_equalTo(accountSDKTextFiledView.mas_width).multipliedBy(0.6);
                 make.height.mas_equalTo(accountSDKTextFiledView.mas_height);
@@ -131,7 +133,22 @@
           make.height.mas_equalTo(40);
       }];
         
-       // [self layoutIfNeeded];
+        UILabel *loginTipsLable = [[UILabel alloc] init];
+       loginTipsLable.text = @"同一手機當日不得收取驗證碼超過五次";
+       loginTipsLable.font = [UIFont systemFontOfSize:10];
+       loginTipsLable.textAlignment = NSTextAlignmentCenter;
+       loginTipsLable.backgroundColor = [UIColor clearColor];
+       loginTipsLable.numberOfLines = 1;
+       loginTipsLable.textColor = [UIColor colorWithHexString:@"#FF3E37"];
+       
+        [self addSubview:loginTipsLable];
+        [loginTipsLable mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(self);
+            make.top.mas_equalTo(registorAccountBtn.mas_bottom).mas_offset(4);
+            make.height.mas_equalTo(20);
+            make.width.mas_equalTo(self).mas_offset(-10);
+            
+        }];
     }
     return self;
 }
